@@ -1,0 +1,41 @@
+{
+  "id": "stonetop",
+  "title": "Stonetop",
+  "version": "0.1.1",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "authors": [
+    {
+      "name": "Dice Goblin Click Clack"
+    }
+  ],
+  "esmodules": [
+    "stonetop.mjs"
+  ],
+  "styles": [
+    "styles/stonetop.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "stonetop_compendium",
+      "label": "Stonetop Compendium",
+      "path": "packs/stonetop_compendium",
+      "type": "Item",
+      "system": "stonetop"
+    }
+  ],
+  "primaryTokenAttribute": "hp",
+  "secondaryTokenAttribute": "",
+  "url": "https://github.com/Dice-Goblin-Click-Clack/stonetop",
+  "manifest": "https://github.com/Dice-Goblin-Click-Clack/stonetop/releases/latest/download/system.json",
+  "download": "https://github.com/Dice-Goblin-Click-Clack/stonetop/releases/download/v0.1.1/stonetop.zip"
+}

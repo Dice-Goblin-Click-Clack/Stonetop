@@ -1,0 +1,98 @@
+<form class="stonetop sheet actor npc npc-sheet-form" autocomplete="off">
+
+  <div class="npc-card-sheet">
+
+    <section class="npc-top-grid">
+
+      <div class="npc-portrait-frame" title="Change NPC image">
+        <img src="{{actor.img}}" alt="{{actor.name}}">
+      </div>
+
+      <div class="npc-identity-block">
+
+        <div class="npc-name-frame">
+          <input name="name" type="text" value="{{actor.name}}" placeholder="Name">
+        </div>
+
+        <input
+          class="npc-tags-field"
+          name="system.tags"
+          type="text"
+          value="{{system.tags}}"
+          placeholder="Tags"
+        >
+
+        <div class="npc-loyalty-row">
+          <span>Loyalty</span>
+
+          <div class="npc-loyalty-pips">
+            {{#each loyaltyPips}}
+              <input
+                type="checkbox"
+                class="circle-check npc-loyalty-pip"
+                data-value="{{this.value}}"
+                {{#if this.checked}}checked{{/if}}
+              >
+            {{/each}}
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="npc-resource-row">
+
+      <div class="npc-resource npc-damage-resource">
+        <button class="npc-damage-roll" type="button">Damage</button>
+        <input name="system.damage" type="text" value="{{system.damage}}">
+      </div>
+
+      <div class="npc-resource npc-armor-resource">
+        <label>Armor</label>
+        <input name="system.armor" type="number" step="1" value="{{system.armor}}">
+      </div>
+
+      <div class="npc-resource npc-hp-resource">
+        <label>HP</label>
+
+        <div class="npc-split-field">
+          <input name="system.hp.value" type="number" step="1" value="{{system.hp.value}}">
+          <span>/</span>
+          <input name="system.hp.max" type="number" step="1" value="{{system.hp.max}}">
+        </div>
+
+        <div class="npc-minmax-labels">
+          <span>Min</span>
+          <span>Max</span>
+        </div>
+      </div>
+
+    </section>
+
+    <input
+      class="npc-weapon-field"
+      name="system.weapon"
+      type="text"
+      value="{{system.weapon}}"
+      placeholder="Weapon"
+    >
+
+    <section class="npc-text-panel">
+      <label>Instincts</label>
+      <textarea name="system.instinct">{{system.instinct}}</textarea>
+    </section>
+
+    <section class="npc-text-panel">
+      <label>Cost</label>
+      <textarea name="system.cost">{{system.cost}}</textarea>
+    </section>
+
+    <section class="npc-text-panel">
+      <label>Description</label>
+      <textarea name="system.description">{{system.description}}</textarea>
+    </section>
+
+  </div>
+
+</form>

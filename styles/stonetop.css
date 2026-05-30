@@ -1,0 +1,4451 @@
+.application.stonetop .window-content {
+  background: white;
+  overflow-y: auto;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor,
+.application.stonetop .window-content form.stonetop.sheet.item {
+  background: white;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.25;
+  padding: 12px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor *,
+.application.stonetop .window-content form.stonetop.sheet.item * {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .sheet-header.character-top {
+  display: block;
+  flex: none;
+  margin-bottom: 10px;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.item .sheet-header {
+  display: block;
+  margin-bottom: 10px;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.item h1 input {
+  font-size: 24px;
+  font-weight: bold;
+  height: 38px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.item h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.item label {
+  display: block;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.item input,
+.application.stonetop .window-content form.stonetop.sheet.item textarea,
+.application.stonetop .window-content form.stonetop.sheet.item select {
+  background: white;
+  color: black;
+  border: 1px solid black;
+  width: 100%;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.item textarea {
+  min-height: 90px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .identity-line {
+  display: block;
+  width: 100%;
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .identity-line input {
+  display: block;
+  width: 100%;
+  margin-top: 3px;
+  font-size: 24px;
+  height: 38px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .top-stats-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .stat-box {
+  border: 1px solid black;
+  padding: 6px;
+  text-align: center;
+  background: #f5f5f5;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .stat-roll {
+  width: 100%;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .stat-box input {
+  margin-top: 4px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  height: 38px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .sheet-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .sheet-tabs .item {
+  padding: 4px 8px;
+  border: 1px solid black;
+  border-bottom: none;
+  cursor: pointer;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .sheet-tabs .item.active {
+  font-weight: bold;
+  background: #ddd;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .sheet-body {
+  min-height: 500px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .sheet-body .tab {
+  display: none;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .sheet-body .tab.active {
+  display: block;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor label {
+  display: block;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor input,
+.application.stonetop .window-content form.stonetop.sheet.actor textarea,
+.application.stonetop .window-content form.stonetop.sheet.actor select {
+  background: white;
+  color: black;
+  border: 1px solid black;
+  width: 100%;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor textarea {
+  min-height: 100px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .field-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 6px;
+  align-items: center;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-panel-frame h2 {
+  font-family: "Historical FellType Roman SC", "Historical-FellTypeRomanSC", Georgia, serif;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 0.95;
+  margin: 0 0 2px;
+  white-space: nowrap;
+}
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card {
+  position: relative;
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #f5f5f5;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card-header h3 {
+  margin: 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .icon-button {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  line-height: 1;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .inventory-sheet {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 14px;
+  font-size: 13px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .inventory-sheet h2,
+.application.stonetop .window-content form.stonetop.sheet.actor .inventory-sheet h3,
+.application.stonetop .window-content form.stonetop.sheet.actor .inventory-sheet h4 {
+  margin: 4px 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .inventory-sheet p {
+  margin: 2px 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .inventory-sheet hr {
+  border: none;
+  border-top: 1px solid black;
+  margin: 6px 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .inventory-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .inventory-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  margin: 2px 0;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor input[type="checkbox"] {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  outline: none;
+  padding: 0 !important;
+  color: transparent !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor input[type="checkbox"]::before,
+.application.stonetop .window-content form.stonetop.sheet.actor input[type="checkbox"]::after {
+  display: none !important;
+  content: none !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .inventory-line > input[type="checkbox"],
+.application.stonetop .window-content form.stonetop.sheet.actor .check-row input[type="checkbox"],
+.application.stonetop .window-content form.stonetop.sheet.actor .small-items-grid input[type="checkbox"] {
+  width: 14px !important;
+  height: 14px !important;
+  min-width: 14px !important;
+  max-width: 14px !important;
+  flex: 0 0 14px;
+  margin: 0 4px 0 0;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .diamond-check > input[type="checkbox"],
+.application.stonetop .window-content form.stonetop.sheet.actor .diamond-row input[type="checkbox"] {
+  border: 1px solid black !important;
+  background: white !important;
+  transform: rotate(45deg);
+  margin-top: 3px;
+  border-radius: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .diamond-check > input[type="checkbox"]:checked,
+.application.stonetop .window-content form.stonetop.sheet.actor .diamond-row input[type="checkbox"]:checked {
+  background: black !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .square-check > input[type="checkbox"],
+.application.stonetop .window-content form.stonetop.sheet.actor .square-row input[type="checkbox"],
+.application.stonetop .window-content form.stonetop.sheet.actor .small-items-grid input[type="checkbox"] {
+  border: 1px solid black !important;
+  background: white !important;
+  border-radius: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .square-check > input[type="checkbox"]:checked,
+.application.stonetop .window-content form.stonetop.sheet.actor .square-row input[type="checkbox"]:checked,
+.application.stonetop .window-content form.stonetop.sheet.actor .small-items-grid input[type="checkbox"]:checked {
+  background: black !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .circle-check {
+  border: 1px solid black !important;
+  border-radius: 50% !important;
+  background: white !important;
+  width: 12px !important;
+  height: 12px !important;
+  min-width: 12px !important;
+  max-width: 12px !important;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 2px;
+  cursor: pointer;
+  padding: 0 !important;
+  box-sizing: border-box;
+  transform: none !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .circle-check:checked {
+  background: black !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .check-row {
+  display: flex;
+  gap: 4px;
+  margin: 4px 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .inventory-small {
+  border-left: 1px solid black;
+  padding-left: 10px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .small-items-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 8px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .small-items-grid label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 1px 0;
+  font-weight: normal;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading {
+  background: white;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.25;
+  padding: 12px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading * {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  box-sizing: border-box;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .sheet-header.steading-top {
+  display: block;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-header-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 120px) minmax(286px, 1fr);
+  gap: 8px;
+  align-items: stretch;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-panel-frame {
+  position: relative;
+  min-height: 184px;
+  padding: 9px 10px 11px;
+  background: white;
+  overflow: hidden;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-stat-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-fortunes { order: 1; }
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-surplus { order: 2; }
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-size { order: 3; }
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-population { order: 4; }
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-prosperity { order: 5; }
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-defenses { order: 6; }
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-debilities-panel { order: 7; }
+
+.application.stonetop .window-content form.stonetop.sheet.steading .panel-corner,
+.application.stonetop .window-content form.stonetop.sheet.steading .panel-edge {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .panel-corner {
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .panel-corner-tl { top: 0; left: 0; background-image: url("../assets/sheet/panel-corner-tl.png"); }
+.application.stonetop .window-content form.stonetop.sheet.steading .panel-corner-tr { top: 0; right: 0; background-image: url("../assets/sheet/panel-corner-tr.png"); }
+.application.stonetop .window-content form.stonetop.sheet.steading .panel-corner-bl { bottom: 0; left: 0; background-image: url("../assets/sheet/panel-corner-bl.png"); }
+.application.stonetop .window-content form.stonetop.sheet.steading .panel-corner-br { bottom: 0; right: 0; background-image: url("../assets/sheet/panel-corner-br.png"); }
+
+.application.stonetop .window-content form.stonetop.sheet.steading .panel-edge-top {
+  top: 0;
+  left: 16px;
+  right: 16px;
+  height: 8px;
+  background: url("../assets/sheet/panel-edge-top.png") repeat-x top left / auto 8px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .panel-edge-bottom {
+  bottom: 0;
+  left: 16px;
+  right: 16px;
+  height: 8px;
+  background: url("../assets/sheet/panel-edge-bottom.png") repeat-x bottom left / auto 8px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .panel-edge-left {
+  top: 16px;
+  bottom: 16px;
+  left: 0;
+  width: 8px;
+  background: url("../assets/sheet/panel-edge-left.png") repeat-y top left / 8px auto;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .panel-edge-right {
+  top: 16px;
+  bottom: 16px;
+  right: 0;
+  width: 8px;
+  background: url("../assets/sheet/panel-edge-right.png") repeat-y top right / 8px auto;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-panel-frame > :not(.panel-corner):not(.panel-edge) {
+  position: relative;
+  z-index: 1;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-panel-frame h2 {
+  font-family: "Historical FellType Roman SC", "Historical-FellTypeRomanSC", Georgia, serif;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 0.95;
+  margin: 0 0 2px;
+  white-space: nowrap;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-debilities-panel h2 {
+  font-size: 16px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-size .steading-rating-options {
+  align-items: flex-start;
+  padding-left: 12px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-defenses .steading-rating-options {
+  align-items: flex-start;
+  padding-left: 2px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-start-line {
+  position: relative;
+  font-family: Georgia, serif;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 6px;
+  padding-top: 4px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-start-line::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: url("../assets/sheet/divider-horizontal-thin.png") repeat-x center / auto 3.5px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-rating-options {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: center;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-rating-option,
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-debility-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 0;
+  font-family: Georgia, serif;
+  font-weight: normal;
+  line-height: 1.1;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-rating-option input,
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-debility-option input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-box,
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-circle {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  flex: 0 0 14px;
+  width: 14px !important;
+  height: 14px !important;
+  min-width: 14px !important;
+  max-width: 14px !important;
+  margin: 0 2px 0 0;
+  border: 1px solid black !important;
+  background: white !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-box {
+  border-radius: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-circle {
+  border-radius: 50% !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading input:checked + .steading-box,
+.application.stonetop .window-content form.stonetop.sheet.steading input:checked + .steading-circle {
+  background: black !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading input:checked + .steading-box::before,
+.application.stonetop .window-content form.stonetop.sheet.steading input:checked + .steading-box::after,
+.application.stonetop .window-content form.stonetop.sheet.steading input:checked + .steading-circle::before,
+.application.stonetop .window-content form.stonetop.sheet.steading input:checked + .steading-circle::after {
+  display: none !important;
+  content: none !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-option-text {
+  display: flex;
+  flex-direction: column;
+  font-family: Georgia, serif;
+  font-size: 13px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-option-text small {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 10px;
+  line-height: 1;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-surplus-input {
+  width: 100%;
+  height: 96px;
+  margin-top: 4px;
+  border: none;
+  background: transparent;
+  font-family: Georgia, serif;
+  font-size: 62px;
+  line-height: 1;
+  text-align: center;
+  outline: none;
+  overflow: visible;
+  padding: 6px 0 10px;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-surplus-input::-webkit-outer-spin-button,
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-surplus-input::-webkit-inner-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-debility-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-debility-option span:last-child {
+  font-family: Georgia, serif;
+  font-size: 11px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .sheet-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .sheet-tabs .item {
+  padding: 4px 8px;
+  border: 1px solid black;
+  border-bottom: none;
+  cursor: pointer;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .sheet-tabs .item.active {
+  font-weight: bold;
+  background: #ddd;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .sheet-body .tab {
+  display: none;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .sheet-body .tab.active {
+  display: block;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-landscape-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-panel,
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-wide-panel {
+  border: 1px solid black;
+  background: #f5f5f5;
+  padding: 10px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading textarea {
+  width: 100%;
+  min-height: 420px;
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card {
+  border: 1px solid black;
+  background: #f5f5f5;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  background: #e8e8e8;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-title {
+  flex: 1;
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-title:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card-actions {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .icon-button {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border: 1px solid black;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .icon-button i {
+  pointer-events: none;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .icon-fallback {
+  display: none;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card-body {
+  display: none;
+  padding: 10px;
+  border-top: 1px solid black;
+  background: white;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card.expanded .move-card-body {
+  display: block;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-description {
+  white-space: pre-wrap;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-stat-select {
+  margin-bottom: 10px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-roll {
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .icon-button {
+  color: black !important;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif !important;
+  line-height: 1;
+  overflow: visible;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .icon-button * {
+  color: black !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .square-description-check {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  border: 1px solid black !important;
+  background: white !important;
+  width: 13px !important;
+  height: 13px !important;
+  min-width: 13px !important;
+  max-width: 13px !important;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 4px 2px 0;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .square-description-check:checked {
+  background: black !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .icon-button {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .icon-button:hover {
+  filter: brightness(1.15);
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .icon-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  border: none;
+  pointer-events: none;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-header {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 16px;
+  border: none;
+  padding-bottom: 16px;
+  margin-bottom: 12px;
+  background-image: url("systems/stonetop/assets/sheet/divider-horizontal.png");
+  background-repeat: repeat-x;
+  background-position: bottom left;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .name-frame {
+  height: 70px;
+  padding: 12px 18px;
+  background-image: url("systems/stonetop/assets/sheet/frame-name.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .name-frame input {
+  border: none;
+  background: transparent;
+  font-size: 32px;
+  font-weight: bold;
+  height: 42px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .stat-instruction {
+  font-size: 12px;
+  margin: 6px 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stats-row {
+  display: grid;
+  grid-template-columns: repeat(6, 120px);
+  gap: 4px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stat {
+  width: 120px;
+  height: 95px;
+  text-align: center;
+  padding: 8px;
+  background-image: url("systems/stonetop/assets/sheet/frame-stat.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stat .stat-roll {
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  font-size: 13px;
+  height: 20px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stat input {
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  height: 36px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .stat-short {
+  font-size: 12px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 8px 0;
+  text-align: center;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .resource-row {
+  display: grid;
+  grid-template-columns: 120px 210px 120px 210px 120px;
+  gap: 4px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-resource {
+  height: 95px;
+  text-align: center;
+  padding: 10px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .small-resource {
+  background-image: url("systems/stonetop/assets/sheet/frame-stat.png");
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .wide-resource {
+  background-image: url("systems/stonetop/assets/sheet/frame-wide.png");
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .resource-label,
+.application.stonetop .window-content form.stonetop.sheet.actor .damage-roll {
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-resource input {
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .split-field {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 4px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .portrait-frame {
+  width: 340px;
+  height: 340px;
+  padding: 10px;
+  background-image: url("systems/stonetop/assets/sheet/frame-portrait.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-header {
+  grid-template-columns: 1fr 260px;
+  gap: 12px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stats-row {
+  grid-template-columns: repeat(6, 95px);
+  gap: 3px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stat {
+  width: 95px;
+  height: 75px;
+  padding: 6px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stat .stat-roll {
+  font-size: 11px;
+  height: 17px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stat input {
+  font-size: 22px;
+  height: 26px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .stat-short {
+  font-size: 10px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .resource-row {
+  grid-template-columns: 95px 165px 95px 165px 95px;
+  gap: 3px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-resource {
+  height: 75px;
+  padding: 7px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-resource input {
+  font-size: 20px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .portrait-frame {
+  width: 260px;
+  height: 260px;
+  padding: 8px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .name-frame {
+  height: 58px;
+  padding: 9px 14px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .name-frame input {
+  font-size: 26px;
+  height: 34px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .sheet-header.character-top.textured-header {
+  display: grid !important;
+  grid-template-columns: minmax(0, 630px) 260px !important;
+  gap: 14px !important;
+  align-items: start !important;
+  border-bottom: none !important;
+  padding: 0 0 10px 0 !important;
+  margin: 0 0 10px 0 !important;
+  background-image: url("../assets/sheet/divider-horizontal.png") !important;
+  background-repeat: repeat-x !important;
+  background-size: auto 8px !important;
+  background-position: bottom left !important;
+  overflow: visible !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .header-main {
+  width: 630px !important;
+  min-width: 0 !important;
+  display: grid !important;
+  grid-template-rows: auto auto auto auto auto !important;
+  row-gap: 4px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .name-frame {
+  width: 630px !important;
+  height: 54px !important;
+  padding: 8px 14px !important;
+  box-sizing: border-box !important;
+  background-image: url("../assets/sheet/frame-name.png") !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .name-frame input {
+  width: 100% !important;
+  height: 34px !important;
+  border: none !important;
+  background: transparent !important;
+  font-size: 24px !important;
+  font-weight: bold !important;
+  line-height: 1 !important;
+  padding: 0 6px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .stat-instruction {
+  width: 630px !important;
+  font-size: 11px !important;
+  line-height: 1.15 !important;
+  margin: 0 !important;
+  padding: 0 2px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stats-row {
+  display: grid !important;
+  grid-template-columns: repeat(6, 95px) !important;
+  gap: 3px !important;
+  width: 585px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stat {
+  width: 95px !important;
+  height: 75px !important;
+  box-sizing: border-box !important;
+  padding: 6px 7px !important;
+  text-align: center !important;
+  background-image: url("../assets/sheet/frame-stat.png") !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stat .stat-roll {
+  width: 100% !important;
+  height: 16px !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 10px !important;
+  line-height: 1 !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stat input {
+  width: 100% !important;
+  height: 32px !important;
+  border: none !important;
+  background: transparent !important;
+  text-align: center !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
+  font-weight: bold !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .stat-short {
+  font-size: 10px !important;
+  line-height: 1 !important;
+  margin-top: 1px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-row {
+  display: grid !important;
+  grid-template-columns: repeat(3, 195px) !important;
+  gap: 0 !important;
+  width: 585px !important;
+  height: 33px !important;
+  margin: 1px 0 2px 0 !important;
+  padding: 0 !important;
+  text-align: center !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-control {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  font-size: 11px !important;
+  font-style: italic !important;
+  font-weight: normal !important;
+  line-height: 1 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-divider {
+  display: block !important;
+  width: 195px !important;
+  height: 12px !important;
+  background-image: url("../assets/sheet/divider-horizontal.png") !important;
+  background-repeat: repeat-x !important;
+  background-size: auto 7px !important;
+  background-position: center !important;
+  margin-bottom: -2px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-control input.circle-check {
+  width: 12px !important;
+  height: 12px !important;
+  min-width: 12px !important;
+  max-width: 12px !important;
+  margin: -12px 0 2px 0 !important;
+  background: white !important;
+  border: 1px solid black !important;
+  border-radius: 50% !important;
+  transform: none !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .resource-row {
+  display: grid !important;
+  grid-template-columns: 95px 165px 95px 165px 95px !important;
+  gap: 3px !important;
+  width: 627px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-resource {
+  width: auto !important;
+  height: 75px !important;
+  box-sizing: border-box !important;
+  padding: 7px 8px !important;
+  text-align: center !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .small-resource {
+  background-image: url("../assets/sheet/frame-stat.png") !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .wide-resource {
+  background-image: url("../assets/sheet/frame-wide.png") !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .resource-label,
+.application.stonetop .window-content form.stonetop.sheet.actor .damage-roll {
+  display: block !important;
+  width: 100% !important;
+  height: 18px !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 0 2px 0 !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
+  font-weight: bold !important;
+  text-align: center !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-resource input {
+  border: none !important;
+  background: transparent !important;
+  text-align: center !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  height: 34px !important;
+  line-height: 1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .damage-resource input {
+  margin-top: 1px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .split-field {
+  display: grid !important;
+  grid-template-columns: 1fr 12px 1fr !important;
+  align-items: center !important;
+  gap: 2px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .split-field span {
+  display: block !important;
+  text-align: center !important;
+  font-weight: bold !important;
+  font-size: 14px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .portrait-frame {
+  display: block !important;
+  width: 260px !important;
+  height: 260px !important;
+  box-sizing: border-box !important;
+  padding: 8px !important;
+  border: none !important;
+  background-color: transparent !important;
+  background-image: url("../assets/sheet/frame-portrait.png") !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .portrait-frame:hover {
+  filter: brightness(1.05) !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .portrait-frame img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border: none !important;
+  background: transparent !important;
+  pointer-events: none !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-header {
+  grid-template-columns: 1fr 260px !important;
+  gap: 12px !important;
+  background-size: auto 6px !important;
+  background-position: bottom left !important;
+  padding-bottom: 8px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .header-main {
+  width: 627px !important;
+  min-width: 627px !important;
+  max-width: 627px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .name-frame {
+  width: 627px !important;
+  max-width: 627px !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .stat-instruction {
+  width: 627px !important;
+  max-width: 627px !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stats-row {
+  display: grid !important;
+  grid-template-columns: repeat(6, 102px) !important;
+  gap: 3px !important;
+  width: 627px !important;
+  max-width: 627px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stat {
+  width: 102px !important;
+  height: 75px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-row {
+  display: grid !important;
+  grid-template-columns: repeat(3, 209px) !important;
+  gap: 0 !important;
+  width: 627px !important;
+  max-width: 627px !important;
+  height: 34px !important;
+  margin: 2px 0 4px 0 !important;
+  padding: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-control {
+  position: relative !important;
+  display: block !important;
+  width: 209px !important;
+  height: 34px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center !important;
+  font-size: 11px !important;
+  font-style: italic !important;
+  font-weight: normal !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-divider {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  display: block !important;
+  width: 209px !important;
+  height: 18px !important;
+  background-image: url("../assets/sheet/divider-debility.png") !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-control input.circle-check {
+  position: absolute !important;
+  left: 50% !important;
+  top: 2px !important;
+  transform: translateX(-50%) !important;
+  width: 12px !important;
+  height: 12px !important;
+  min-width: 12px !important;
+  max-width: 12px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: white !important;
+  border: 1px solid black !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  z-index: 3 !important;
+  pointer-events: auto !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-control input.circle-check:checked {
+  background: black !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-control span:last-child {
+  position: absolute !important;
+  left: 0 !important;
+  top: 19px !important;
+  display: block !important;
+  width: 209px !important;
+  text-align: center !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor {
+  min-width: 940px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .sheet-header.character-top.textured-header {
+  display: grid !important;
+  grid-template-columns: 626px 260px !important;
+  gap: 14px !important;
+  align-items: start !important;
+  width: 900px !important;
+  min-width: 900px !important;
+  max-width: 900px !important;
+  overflow: visible !important;
+  padding-bottom: 8px !important;
+  margin-bottom: 10px !important;
+  border: none !important;
+  background-image: url("../assets/sheet/divider-horizontal.png") !important;
+  background-repeat: repeat-x !important;
+  background-size: auto 8px !important;
+  background-position: bottom left !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .header-main {
+  width: 626px !important;
+  min-width: 626px !important;
+  max-width: 626px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .name-frame {
+  width: 626px !important;
+  height: 50px !important;
+  padding: 8px 18px !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .name-frame input {
+  height: 32px !important;
+  font-size: 24px !important;
+  line-height: 32px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .stat-instruction {
+  font-size: 11px !important;
+  line-height: 1.1 !important;
+  margin: 5px 0 4px 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stats-row {
+  width: 626px !important;
+  display: grid !important;
+  grid-template-columns: repeat(6, 101px) !important;
+  gap: 4px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stat {
+  width: 101px !important;
+  height: 75px !important;
+  padding: 6px !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-stat input {
+  font-size: 22px !important;
+  height: 27px !important;
+  line-height: 27px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-row {
+  width: 626px !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 206px) !important;
+  gap: 4px !important;
+  margin: 3px 0 11px 0 !important;
+  height: 31px !important;
+  align-items: end !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-control {
+  position: relative !important;
+  display: block !important;
+  width: 206px !important;
+  height: 31px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center !important;
+  font-style: italic !important;
+  font-weight: normal !important;
+  line-height: 1 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-divider {
+  position: absolute !important;
+  left: 0 !important;
+  top: 7px !important;
+  width: 206px !important;
+  height: 16px !important;
+  background-image: url("../assets/sheet/divider-debility.png") !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+  pointer-events: none !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-control input.circle-check {
+  position: absolute !important;
+  left: 50% !important;
+  top: 2px !important;
+  transform: translateX(-50%) !important;
+  z-index: 2 !important;
+  width: 12px !important;
+  height: 12px !important;
+  min-width: 12px !important;
+  max-width: 12px !important;
+  margin: 0 !important;
+  border: 1px solid black !important;
+  border-radius: 50% !important;
+  background: white !important;
+  cursor: pointer !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-control input.circle-check:checked {
+  background: black !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-control span:last-child {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  font-size: 11px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .resource-row {
+  width: 626px !important;
+  display: grid !important;
+  grid-template-columns: 101px 165px 101px 165px 78px !important;
+  gap: 4px !important;
+  align-items: start !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-resource {
+  height: 75px !important;
+  padding: 7px 8px !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .damage-resource {
+  display: grid !important;
+  grid-template-rows: 24px 1fr !important;
+  align-items: center !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .damage-roll {
+  height: 22px !important;
+  line-height: 20px !important;
+  font-size: 15px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .damage-resource input {
+  height: 31px !important;
+  line-height: 31px !important;
+  font-size: 23px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .resource-label {
+  height: 22px !important;
+  line-height: 20px !important;
+  font-size: 15px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-resource input {
+  height: 31px !important;
+  line-height: 31px !important;
+  font-size: 23px !important;
+  padding: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .split-field {
+  height: 35px !important;
+  align-items: center !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .split-field span {
+  font-size: 20px !important;
+  line-height: 31px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .portrait-frame {
+  width: 260px !important;
+  height: 260px !important;
+  min-width: 260px !important;
+  max-width: 260px !important;
+  padding: 8px !important;
+  box-sizing: border-box !important;
+  align-self: start !important;
+  justify-self: start !important;
+  flex: 0 0 260px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .portrait-frame img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .sheet-header.character-top.textured-header {
+  padding-bottom: 18px !important;
+  margin-bottom: 10px !important;
+  background-size: auto 7px !important;
+  background-position: left bottom !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .resource-row {
+  margin-top: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .damage-resource {
+  display: grid !important;
+  grid-template-rows: 22px 37px !important;
+  align-items: start !important;
+  justify-items: center !important;
+  padding-top: 9px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .damage-roll {
+  display: block !important;
+  height: 20px !important;
+  line-height: 20px !important;
+  font-size: 15px !important;
+  font-weight: bold !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .damage-resource input {
+  display: block !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  font-size: 24px !important;
+  font-weight: bold !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-resource:not(.damage-resource) {
+  padding-top: 8px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-resource:not(.damage-resource) .resource-label {
+  height: 20px !important;
+  line-height: 20px !important;
+  margin: 0 0 2px 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .textured-resource:not(.damage-resource) input {
+  font-size: 24px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+}
+
+
+/* =========================================================
+   MOVES TAB LAYOUT 
+========================================================= */
+
+.application.stonetop .window-content form.stonetop.sheet.actor .moves-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr) !important;
+  gap: 14px !important;
+  align-items: start !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .moves-divider {
+  width: 20px !important;
+  min-height: 520px !important;
+  background-image: url("../assets/sheet/divider-vertical.png") !important;
+  background-repeat: repeat-y !important;
+  background-position: center top !important;
+  background-size: 20px auto !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .moves-column {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  min-width: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category {
+  border: 10px solid transparent !important;
+  border-image-source: url("../assets/sheet/move-category-frame.png") !important;
+  border-image-slice: 10 fill !important;
+  border-image-repeat: stretch !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  padding: 4px !important;
+  box-sizing: border-box !important;
+  min-height: 48px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category.drop-target {
+  filter: brightness(1.05) !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category-header {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  cursor: pointer !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 4px 6px 6px 6px !important;
+  margin: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category-title {
+  font-size: 17px !important;
+  font-weight: bold !important;
+  line-height: 1 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category-toggle {
+  font-size: 14px !important;
+  line-height: 1 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category-body {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  min-height: 22px !important;
+  padding: 4px 2px 2px 2px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category.category-closed .move-category-body {
+  display: none !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category.category-closed .move-category-toggle {
+  transform: rotate(-90deg) !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card {
+  border: 8px solid transparent !important;
+  border-image-source: url("../assets/sheet/move-card-frame.png") !important;
+  border-image-slice: 8 fill !important;
+  border-image-repeat: stretch !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  padding: 2px !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 6px !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 2px 2px 4px 2px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-header-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-item-icon {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  object-fit: cover !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-title {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  text-align: left !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 15px !important;
+  font-weight: bold !important;
+  padding: 2px !important;
+  margin: 0 !important;
+  line-height: 1.1 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card-body {
+  display: none !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: none !important;
+  padding: 8px !important;
+  margin-top: 4px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card.expanded .move-card-body {
+  display: block !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  flex: 0 0 auto !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-pips {
+  display: flex !important;
+  align-items: center !important;
+  gap: 2px !important;
+  flex: 0 0 auto !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-pips .circle-check {
+  width: 10px !important;
+  height: 10px !important;
+  min-width: 10px !important;
+  max-width: 10px !important;
+}
+
+/* =========================================================
+   ITEM SHEET IMAGE PICKER
+========================================================= */
+
+.application.stonetop .window-content form.stonetop.sheet.item .item-sheet-header {
+  display: grid !important;
+  grid-template-columns: 72px 1fr !important;
+  gap: 12px !important;
+  align-items: center !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.item .item-image-picker {
+  width: 64px !important;
+  height: 64px !important;
+  border: 1px solid black !important;
+  background: white !important;
+  padding: 2px !important;
+  cursor: pointer !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.item .item-image-picker img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border: none !important;
+  pointer-events: none !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.item .item-title-block h1 {
+  margin: 0 !important;
+}
+
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-divider {
+  background-image: url("../assets/sheet/divider-debility.png") !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-control input.circle-check {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  border-radius: 50% !important;
+  background: white !important;
+  border: 1px solid black !important;
+  width: 12px !important;
+  height: 12px !important;
+  min-width: 12px !important;
+  max-width: 12px !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  z-index: 5 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-control input.circle-check:checked {
+  background: black !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .portrait-frame {
+  position: relative !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .portrait-frame img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-row {
+  width: 626px !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 206px) !important;
+  gap: 4px !important;
+  margin: 3px 0 11px 0 !important;
+  height: 31px !important;
+  align-items: end !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-control {
+  position: relative !important;
+  display: block !important;
+  width: 206px !important;
+  height: 31px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center !important;
+  font-style: italic !important;
+  font-weight: normal !important;
+  line-height: 1 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-divider {
+  position: absolute !important;
+  left: 0 !important;
+  top: 7px !important;
+  width: 206px !important;
+  height: 16px !important;
+  display: block !important;
+  background-image: url("../assets/sheet/divider-debility.png") !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-control input.circle-check {
+  position: absolute !important;
+  left: 50% !important;
+  top: 2px !important;
+  transform: translateX(-50%) !important;
+  z-index: 3 !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 12px !important;
+  height: 12px !important;
+  min-width: 12px !important;
+  max-width: 12px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid black !important;
+  border-radius: 50% !important;
+  background: white !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-control input.circle-check:checked {
+  background: black !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .debility-control span:last-child {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  font-size: 11px !important;
+  pointer-events: none !important;
+}
+
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .moves-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 10px minmax(0, 1fr) !important;
+  gap: 12px !important;
+  align-items: start !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .moves-divider {
+  width: 10px !important;
+  min-width: 10px !important;
+  min-height: 520px !important;
+  background-image: url("../assets/sheet/divider-vertical.png") !important;
+  background-repeat: repeat-y !important;
+  background-position: center top !important;
+  background-size: 10px auto !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .moves-column {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  min-width: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category {
+  display: block !important;
+  min-height: 52px !important;
+  border: 10px solid transparent !important;
+  border-image-source: url("../assets/sheet/move-category-frame.png") !important;
+  border-image-slice: 10 fill !important;
+  border-image-repeat: stretch !important;
+  background: rgba(255, 255, 255, 0.78) !important;
+  padding: 4px !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category.drop-target {
+  filter: brightness(1.08) !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category-header {
+  display: flex !important;
+  width: 100% !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 4px 6px !important;
+  margin: 0 !important;
+  cursor: pointer !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category-title {
+  font-size: 17px !important;
+  font-weight: bold !important;
+  line-height: 1 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category-toggle {
+  font-size: 14px !important;
+  line-height: 1 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category-body {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  min-height: 24px !important;
+  padding: 6px 2px 2px 2px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category.category-closed .move-category-body {
+  display: none !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category.category-closed .move-category-toggle {
+  transform: rotate(-90deg) !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card {
+  display: block !important;
+  border: 8px solid transparent !important;
+  border-image-source: url("../assets/sheet/move-card-frame.png") !important;
+  border-image-slice: 8 fill !important;
+  border-image-repeat: stretch !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  padding: 2px !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 6px !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 2px 2px 4px 2px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-header-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-item-icon {
+  display: block !important;
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  object-fit: cover !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-title {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  text-align: left !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 15px !important;
+  font-weight: bold !important;
+  padding: 2px !important;
+  margin: 0 !important;
+  line-height: 1.1 !important;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .diamond-description-check {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  border: 1px solid black !important;
+  background: white !important;
+  width: 13px !important;
+  height: 13px !important;
+  min-width: 13px !important;
+  max-width: 13px !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin: 0 5px 2px 2px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  transform: rotate(45deg) !important;
+  cursor: pointer !important;
+  border-radius: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .diamond-description-check:checked {
+  background: black !important;
+}
+
+
+/* =========================================================
+   PLAYBOOK TAB
+========================================================= */
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-tab-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 5px minmax(0, 1fr) !important;
+  gap: 12px !important;
+  align-items: start !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-divider {
+  width: 5px !important;
+  min-width: 5px !important;
+  max-width: 5px !important;
+  min-height: 500px !important;
+  background-image: url("../assets/sheet/divider-vertical-thin.png") !important;
+  background-repeat: repeat-y !important;
+  background-position: center top !important;
+  background-size: 5px auto !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-column {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-panel {
+  position: relative !important;
+  border: none !important;
+  background: rgba(255,255,255,0.82) !important;
+  padding: 14px !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-panel::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+
+  background-image:
+    url("../assets/sheet/panel-corner-tl.png"),
+    url("../assets/sheet/panel-corner-tr.png"),
+    url("../assets/sheet/panel-corner-bl.png"),
+    url("../assets/sheet/panel-corner-br.png"),
+    url("../assets/sheet/panel-edge-top.png"),
+    url("../assets/sheet/panel-edge-bottom.png"),
+    url("../assets/sheet/panel-edge-left.png"),
+    url("../assets/sheet/panel-edge-right.png");
+
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    repeat-x,
+    repeat-x,
+    repeat-y,
+    repeat-y;
+
+  background-position:
+    left top,
+    right top,
+    left bottom,
+    right bottom,
+    left 16px top 0,
+    left 16px bottom 0,
+    left 0 top 16px,
+    right 0 top 16px;
+
+  background-size:
+    16px 16px,
+    16px 16px,
+    16px 16px,
+    16px 16px,
+    calc(100% - 32px) 8px,
+    calc(100% - 32px) 8px,
+    8px calc(100% - 32px),
+    8px calc(100% - 32px);
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-panel > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-panel-header h2 {
+  margin: 0 !important;
+  font-size: 17px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-panel-divider {
+  height: 5px !important;
+  margin: 4px 0 8px 0 !important;
+  background-image: url("../assets/sheet/divider-horizontal-thin.png") !important;
+  background-repeat: repeat-x !important;
+  background-position: center !important;
+  background-size: auto 5px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .profile-text-field,
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-panel textarea {
+  min-height: 120px !important;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-panel-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-panel-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  flex: 0 0 auto !important;
+}
+
+
+
+/* =========================================================
+   ARCANA TAB LAYOUT
+========================================================= */
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-tab-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 10px minmax(0, 1fr) !important;
+  gap: 12px !important;
+  align-items: start !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-divider {
+  width: 10px !important;
+  min-width: 10px !important;
+  min-height: 520px !important;
+  background-image: url("../assets/sheet/divider-vertical.png") !important;
+  background-repeat: repeat-y !important;
+  background-position: center top !important;
+  background-size: 10px auto !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-column {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-column-header {
+  border: 10px solid transparent !important;
+  border-image-source: url("../assets/sheet/move-category-frame.png") !important;
+  border-image-slice: 10 fill !important;
+  border-image-repeat: stretch !important;
+  background: rgba(255, 255, 255, 0.78) !important;
+  padding: 4px 8px !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-column-header h3 {
+  margin: 0 !important;
+  font-size: 17px !important;
+  font-weight: bold !important;
+  line-height: 1.1 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-column-divider {
+  height: 10px !important;
+  background-image: url("../assets/sheet/divider-horizontal.png") !important;
+  background-repeat: repeat-x !important;
+  background-position: center !important;
+  background-size: auto 6px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-card {
+  border: 8px solid transparent !important;
+  border-image-source: url("../assets/sheet/move-card-frame.png") !important;
+  border-image-slice: 8 fill !important;
+  border-image-repeat: stretch !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  padding: 2px !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-card-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 6px !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 2px 2px 4px 2px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-header-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-item-icon {
+  display: block !important;
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  object-fit: cover !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-title {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  text-align: left !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 15px !important;
+  font-weight: bold !important;
+  padding: 2px !important;
+  margin: 0 !important;
+  line-height: 1.1 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-card-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  flex: 0 0 auto !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-card-body {
+  display: none !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: none !important;
+  padding: 8px !important;
+  margin-top: 4px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-card.expanded .arcana-card-body {
+  display: block !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-face-label {
+  font-size: 11px !important;
+  font-style: italic !important;
+  margin-bottom: 4px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-description {
+  white-space: normal !important;
+  margin-bottom: 10px !important;
+  line-height: 1.35 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-stat-select {
+  margin-bottom: 10px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-roll {
+  width: 100% !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-description {
+  white-space: normal !important;
+  text-indent: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-description p:first-child {
+  margin-top: 0 !important;
+}
+
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-tab-layout {
+  grid-template-columns: minmax(0, 1fr) 5px minmax(0, 1fr) !important;
+  gap: 14px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-divider {
+  width: 5px !important;
+  min-width: 5px !important;
+  max-width: 5px !important;
+  min-height: 500px !important;
+  background-image: url("../assets/sheet/divider-vertical-thin.png") !important;
+  background-repeat: repeat-y !important;
+  background-position: center top !important;
+  background-size: 5px auto !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-panel {
+  position: relative !important;
+  border: none !important;
+  border-image: none !important;
+  background: rgba(255,255,255,0.82) !important;
+  padding: 16px !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-panel::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  background-image:
+    url("../assets/sheet/panel-corner-tl.png"),
+    url("../assets/sheet/panel-corner-tr.png"),
+    url("../assets/sheet/panel-corner-bl.png"),
+    url("../assets/sheet/panel-corner-br.png"),
+    url("../assets/sheet/panel-edge-top.png"),
+    url("../assets/sheet/panel-edge-bottom.png"),
+    url("../assets/sheet/panel-edge-left.png"),
+    url("../assets/sheet/panel-edge-right.png") !important;
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    repeat-x,
+    repeat-x,
+    repeat-y,
+    repeat-y !important;
+  background-position:
+    top left,
+    top right,
+    bottom left,
+    bottom right,
+    top left 16px,
+    bottom left 16px,
+    left top 16px,
+    right top 16px !important;
+  background-size:
+    16px 16px,
+    16px 16px,
+    16px 16px,
+    16px 16px,
+    auto 8px,
+    auto 8px,
+    8px auto,
+    8px auto !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-panel > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-panel-divider {
+  height: 5px !important;
+  margin: 4px 0 8px 0 !important;
+  background-image: url("../assets/sheet/divider-horizontal-thin.png") !important;
+  background-repeat: repeat-x !important;
+  background-position: center !important;
+  background-size: auto 5px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-panel-header h2 {
+  margin: 0 !important;
+  font-size: 17px !important;
+  line-height: 1.1 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-text,
+.application.stonetop .window-content form.stonetop.sheet.actor .profile-text-rendered {
+  line-height: 1.35 !important;
+}
+
+
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-panel::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+
+  background-image:
+    url("../assets/sheet/panel-edge-top.png"),
+    url("../assets/sheet/panel-edge-bottom.png"),
+    url("../assets/sheet/panel-edge-left.png"),
+    url("../assets/sheet/panel-edge-right.png") !important;
+
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat !important;
+
+  background-position:
+    16px 0,
+    16px 100%,
+    0 16px,
+    100% 16px !important;
+
+  background-size:
+    calc(100% - 32px) 8px,
+    calc(100% - 32px) 8px,
+    8px calc(100% - 32px),
+    8px calc(100% - 32px) !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-panel::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+
+  background-image:
+    url("../assets/sheet/panel-corner-tl.png"),
+    url("../assets/sheet/panel-corner-tr.png"),
+    url("../assets/sheet/panel-corner-bl.png"),
+    url("../assets/sheet/panel-corner-br.png") !important;
+
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat !important;
+
+  background-position:
+    0 0,
+    100% 0,
+    0 100%,
+    100% 100% !important;
+
+  background-size:
+    16px 16px,
+    16px 16px,
+    16px 16px,
+    16px 16px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .playbook-panel > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .moves-layout {
+  grid-template-columns: minmax(0, 1fr) 5px minmax(0, 1fr) !important;
+  gap: 12px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .moves-divider {
+  width: 5px !important;
+  min-width: 5px !important;
+  max-width: 5px !important;
+  min-height: 520px !important;
+  background-image: url("../assets/sheet/divider-vertical-thin.png") !important;
+  background-repeat: repeat-y !important;
+  background-position: center top !important;
+  background-size: 5px auto !important;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category {
+  position: relative !important;
+  border: none !important;
+  border-image: none !important;
+  background: rgba(255,255,255,0.82) !important;
+  padding: 14px !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+
+  background-image:
+    url("../assets/sheet/panel-edge-top.png"),
+    url("../assets/sheet/panel-edge-bottom.png"),
+    url("../assets/sheet/panel-edge-left.png"),
+    url("../assets/sheet/panel-edge-right.png") !important;
+
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat !important;
+
+  background-position:
+    16px 0,
+    16px 100%,
+    0 16px,
+    100% 16px !important;
+
+  background-size:
+    calc(100% - 32px) 8px,
+    calc(100% - 32px) 8px,
+    8px calc(100% - 32px),
+    8px calc(100% - 32px) !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+
+  background-image:
+    url("../assets/sheet/panel-corner-tl.png"),
+    url("../assets/sheet/panel-corner-tr.png"),
+    url("../assets/sheet/panel-corner-bl.png"),
+    url("../assets/sheet/panel-corner-br.png") !important;
+
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat !important;
+
+  background-position:
+    0 0,
+    100% 0,
+    0 100%,
+    100% 100% !important;
+
+  background-size:
+    16px 16px,
+    16px 16px,
+    16px 16px,
+    16px 16px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category-header {
+  padding: 0 2px 5px 2px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category-body {
+  padding: 5px 0 0 0 !important;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card {
+  position: relative !important;
+  border: none !important;
+  border-image: none !important;
+  background: rgba(255,255,255,0.78) !important;
+  padding: 12px !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+
+  background-image:
+    url("../assets/sheet/panel-edge-top.png"),
+    url("../assets/sheet/panel-edge-bottom.png"),
+    url("../assets/sheet/panel-edge-left.png"),
+    url("../assets/sheet/panel-edge-right.png") !important;
+
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat !important;
+
+  background-position:
+    16px 0,
+    16px 100%,
+    0 16px,
+    100% 16px !important;
+
+  background-size:
+    calc(100% - 32px) 8px,
+    calc(100% - 32px) 8px,
+    8px calc(100% - 32px),
+    8px calc(100% - 32px) !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+
+  background-image:
+    url("../assets/sheet/panel-corner-tl.png"),
+    url("../assets/sheet/panel-corner-tr.png"),
+    url("../assets/sheet/panel-corner-bl.png"),
+    url("../assets/sheet/panel-corner-br.png") !important;
+
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat !important;
+
+  background-position:
+    0 0,
+    100% 0,
+    0 100%,
+    100% 100% !important;
+
+  background-size:
+    16px 16px,
+    16px 16px,
+    16px 16px,
+    16px 16px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card-header {
+  padding: 0 2px 4px 2px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-card-body {
+  margin-top: 5px !important;
+  padding: 8px !important;
+  background: rgba(255,255,255,0.88) !important;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .move-category.drop-target {
+  filter: brightness(1.08) !important;
+}
+
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-tab-layout {
+  grid-template-columns: minmax(0, 1fr) 5px minmax(0, 1fr) !important;
+  gap: 12px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-divider {
+  width: 5px !important;
+  min-width: 5px !important;
+  max-width: 5px !important;
+  min-height: 520px !important;
+  background-image: url("../assets/sheet/divider-vertical-thin.png") !important;
+  background-repeat: repeat-y !important;
+  background-position: center top !important;
+  background-size: 5px auto !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-column-header,
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-card {
+  position: relative !important;
+  border: none !important;
+  border-image: none !important;
+  background: rgba(255,255,255,0.82) !important;
+  padding: 14px !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-card {
+  padding: 12px !important;
+  background: rgba(255,255,255,0.78) !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-column-header::before,
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  background-image:
+    url("../assets/sheet/panel-edge-top.png"),
+    url("../assets/sheet/panel-edge-bottom.png"),
+    url("../assets/sheet/panel-edge-left.png"),
+    url("../assets/sheet/panel-edge-right.png") !important;
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat !important;
+  background-position:
+    16px 0,
+    16px 100%,
+    0 16px,
+    100% 16px !important;
+  background-size:
+    calc(100% - 32px) 8px,
+    calc(100% - 32px) 8px,
+    8px calc(100% - 32px),
+    8px calc(100% - 32px) !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-column-header::after,
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  background-image:
+    url("../assets/sheet/panel-corner-tl.png"),
+    url("../assets/sheet/panel-corner-tr.png"),
+    url("../assets/sheet/panel-corner-bl.png"),
+    url("../assets/sheet/panel-corner-br.png") !important;
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat !important;
+  background-position:
+    0 0,
+    100% 0,
+    0 100%,
+    100% 100% !important;
+  background-size:
+    16px 16px,
+    16px 16px,
+    16px 16px,
+    16px 16px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-column-header > *,
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-card > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-column-divider {
+  height: 5px !important;
+  background-image: url("../assets/sheet/divider-horizontal-thin.png") !important;
+  background-repeat: repeat-x !important;
+  background-position: center !important;
+  background-size: auto 5px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-card-header {
+  padding: 0 2px 4px 2px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .arcana-card-body {
+  margin-top: 5px !important;
+  padding: 8px !important;
+  background: rgba(255,255,255,0.88) !important;
+}
+
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .inventory-sheet hr {
+  display: block !important;
+  height: 5px !important;
+  margin: 6px 0 8px 0 !important;
+
+  border: none !important;
+  background-color: transparent !important;
+  background-image: url("../assets/sheet/divider-horizontal-thin.png") !important;
+  background-repeat: repeat-x !important;
+  background-position: center !important;
+  background-size: auto 5px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .inventory-small {
+  border-left: none !important;
+  padding-left: 14px !important;
+
+  background-image: url("../assets/sheet/divider-vertical-thin.png") !important;
+  background-repeat: repeat-y !important;
+  background-position: left top !important;
+  background-size: 5px auto !important;
+}
+
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .notes-tab-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 5px minmax(0, 1fr) !important;
+  gap: 12px !important;
+  align-items: start !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .notes-divider {
+  width: 5px !important;
+  min-width: 5px !important;
+  max-width: 5px !important;
+  min-height: 520px !important;
+  background-image: url("../assets/sheet/divider-vertical-thin.png") !important;
+  background-repeat: repeat-y !important;
+  background-position: center top !important;
+  background-size: 5px auto !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .notes-panel {
+  position: relative !important;
+  border: none !important;
+  border-image: none !important;
+  background: rgba(255,255,255,0.82) !important;
+  padding: 14px !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .notes-panel::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  background-image:
+    url("../assets/sheet/panel-edge-top.png"),
+    url("../assets/sheet/panel-edge-bottom.png"),
+    url("../assets/sheet/panel-edge-left.png"),
+    url("../assets/sheet/panel-edge-right.png") !important;
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat !important;
+  background-position:
+    16px 0,
+    16px 100%,
+    0 16px,
+    100% 16px !important;
+  background-size:
+    calc(100% - 32px) 8px,
+    calc(100% - 32px) 8px,
+    8px calc(100% - 32px),
+    8px calc(100% - 32px) !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .notes-panel::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  background-image:
+    url("../assets/sheet/panel-corner-tl.png"),
+    url("../assets/sheet/panel-corner-tr.png"),
+    url("../assets/sheet/panel-corner-bl.png"),
+    url("../assets/sheet/panel-corner-br.png") !important;
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat !important;
+  background-position:
+    0 0,
+    100% 0,
+    0 100%,
+    100% 100% !important;
+  background-size:
+    16px 16px,
+    16px 16px,
+    16px 16px,
+    16px 16px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .notes-panel > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .notes-panel-header h3 {
+  margin: 0 !important;
+  font-size: 17px !important;
+  line-height: 1.1 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .notes-panel-divider {
+  height: 5px !important;
+  margin: 4px 0 8px 0 !important;
+  background-image: url("../assets/sheet/divider-horizontal-thin.png") !important;
+  background-repeat: repeat-x !important;
+  background-position: center !important;
+  background-size: auto 5px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .notes-panel textarea {
+  min-height: 420px !important;
+  resize: vertical !important;
+  box-sizing: border-box !important;
+}
+
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor nav.sheet-tabs {
+  display: flex !important;
+  gap: 6px !important;
+  align-items: flex-end !important;
+  margin: 0 0 10px 0 !important;
+  padding: 0 !important;
+  border-bottom: none !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor nav.sheet-tabs .item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  min-height: 36px !important;
+  padding: 9px 18px 6px 18px !important;
+
+  border: none !important;
+  background-color: transparent !important;
+  background-image: url("../assets/sheet/tab-half-frame.png") !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+
+  box-shadow: none !important;
+
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor nav.sheet-tabs .item:hover {
+  filter: brightness(1.05) !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor nav.sheet-tabs .item.active {
+  transform: translateY(2px) !important;
+  filter: brightness(1.08) !important;
+  background-color: transparent !important;
+}
+
+
+
+@font-face {
+  font-family: "StonetopUI";
+  src: url("../fonts/Historical-FellTypeRomanSC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Historical-FellTypeRomanSC";
+  src: url("../fonts/Historical-FellTypeRomanSC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Historical FellType Roman SC";
+  src: url("../fonts/Historical-FellTypeRomanSC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.application.stonetop .sheet-tabs,
+.application.stonetop .sheet-tabs .item,
+.application.stonetop .move-title,
+.application.stonetop .move-category-title,
+.application.stonetop .resource-label,
+.application.stonetop .damage-roll,
+.application.stonetop h1,
+.application.stonetop h2,
+.application.stonetop h3,
+.application.stonetop h4,
+.application.stonetop button,
+.application.stonetop .playbook-panel-header,
+.application.stonetop .notes-panel-header,
+.application.stonetop .arcana-column-header,
+.application.stonetop .move-category-header,
+.application.stonetop .move-card-header,
+.application.stonetop .arcana-card-header {
+  font-family: "StonetopUI", serif !important;
+  letter-spacing: 0.4px !important;
+}
+
+
+.application.stonetop textarea,
+.application.stonetop .editor-content,
+.application.stonetop .move-description,
+.application.stonetop .playbook-text,
+.application.stonetop .profile-text-rendered,
+.application.stonetop input[type="text"],
+.application.stonetop input[type="number"] {
+  font-family: inherit !important;
+}
+
+
+
+/* =========================================================
+   NPC / MONSTER SHEET 
+========================================================= */
+
+.application.stonetop .window-content form.npc-sheet-form,
+form.npc-sheet-form {
+  width: 410px !important;
+  min-width: 410px !important;
+  max-width: 410px !important;
+  padding: 8px !important;
+  margin: 0 !important;
+  background: white !important;
+  color: black !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content .npc-card-sheet,
+.npc-card-sheet {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background: white !important;
+  color: black !important;
+}
+
+.npc-card-sheet *,
+.application.stonetop .window-content .npc-card-sheet * {
+  color: black !important;
+  box-sizing: border-box !important;
+}
+
+.npc-card-sheet input,
+.npc-card-sheet textarea,
+.application.stonetop .window-content .npc-card-sheet input,
+.application.stonetop .window-content .npc-card-sheet textarea {
+  background: white !important;
+  color: black !important;
+  border: 1px solid black !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.npc-top-grid {
+  display: grid !important;
+  grid-template-columns: 130px 1fr !important;
+  gap: 10px !important;
+  align-items: start !important;
+  width: 100% !important;
+}
+
+.npc-portrait-frame {
+  display: block !important;
+  width: 130px !important;
+  height: 130px !important;
+  min-width: 130px !important;
+  max-width: 130px !important;
+  padding: 7px !important;
+  background-image: url("../assets/sheet/frame-portrait-npc.png") !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+}
+
+.npc-portrait-frame img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border: none !important;
+  background: transparent !important;
+  pointer-events: none !important;
+}
+
+.npc-identity-block {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+}
+
+.npc-name-frame {
+  height: 38px !important;
+  padding: 5px 9px !important;
+  background-image: url("../assets/sheet/move-category-frame.png") !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+
+.npc-name-frame input {
+  height: 26px !important;
+  line-height: 26px !important;
+  border: none !important;
+  background: transparent !important;
+  font-size: 17px !important;
+  font-weight: bold !important;
+  padding: 0 3px !important;
+}
+
+.npc-tags-field,
+.npc-weapon-field {
+  width: 100% !important;
+  height: 28px !important;
+  line-height: 28px !important;
+  padding: 2px 5px !important;
+  font-size: 15px !important;
+}
+
+.npc-loyalty-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  padding-top: 2px !important;
+  font-size: 22px !important;
+  font-weight: bold !important;
+}
+
+.npc-loyalty-pips {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+input.npc-loyalty-pip {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 22px !important;
+  height: 22px !important;
+  min-width: 22px !important;
+  max-width: 22px !important;
+  border: 1px solid black !important;
+  border-radius: 50% !important;
+  background: white !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  cursor: pointer !important;
+}
+
+input.npc-loyalty-pip:checked {
+  background: black !important;
+}
+
+.npc-resource-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 1.6fr !important;
+  gap: 8px !important;
+  align-items: start !important;
+  width: 100% !important;
+}
+
+.npc-resource {
+  height: 76px !important;
+  padding: 8px 8px 6px 8px !important;
+  text-align: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+}
+
+.npc-damage-resource,
+.npc-armor-resource {
+  background-image: url("../assets/sheet/frame-stat.png") !important;
+}
+
+.npc-hp-resource {
+  background-image: url("../assets/sheet/frame-wide.png") !important;
+}
+
+.npc-resource label {
+  display: block !important;
+  margin: 0 0 2px 0 !important;
+  font-weight: bold !important;
+  font-size: 15px !important;
+  line-height: 1 !important;
+}
+
+.npc-resource input {
+  width: 100% !important;
+  height: 38px !important;
+  line-height: 38px !important;
+  border: none !important;
+  background: transparent !important;
+  text-align: center !important;
+  font-size: 28px !important;
+  font-weight: bold !important;
+  padding: 0 !important;
+}
+
+.npc-split-field {
+  display: grid !important;
+  grid-template-columns: 1fr 18px 1fr !important;
+  align-items: center !important;
+  gap: 2px !important;
+}
+
+.npc-split-field span {
+  display: block !important;
+  font-size: 25px !important;
+  font-weight: bold !important;
+  line-height: 34px !important;
+  text-align: center !important;
+}
+
+.npc-minmax-labels {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  font-size: 11px !important;
+  line-height: 1 !important;
+  margin-top: -4px !important;
+}
+
+.npc-text-panel {
+  border: 1px solid black !important;
+  background: white !important;
+  padding: 4px !important;
+}
+
+.npc-text-panel label {
+  display: block !important;
+  margin: 0 0 2px 0 !important;
+  font-weight: normal !important;
+  font-size: 15px !important;
+  line-height: 1.1 !important;
+}
+
+.npc-text-panel textarea {
+  display: block !important;
+  width: 100% !important;
+  min-height: 78px !important;
+  border: none !important;
+  background: transparent !important;
+  resize: vertical !important;
+  padding: 0 !important;
+  line-height: 1.25 !important;
+}
+
+.npc-text-panel:last-child textarea {
+  min-height: 96px !important;
+}
+
+.npc-name-frame input,
+.npc-resource label,
+.npc-loyalty-row,
+.npc-text-panel label {
+  font-family: "StonetopUI", serif !important;
+  letter-spacing: 0.3px !important;
+}
+
+.npc-card-sheet textarea {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+
+.npc-damage-roll {
+  display: block !important;
+  width: 100% !important;
+  height: 18px !important;
+  line-height: 16px !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 0 2px 0 !important;
+  font-weight: bold !important;
+  font-size: 15px !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  font-family: "StonetopUI", serif !important;
+  letter-spacing: 0.3px !important;
+}
+
+.npc-damage-roll:hover {
+  filter: brightness(1.15) !important;
+}
+
+
+
+.npc-name-frame input,
+.npc-damage-resource input[name="system.damage"],
+.npc-armor-resource input[name="system.armor"],
+.npc-hp-resource input[name="system.hp.value"],
+.npc-hp-resource input[name="system.hp.max"] {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.npc-damage-resource {
+  display: grid !important;
+  grid-template-rows: 19px 38px !important;
+  align-items: start !important;
+  justify-items: center !important;
+  padding-top: 10px !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+.npc-damage-resource .npc-damage-roll {
+  display: block !important;
+  width: 100% !important;
+  height: 18px !important;
+  line-height: 18px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center !important;
+}
+
+.npc-damage-resource input[name="system.damage"] {
+  display: block !important;
+  width: 100% !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center !important;
+  font-size: 28px !important;
+  font-weight: bold !important;
+}
+
+.npc-armor-resource input[name="system.armor"] {
+  border: none !important;
+  background: transparent !important;
+}
+
+.npc-hp-resource input[name="system.hp.value"],
+.npc-hp-resource input[name="system.hp.max"] {
+  border: none !important;
+  background: transparent !important;
+}
+
+
+.npc-hp-resource .npc-split-field {
+  display: grid !important;
+  grid-template-columns: 1fr 18px 1fr !important;
+  align-items: center !important;
+  justify-items: center !important;
+  gap: 2px !important;
+}
+
+
+
+.npc-damage-resource .npc-damage-roll {
+  position: relative !important;
+  top: -8px !important;
+}
+
+.npc-damage-resource input[name="system.damage"] {
+  position: relative !important;
+  top: -4px !important;
+}
+
+.npc-name-frame input,
+.npc-damage-resource input[name="system.damage"],
+.npc-armor-resource input[name="system.armor"],
+.npc-hp-resource input[name="system.hp.value"],
+.npc-hp-resource input[name="system.hp.max"] {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+
+.npc-card-sheet .npc-name-frame,
+.npc-card-sheet .npc-damage-resource,
+.npc-card-sheet .npc-armor-resource,
+.npc-card-sheet .npc-hp-resource {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.npc-card-sheet .npc-name-frame input,
+.npc-card-sheet .npc-resource input,
+.application.stonetop .window-content .npc-card-sheet .npc-name-frame input,
+.application.stonetop .window-content .npc-card-sheet .npc-resource input {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: textfield !important;
+
+  border: none !important;
+  border-width: 0 !important;
+  border-style: none !important;
+  border-color: transparent !important;
+
+  outline: none !important;
+  outline-width: 0 !important;
+  outline-style: none !important;
+  outline-color: transparent !important;
+
+  box-shadow: none !important;
+  filter: none !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  border-radius: 0 !important;
+}
+
+.npc-card-sheet .npc-resource input[type="number"]::-webkit-outer-spin-button,
+.npc-card-sheet .npc-resource input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  margin: 0 !important;
+}
+
+.npc-card-sheet .npc-resource input[type="number"] {
+  -moz-appearance: textfield !important;
+}
+
+.npc-card-sheet .npc-damage-resource .npc-damage-roll {
+  position: relative !important;
+  top: -8px !important;
+}
+
+.npc-card-sheet .npc-damage-resource input[name="system.damage"] {
+  position: relative !important;
+  top: -4px !important;
+}
+
+
+
+.application.stonetop .window-header button,
+.application.stonetop .window-header .header-control,
+.application.stonetop .window-header .window-control,
+.application.stonetop .window-header [data-action],
+.application.stonetop .window-header button::before,
+.application.stonetop .window-header .header-control::before,
+.application.stonetop .window-header .window-control::before,
+.application.stonetop .window-header [data-action]::before,
+.application.stonetop .window-header button i,
+.application.stonetop .window-header .header-control i,
+.application.stonetop .window-header .window-control i {
+  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", "Font Awesome 6 Pro", "Font Awesome 5 Pro", FontAwesome !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  letter-spacing: normal !important;
+  color: inherit !important;
+}
+
+.application.stonetop .window-header button,
+.application.stonetop .window-header .header-control,
+.application.stonetop .window-header .window-control,
+.application.stonetop .window-header [data-action] {
+  background-image: none !important;
+  text-indent: 0 !important;
+  overflow: visible !important;
+}
+
+.application.stonetop .window-header .window-title,
+.application.stonetop .window-header .window-title *,
+.application.stonetop .window-header h1,
+.application.stonetop .window-header h1 * {
+  font-family: "StonetopUI", serif !important;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card {
+  max-width: 100% !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card .playbook-panel-header {
+  display: block !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card .npc-top-grid {
+  grid-template-columns: 110px minmax(0, 1fr) !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card .npc-portrait-frame {
+  width: 110px !important;
+  height: 110px !important;
+  min-width: 110px !important;
+  max-width: 110px !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card .npc-card-sheet,
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card .npc-identity-block,
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card .npc-name-frame,
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card .npc-tags-field,
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card .npc-weapon-field,
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card .npc-text-panel,
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card input,
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card textarea {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card input:disabled,
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card textarea:disabled,
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card button:disabled {
+  opacity: 1 !important;
+  color: black !important;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card .insert-npc-field {
+  pointer-events: auto !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .insert-npc-card .npc-portrait-display {
+  cursor: default !important;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor a.inline-roll,
+.application.stonetop .window-content form.stonetop.sheet.actor a.inline-result,
+.application.stonetop .window-content form.stonetop.sheet.item a.inline-roll,
+.application.stonetop .window-content form.stonetop.sheet.item a.inline-result,
+.application.stonetop .window-content form.stonetop.sheet.steading a.inline-roll,
+.application.stonetop .window-content form.stonetop.sheet.steading a.inline-result,
+.chat-message a.inline-roll,
+.chat-message a.inline-result {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 3px !important;
+  background: #cccccc !important;
+  background-color: #cccccc !important;
+  background-image: none !important;
+  color: black !important;
+  border: 1px solid black !important;
+  border-radius: 3px !important;
+  padding: 1px 4px !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor a.inline-roll i,
+.application.stonetop .window-content form.stonetop.sheet.actor a.inline-result i,
+.application.stonetop .window-content form.stonetop.sheet.item a.inline-roll i,
+.application.stonetop .window-content form.stonetop.sheet.item a.inline-result i,
+.application.stonetop .window-content form.stonetop.sheet.steading a.inline-roll i,
+.application.stonetop .window-content form.stonetop.sheet.steading a.inline-result i,
+.chat-message a.inline-roll i,
+.chat-message a.inline-result i {
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free", "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
+  color: black !important;
+  background: transparent !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor a.inline-roll .formula,
+.application.stonetop .window-content form.stonetop.sheet.actor a.inline-result .formula,
+.application.stonetop .window-content form.stonetop.sheet.actor a.inline-roll .part-formula,
+.application.stonetop .window-content form.stonetop.sheet.actor a.inline-result .part-formula,
+.application.stonetop .window-content form.stonetop.sheet.item a.inline-roll .formula,
+.application.stonetop .window-content form.stonetop.sheet.item a.inline-result .formula,
+.application.stonetop .window-content form.stonetop.sheet.item a.inline-roll .part-formula,
+.application.stonetop .window-content form.stonetop.sheet.item a.inline-result .part-formula,
+.application.stonetop .window-content form.stonetop.sheet.steading a.inline-roll .formula,
+.application.stonetop .window-content form.stonetop.sheet.steading a.inline-result .formula,
+.application.stonetop .window-content form.stonetop.sheet.steading a.inline-roll .part-formula,
+.application.stonetop .window-content form.stonetop.sheet.steading a.inline-result .part-formula,
+.chat-message a.inline-roll .formula,
+.chat-message a.inline-result .formula,
+.chat-message a.inline-roll .part-formula,
+.chat-message a.inline-result .part-formula {
+  color: black !important;
+  background: transparent !important;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor.steading .steading-header-grid .steading-stat-panel h2 .steading-stat-roll {
+  width: 100%;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor.steading .steading-header-grid .steading-stat-panel h2 .steading-stat-roll:hover {
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-overview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 7px minmax(0, 1fr) 7px minmax(0, 1fr);
+  gap: 10px;
+  align-items: stretch;
+  min-height: 430px;
+  height: auto;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-overview-column {
+  min-width: 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-overview-divider {
+  width: 7px;
+  min-height: 100%;
+  background-image: url("../assets/sheet/divider-vertical.png");
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 7px auto;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-overview-field {
+  padding: 20px 18px 18px;
+  background: rgba(255, 255, 255, 0.72);
+  min-height: 430px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-overview-field h2 {
+  margin: 0 0 8px 0;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-overview-field textarea {
+  min-height: 365px;
+  height: auto;
+  field-sizing: content;
+  overflow-y: hidden;
+  resize: vertical;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 1.25;
+  padding: 4px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-assets-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-assets-text-field {
+  min-height: 250px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-assets-text-field textarea {
+  min-height: 185px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-asset-currency-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 8px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-asset-currency-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 74px;
+  padding: 12px 8px 8px;
+  background-image: url("../assets/sheet/frame-stat.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  font-family: "Historical-FellTypeRomanSC", "Historical FellType Roman SC", "StonetopUI", Georgia, "Times New Roman", serif;
+  color: black;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-asset-currency-frame span {
+  font-family: "Historical-FellTypeRomanSC", "Historical FellType Roman SC", "StonetopUI", Georgia, "Times New Roman", serif !important;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: normal;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-asset-currency-frame input {
+  width: 58px;
+  height: 30px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  line-height: 1;
+  color: black;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-residents-grid {
+  display: grid;
+  grid-template-columns: minmax(0, calc(80% - 75px)) 2px minmax(250px, calc(20% + 75px));
+  gap: 10px;
+  align-items: stretch;
+  min-height: 430px;
+  height: auto;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-residents-roster {
+  grid-column: 1;
+  min-width: 0;
+  min-height: 430px;
+  height: auto;
+  padding: 22px 18px 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-residents-divider {
+  width: 2px;
+  min-height: 100%;
+  background-image: url("../assets/sheet/divider-vertical.png");
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 2px auto;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-residents-divider:first-of-type {
+  grid-column: 2;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-resident-names {
+  grid-column: 3;
+  min-width: 0;
+  min-height: 430px;
+  height: auto;
+  padding: 22px 18px 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-residents-table {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 100%;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-residents-header,
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-resident-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) minmax(120px, 1fr) minmax(180px, 2fr) 24px;
+  gap: 8px;
+  align-items: center;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-residents-header span {
+  font-family: "Historical-FellTypeRomanSC", "Historical FellType Roman SC", "StonetopUI", Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1;
+  color: black;
+  text-align: center;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-resident-row input {
+  width: 100%;
+  min-width: 0;
+  height: 28px;
+  border: 0;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 1.1;
+  color: black;
+  padding: 2px 4px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-delete-resident,
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-delete-neighbor {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms ease;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-delete-resident img,
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-delete-neighbor img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  object-fit: contain;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-resident-row:hover .steading-delete-resident,
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-neighbor-row:hover .steading-delete-neighbor {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-add-resident {
+  align-self: flex-end;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-add-resident img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  object-fit: contain;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-add-resident:hover {
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.35));
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-resident-names h2 {
+  margin: 0 0 8px 0;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-resident-names textarea {
+  min-height: 365px;
+  height: auto;
+  field-sizing: content;
+  overflow-y: hidden;
+  resize: vertical;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 1.25;
+  padding: 4px;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-npc-traits {
+  margin-top: 14px;
+  min-width: 0;
+  min-height: 190px;
+  height: auto;
+  padding: 16px 18px 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-npc-traits-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+  padding-bottom: 4px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-npc-traits-heading h2 {
+  margin: 0;
+  font-family: "Historical-FellTypeRomanSC", "Historical FellType Roman SC", "StonetopUI", Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  line-height: 1;
+  color: black;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-npc-traits-heading span {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  line-height: 1.2;
+  color: black;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-npc-traits-source {
+  display: none;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-npc-traits-columns {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  column-gap: 18px;
+  align-items: start;
+  width: 100%;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-npc-traits-column {
+  min-width: 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-npc-trait {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 1.22;
+  color: black;
+  margin: 0 0 1px;
+  overflow-wrap: anywhere;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-neighbors-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1fr);
+  gap: 10px;
+  align-items: stretch;
+  min-height: 520px;
+  height: auto;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-neighbors-roster {
+  grid-column: 1;
+  min-width: 0;
+  min-height: 520px;
+  height: auto;
+  padding: 22px 18px 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-neighbors-divider {
+  grid-column: 2;
+  width: 2px;
+  min-height: 100%;
+  background-image: url("../assets/sheet/divider-vertical.png");
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 2px auto;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-neighbor-places {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-neighbor-place {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 14px;
+  row-gap: 8px;
+  min-width: 0;
+  min-height: 128px;
+  height: auto;
+  padding: 16px 18px 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-neighbor-place h2 {
+  grid-column: 1 / -1;
+  margin: 0 0 2px 0;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-neighbor-text-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: stretch;
+  min-width: 0;
+  margin: 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-neighbor-text-field:last-child {
+  margin-bottom: 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-neighbor-text-field > span {
+  font-family: "Historical-FellTypeRomanSC", "Historical FellType Roman SC", "StonetopUI", Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1;
+  color: black;
+  padding-top: 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-neighbor-text-field textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 34px;
+  height: auto;
+  field-sizing: content;
+  overflow-y: hidden;
+  resize: vertical;
+  border: 0;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.2;
+  color: black;
+  padding: 2px 4px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-add-neighbor {
+  align-self: flex-end;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-add-neighbor img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  object-fit: contain;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-add-neighbor:hover {
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.35));
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.actor .text-box-title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .text-box-title-row h2 {
+  margin: 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.actor .text-box-header-check {
+  flex: 0 0 auto;
+  margin: 0 2px 0 0 !important;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.item .text-box-option-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvements-grid {
+  display: grid;
+  grid-template-columns: 1fr 7px 1fr 7px 1fr;
+  gap: 12px;
+  align-items: stretch;
+  min-height: 430px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvements-divider {
+  width: 7px;
+  min-height: 100%;
+  background-image: url("../assets/sheet/divider-vertical.png");
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 7px auto;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvement-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  min-height: 430px;
+  padding: 2px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvement-column.drop-target {
+  outline: 2px dashed rgba(0, 0, 0, 0.45);
+  outline-offset: 3px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvement-card {
+  min-height: 0;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvement-card-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvement-title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvement-title {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  color: black;
+  font-family: Historical-FellTypeRomanSC, Georgia, serif;
+  font-size: 17px;
+  line-height: 1.05;
+  text-align: left;
+  cursor: pointer;
+  white-space: normal;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvement-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 3px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvement-actions .icon-button {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvement-actions .icon-button img {
+  width: 14px;
+  height: 14px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvement-divider {
+  position: relative;
+  z-index: 1;
+  display: none;
+  height: 5px;
+  margin: 6px 0 8px;
+  background-image: url("../assets/sheet/divider-horizontal-thin.png");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 5px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvement-body {
+  position: relative;
+  z-index: 1;
+  display: none;
+  font-family: Georgia, serif;
+  font-size: 13px;
+  line-height: 1.25;
+  color: black;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvement-card.expanded .steading-improvement-divider,
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvement-card.expanded .steading-improvement-body {
+  display: block;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvement-body p {
+  margin: 0 0 6px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-improvement-empty {
+  margin: 8px;
+  opacity: 0.7;
+  font-style: italic;
+  font-family: Georgia, serif;
+  font-size: 12px;
+}
+
+
+/* Steading Moves */
+.stonetop.sheet.actor.steading .steading-homefront-moves-grid {
+  display: grid;
+  grid-template-columns: 1fr 7px 1fr 7px 1fr;
+  gap: 12px;
+  align-items: stretch;
+  min-height: 430px;
+}
+
+.stonetop.sheet.actor.steading .steading-homefront-moves-divider {
+  width: 7px;
+  min-height: 100%;
+  background-image: url("../assets/sheet/divider-vertical.png");
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 7px auto;
+}
+
+.stonetop.sheet.actor.steading .steading-homefront-move-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  min-height: 430px;
+  padding: 2px;
+}
+
+.stonetop.sheet.actor.steading .steading-moves-panel.drop-target .steading-homefront-move-column {
+  outline: 2px dashed rgba(0, 0, 0, 0.45);
+  outline-offset: 3px;
+}
+
+.stonetop.sheet.actor.steading .steading-moves-empty {
+  margin: 8px;
+  font-style: italic;
+  opacity: 0.75;
+}
+
+
+/* Steading notes tab */
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-notes-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 7px minmax(0, 1fr) 7px minmax(0, 1fr);
+  gap: 10px;
+  align-items: stretch;
+  min-height: 430px;
+  height: auto;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-notes-column {
+  min-width: 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-notes-divider {
+  width: 7px;
+  min-height: 100%;
+  background-image: url("../assets/sheet/divider-vertical.png");
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 7px auto;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-notes-field {
+  padding: 20px 18px 18px;
+  background: rgba(255, 255, 255, 0.72);
+  min-height: 430px;
+  height: auto;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-notes-field h2 {
+  margin: 0 0 8px 0;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-notes-field textarea {
+  min-height: 365px;
+  height: auto;
+  field-sizing: content;
+  overflow-y: hidden;
+  resize: vertical;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.25;
+  padding: 4px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-notes-content-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-notes-content-title {
+  font-family: "Historical-FellTypeRomanSC", "Historical FellType Roman SC", "StonetopUI", Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  line-height: 1;
+  text-align: center;
+  color: black;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-notes-content-field {
+  min-height: 130px;
+  flex: 1 1 0;
+}
+
+.application.stonetop .window-content form.stonetop.sheet.steading .steading-notes-content-field textarea {
+  min-height: 82px;
+}

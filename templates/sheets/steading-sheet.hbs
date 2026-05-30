@@ -1,0 +1,868 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+  <header class="sheet-header steading-top">
+
+    <section class="steading-header-grid">
+
+      {{#each ratings as |rating key|}}
+        <div class="steading-stat-panel steading-panel-frame steading-{{key}}">
+          <span class="panel-corner panel-corner-tl"></span>
+          <span class="panel-corner panel-corner-tr"></span>
+          <span class="panel-corner panel-corner-bl"></span>
+          <span class="panel-corner panel-corner-br"></span>
+          <span class="panel-edge panel-edge-top"></span>
+          <span class="panel-edge panel-edge-right"></span>
+          <span class="panel-edge panel-edge-bottom"></span>
+          <span class="panel-edge panel-edge-left"></span>
+
+          <h2>
+            <button class="stat-roll steading-stat-roll" type="button" data-stat="{{key}}" data-label="{{rating.label}}">{{rating.label}}</button>
+          </h2>
+          <div class="steading-start-line">{{rating.start}}</div>
+
+          <div class="steading-rating-options">
+            {{#each rating.options as |option|}}
+              <label class="steading-rating-option">
+                <input class="steading-box-input" type="radio" name="{{../path}}" value="{{option.value}}" {{#if (eq option.value ../value)}}checked{{/if}}>
+                <span class="steading-box" aria-hidden="true"></span>
+                <span class="steading-option-text">
+                  <span>{{option.label}}</span>
+                  {{#if option.note}}<small>{{option.note}}</small>{{/if}}
+                </span>
+              </label>
+            {{/each}}
+          </div>
+        </div>
+      {{/each}}
+
+      <div class="steading-stat-panel steading-panel-frame steading-surplus">
+        <span class="panel-corner panel-corner-tl"></span>
+        <span class="panel-corner panel-corner-tr"></span>
+        <span class="panel-corner panel-corner-bl"></span>
+        <span class="panel-corner panel-corner-br"></span>
+        <span class="panel-edge panel-edge-top"></span>
+        <span class="panel-edge panel-edge-right"></span>
+        <span class="panel-edge panel-edge-bottom"></span>
+        <span class="panel-edge panel-edge-left"></span>
+
+        <h2>
+          <button class="stat-roll steading-stat-roll" type="button" data-stat="surplus" data-label="Surplus">Surplus</button>
+        </h2>
+        <div class="steading-start-line">Starts at 1</div>
+        <input class="steading-surplus-input" name="system.surplus" type="number" value="{{system.surplus}}" min="0" step="1">
+      </div>
+
+      <div class="steading-debilities-panel steading-panel-frame">
+        <span class="panel-corner panel-corner-tl"></span>
+        <span class="panel-corner panel-corner-tr"></span>
+        <span class="panel-corner panel-corner-bl"></span>
+        <span class="panel-corner panel-corner-br"></span>
+        <span class="panel-edge panel-edge-top"></span>
+        <span class="panel-edge panel-edge-right"></span>
+        <span class="panel-edge panel-edge-bottom"></span>
+        <span class="panel-edge panel-edge-left"></span>
+
+        <h2>Debilities</h2>
+        <div class="steading-debility-list">
+          {{#each debilityList as |debility|}}
+            <label class="steading-debility-option">
+              <input class="steading-circle-input" type="checkbox" name="{{debility.path}}" {{#if debility.checked}}checked{{/if}}>
+              <span class="steading-circle" aria-hidden="true"></span>
+              <span>{{debility.text}}</span>
+            </label>
+          {{/each}}
+        </div>
+      </div>
+
+    </section>
+
+  </header>
+
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item active" data-tab="overview">Overview</a>
+    <a class="item" data-tab="residents">Residents</a>
+    <a class="item" data-tab="neighbors">Neighbors</a>
+    <a class="item" data-tab="improvements">Improvements</a>
+    <a class="item" data-tab="moves">Moves</a>
+    <a class="item" data-tab="notes">Notes</a>
+  </nav>
+
+  <section class="sheet-body">
+
+    <div class="tab active" data-group="primary" data-tab="overview">
+
+      <div class="steading-overview-grid">
+
+        <section class="steading-overview-column">
+          <div class="steading-overview-field steading-panel-frame">
+            <span class="panel-corner panel-corner-tl"></span>
+            <span class="panel-corner panel-corner-tr"></span>
+            <span class="panel-corner panel-corner-bl"></span>
+            <span class="panel-corner panel-corner-br"></span>
+            <span class="panel-edge panel-edge-top"></span>
+            <span class="panel-edge panel-edge-right"></span>
+            <span class="panel-edge panel-edge-bottom"></span>
+            <span class="panel-edge panel-edge-left"></span>
+
+            <h2>Resources</h2>
+            <textarea name="system.resources">{{system.resources}}</textarea>
+          </div>
+        </section>
+
+        <div class="steading-overview-divider" aria-hidden="true"></div>
+
+        <section class="steading-overview-column">
+          <div class="steading-overview-field steading-panel-frame">
+            <span class="panel-corner panel-corner-tl"></span>
+            <span class="panel-corner panel-corner-tr"></span>
+            <span class="panel-corner panel-corner-bl"></span>
+            <span class="panel-corner panel-corner-br"></span>
+            <span class="panel-edge panel-edge-top"></span>
+            <span class="panel-edge panel-edge-right"></span>
+            <span class="panel-edge panel-edge-bottom"></span>
+            <span class="panel-edge panel-edge-left"></span>
+
+            <h2>Defenses</h2>
+            <textarea name="system.defenseNotes">{{system.defenseNotes}}</textarea>
+          </div>
+        </section>
+
+        <div class="steading-overview-divider" aria-hidden="true"></div>
+
+        <section class="steading-overview-column steading-assets-column">
+          <div class="steading-overview-field steading-panel-frame steading-assets-text-field">
+            <span class="panel-corner panel-corner-tl"></span>
+            <span class="panel-corner panel-corner-tr"></span>
+            <span class="panel-corner panel-corner-bl"></span>
+            <span class="panel-corner panel-corner-br"></span>
+            <span class="panel-edge panel-edge-top"></span>
+            <span class="panel-edge panel-edge-right"></span>
+            <span class="panel-edge panel-edge-bottom"></span>
+            <span class="panel-edge panel-edge-left"></span>
+
+            <h2>Assets</h2>
+            <textarea name="system.assets">{{system.assets}}</textarea>
+          </div>
+
+          <div class="steading-asset-currency-grid">
+            <label class="steading-asset-currency-frame">
+              <span>Silver Purses</span>
+              <input type="number" name="system.assetCoinage.silverPurses" value="{{system.assetCoinage.silverPurses}}" step="1">
+            </label>
+            <label class="steading-asset-currency-frame">
+              <span>Silver Handfuls</span>
+              <input type="number" name="system.assetCoinage.silverHandfuls" value="{{system.assetCoinage.silverHandfuls}}" step="1">
+            </label>
+            <label class="steading-asset-currency-frame">
+              <span>Silver Coins</span>
+              <input type="number" name="system.assetCoinage.silverCoins" value="{{system.assetCoinage.silverCoins}}" step="1">
+            </label>
+            <label class="steading-asset-currency-frame">
+              <span>Gold Purses</span>
+              <input type="number" name="system.assetCoinage.goldPurses" value="{{system.assetCoinage.goldPurses}}" step="1">
+            </label>
+            <label class="steading-asset-currency-frame">
+              <span>Gold Handfuls</span>
+              <input type="number" name="system.assetCoinage.goldHandfuls" value="{{system.assetCoinage.goldHandfuls}}" step="1">
+            </label>
+            <label class="steading-asset-currency-frame">
+              <span>Gold Coins</span>
+              <input type="number" name="system.assetCoinage.goldCoins" value="{{system.assetCoinage.goldCoins}}" step="1">
+            </label>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="residents">
+
+      <div class="steading-residents-grid">
+
+        <section class="steading-residents-roster steading-panel-frame">
+          <span class="panel-corner panel-corner-tl"></span>
+          <span class="panel-corner panel-corner-tr"></span>
+          <span class="panel-corner panel-corner-bl"></span>
+          <span class="panel-corner panel-corner-br"></span>
+          <span class="panel-edge panel-edge-top"></span>
+          <span class="panel-edge panel-edge-right"></span>
+          <span class="panel-edge panel-edge-bottom"></span>
+          <span class="panel-edge panel-edge-left"></span>
+
+          <div class="steading-residents-table">
+            <div class="steading-residents-header">
+              <span>Name (Pronouns)</span>
+              <span>Occuption</span>
+              <span>Traits, Relations, Etc</span>
+            </div>
+
+            <div class="steading-residents-rows">
+              {{#each residentRows as |resident index|}}
+                <div class="steading-resident-row">
+                  <input type="text" name="system.residentsRoster.rows.{{index}}.name" value="{{resident.name}}" placeholder="Name (Pronouns)">
+                  <input type="text" name="system.residentsRoster.rows.{{index}}.occupation" value="{{resident.occupation}}" placeholder="Occuption">
+                  <input type="text" name="system.residentsRoster.rows.{{index}}.traits" value="{{resident.traits}}" placeholder="Traits, Relations, Etc">
+                  <button class="steading-delete-resident" type="button" title="Delete resident" aria-label="Delete resident">
+                    <img src="systems/stonetop/assets/icons/delete-icon.png" alt="">
+                  </button>
+                </div>
+              {{/each}}
+            </div>
+
+            <button class="steading-add-resident" type="button" title="Add resident" aria-label="Add resident">
+              <img src="systems/stonetop/assets/icons/plus-icon.png" alt="">
+            </button>
+          </div>
+        </section>
+
+        <div class="steading-residents-divider" aria-hidden="true"></div>
+
+        <section class="steading-resident-names steading-panel-frame">
+          <span class="panel-corner panel-corner-tl"></span>
+          <span class="panel-corner panel-corner-tr"></span>
+          <span class="panel-corner panel-corner-bl"></span>
+          <span class="panel-corner panel-corner-br"></span>
+          <span class="panel-edge panel-edge-top"></span>
+          <span class="panel-edge panel-edge-right"></span>
+          <span class="panel-edge panel-edge-bottom"></span>
+          <span class="panel-edge panel-edge-left"></span>
+
+          <h2>Names</h2>
+          <textarea name="system.residentNames">{{residentNames}}</textarea>
+        </section>
+
+      </div>
+
+      <section class="steading-npc-traits steading-panel-frame">
+        <span class="panel-corner panel-corner-tl"></span>
+        <span class="panel-corner panel-corner-tr"></span>
+        <span class="panel-corner panel-corner-bl"></span>
+        <span class="panel-corner panel-corner-br"></span>
+        <span class="panel-edge panel-edge-top"></span>
+        <span class="panel-edge panel-edge-right"></span>
+        <span class="panel-edge panel-edge-bottom"></span>
+        <span class="panel-edge panel-edge-left"></span>
+
+        <div class="steading-npc-traits-heading">
+          <h2>NPC traits</h2>
+          <span>Assign as needed; choose from this list or make up your own.</span>
+        </div>
+        <textarea class="steading-npc-traits-source" name="system.npcTraits">{{npcTraits}}</textarea>
+        <div class="steading-npc-traits-columns">
+          {{#each npcTraitColumns as |column|}}
+            <div class="steading-npc-traits-column">
+              {{#each column as |trait|}}
+                <div class="steading-npc-trait">{{trait}}</div>
+              {{/each}}
+            </div>
+          {{/each}}
+        </div>
+      </section>
+
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="neighbors">
+
+      <div class="steading-neighbors-grid">
+
+        <section class="steading-neighbors-roster steading-panel-frame">
+          <span class="panel-corner panel-corner-tl"></span>
+          <span class="panel-corner panel-corner-tr"></span>
+          <span class="panel-corner panel-corner-bl"></span>
+          <span class="panel-corner panel-corner-br"></span>
+          <span class="panel-edge panel-edge-top"></span>
+          <span class="panel-edge panel-edge-right"></span>
+          <span class="panel-edge panel-edge-bottom"></span>
+          <span class="panel-edge panel-edge-left"></span>
+
+          <div class="steading-residents-table steading-neighbors-table">
+            <div class="steading-residents-header">
+              <span>Name (Pronouns)</span>
+              <span>Occuption</span>
+              <span>Traits, Relations, Etc</span>
+            </div>
+
+            <div class="steading-residents-rows">
+              {{#each neighborRows as |neighbor index|}}
+                <div class="steading-resident-row steading-neighbor-row">
+                  <input type="text" name="system.neighborsRoster.rows.{{index}}.name" value="{{neighbor.name}}" placeholder="Name (Pronouns)">
+                  <input type="text" name="system.neighborsRoster.rows.{{index}}.occupation" value="{{neighbor.occupation}}" placeholder="Occuption">
+                  <input type="text" name="system.neighborsRoster.rows.{{index}}.traits" value="{{neighbor.traits}}" placeholder="Traits, Relations, Etc">
+                  <button class="steading-delete-neighbor" type="button" title="Delete neighbor" aria-label="Delete neighbor">
+                    <img src="systems/stonetop/assets/icons/delete-icon.png" alt="">
+                  </button>
+                </div>
+              {{/each}}
+            </div>
+
+            <button class="steading-add-neighbor" type="button" title="Add neighbor" aria-label="Add neighbor">
+              <img src="systems/stonetop/assets/icons/plus-icon.png" alt="">
+            </button>
+          </div>
+        </section>
+
+        <div class="steading-neighbors-divider" aria-hidden="true"></div>
+
+        <section class="steading-neighbor-places">
+
+          <section class="steading-neighbor-place steading-panel-frame">
+            <span class="panel-corner panel-corner-tl"></span>
+          <span class="panel-corner panel-corner-tr"></span>
+          <span class="panel-corner panel-corner-bl"></span>
+          <span class="panel-corner panel-corner-br"></span>
+          <span class="panel-edge panel-edge-top"></span>
+          <span class="panel-edge panel-edge-right"></span>
+          <span class="panel-edge panel-edge-bottom"></span>
+          <span class="panel-edge panel-edge-left"></span>
+
+            <h2>Marshedge</h2>
+
+            <label class="steading-neighbor-text-field">
+              <span>Notes</span>
+              <textarea name="system.neighborPlaces.0.notes">{{lookup (lookup neighborPlaces 0) "notes"}}</textarea>
+            </label>
+
+            <label class="steading-neighbor-text-field">
+              <span>Names</span>
+              <textarea name="system.neighborPlaces.0.names">{{lookup (lookup neighborPlaces 0) "names"}}</textarea>
+            </label>
+          </section>
+
+          <section class="steading-neighbor-place steading-panel-frame">
+            <span class="panel-corner panel-corner-tl"></span>
+          <span class="panel-corner panel-corner-tr"></span>
+          <span class="panel-corner panel-corner-bl"></span>
+          <span class="panel-corner panel-corner-br"></span>
+          <span class="panel-edge panel-edge-top"></span>
+          <span class="panel-edge panel-edge-right"></span>
+          <span class="panel-edge panel-edge-bottom"></span>
+          <span class="panel-edge panel-edge-left"></span>
+
+            <h2>Gordin’s Delve</h2>
+
+            <label class="steading-neighbor-text-field">
+              <span>Notes</span>
+              <textarea name="system.neighborPlaces.1.notes">{{lookup (lookup neighborPlaces 1) "notes"}}</textarea>
+            </label>
+
+            <label class="steading-neighbor-text-field">
+              <span>Names</span>
+              <textarea name="system.neighborPlaces.1.names">{{lookup (lookup neighborPlaces 1) "names"}}</textarea>
+            </label>
+          </section>
+
+          <section class="steading-neighbor-place steading-panel-frame">
+            <span class="panel-corner panel-corner-tl"></span>
+          <span class="panel-corner panel-corner-tr"></span>
+          <span class="panel-corner panel-corner-bl"></span>
+          <span class="panel-corner panel-corner-br"></span>
+          <span class="panel-edge panel-edge-top"></span>
+          <span class="panel-edge panel-edge-right"></span>
+          <span class="panel-edge panel-edge-bottom"></span>
+          <span class="panel-edge panel-edge-left"></span>
+
+            <h2>The Steplands</h2>
+
+            <label class="steading-neighbor-text-field">
+              <span>Notes</span>
+              <textarea name="system.neighborPlaces.2.notes">{{lookup (lookup neighborPlaces 2) "notes"}}</textarea>
+            </label>
+
+            <label class="steading-neighbor-text-field">
+              <span>Names</span>
+              <textarea name="system.neighborPlaces.2.names">{{lookup (lookup neighborPlaces 2) "names"}}</textarea>
+            </label>
+          </section>
+
+          <section class="steading-neighbor-place steading-panel-frame">
+            <span class="panel-corner panel-corner-tl"></span>
+          <span class="panel-corner panel-corner-tr"></span>
+          <span class="panel-corner panel-corner-bl"></span>
+          <span class="panel-corner panel-corner-br"></span>
+          <span class="panel-edge panel-edge-top"></span>
+          <span class="panel-edge panel-edge-right"></span>
+          <span class="panel-edge panel-edge-bottom"></span>
+          <span class="panel-edge panel-edge-left"></span>
+
+            <h2>Lygos</h2>
+
+            <label class="steading-neighbor-text-field">
+              <span>Notes</span>
+              <textarea name="system.neighborPlaces.3.notes">{{lookup (lookup neighborPlaces 3) "notes"}}</textarea>
+            </label>
+
+            <label class="steading-neighbor-text-field">
+              <span>Names</span>
+              <textarea name="system.neighborPlaces.3.names">{{lookup (lookup neighborPlaces 3) "names"}}</textarea>
+            </label>
+          </section>
+
+          <section class="steading-neighbor-place steading-panel-frame">
+            <span class="panel-corner panel-corner-tl"></span>
+          <span class="panel-corner panel-corner-tr"></span>
+          <span class="panel-corner panel-corner-bl"></span>
+          <span class="panel-corner panel-corner-br"></span>
+          <span class="panel-edge panel-edge-top"></span>
+          <span class="panel-edge panel-edge-right"></span>
+          <span class="panel-edge panel-edge-bottom"></span>
+          <span class="panel-edge panel-edge-left"></span>
+
+            <h2>Other Places</h2>
+
+            <label class="steading-neighbor-text-field">
+              <span>Notes</span>
+              <textarea name="system.neighborPlaces.4.notes">{{lookup (lookup neighborPlaces 4) "notes"}}</textarea>
+            </label>
+
+            <label class="steading-neighbor-text-field">
+              <span>Names</span>
+              <textarea name="system.neighborPlaces.4.names">{{lookup (lookup neighborPlaces 4) "names"}}</textarea>
+            </label>
+          </section>
+
+        </section>
+
+      </div>
+
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="improvements">
+
+      <div class="steading-improvements-grid">
+
+        <section class="steading-improvement-column" data-column="left">
+          {{#each improvementColumns.left as |improvement|}}
+            <article class="steading-improvement-card steading-panel-frame {{#if improvement.expanded}}expanded{{/if}}" data-item-id="{{improvement.id}}">
+              <span class="panel-corner panel-corner-tl"></span>
+              <span class="panel-corner panel-corner-tr"></span>
+              <span class="panel-corner panel-corner-bl"></span>
+              <span class="panel-corner panel-corner-br"></span>
+              <span class="panel-edge panel-edge-top"></span>
+              <span class="panel-edge panel-edge-right"></span>
+              <span class="panel-edge panel-edge-bottom"></span>
+              <span class="panel-edge panel-edge-left"></span>
+
+              <header class="steading-improvement-card-header">
+                <div class="steading-improvement-title-row">
+                  {{#if improvement.showHeaderCheckbox}}
+                    <input
+                      type="checkbox"
+                      class="square-description-check steading-improvement-check"
+                      data-item-id="{{improvement.id}}"
+                      {{#if improvement.headerCheckboxChecked}}checked{{/if}}
+                    >
+                  {{/if}}
+                  <button class="steading-improvement-title" type="button">{{improvement.name}}</button>
+                </div>
+                <div class="steading-improvement-actions">
+                  <button class="steading-improvement-edit icon-button" type="button" data-item-id="{{improvement.id}}" title="Edit">
+                    <img src="systems/stonetop/assets/icons/edit-icon.png">
+                  </button>
+                  <button class="steading-improvement-delete icon-button" type="button" data-item-id="{{improvement.id}}" title="Delete">
+                    <img src="systems/stonetop/assets/icons/delete-icon.png">
+                  </button>
+                </div>
+              </header>
+
+              <div class="steading-improvement-divider"></div>
+
+              <div class="steading-improvement-body">
+                {{{improvement.textHtml}}}
+              </div>
+            </article>
+          {{/each}}
+          {{#unless improvementColumns.left}}
+            <p class="steading-improvement-empty">Drop steading improvements here.</p>
+          {{/unless}}
+        </section>
+
+        <div class="steading-improvements-divider" aria-hidden="true"></div>
+
+        <section class="steading-improvement-column" data-column="middle">
+          {{#each improvementColumns.middle as |improvement|}}
+            <article class="steading-improvement-card steading-panel-frame {{#if improvement.expanded}}expanded{{/if}}" data-item-id="{{improvement.id}}">
+              <span class="panel-corner panel-corner-tl"></span>
+              <span class="panel-corner panel-corner-tr"></span>
+              <span class="panel-corner panel-corner-bl"></span>
+              <span class="panel-corner panel-corner-br"></span>
+              <span class="panel-edge panel-edge-top"></span>
+              <span class="panel-edge panel-edge-right"></span>
+              <span class="panel-edge panel-edge-bottom"></span>
+              <span class="panel-edge panel-edge-left"></span>
+
+              <header class="steading-improvement-card-header">
+                <div class="steading-improvement-title-row">
+                  {{#if improvement.showHeaderCheckbox}}
+                    <input
+                      type="checkbox"
+                      class="square-description-check steading-improvement-check"
+                      data-item-id="{{improvement.id}}"
+                      {{#if improvement.headerCheckboxChecked}}checked{{/if}}
+                    >
+                  {{/if}}
+                  <button class="steading-improvement-title" type="button">{{improvement.name}}</button>
+                </div>
+                <div class="steading-improvement-actions">
+                  <button class="steading-improvement-edit icon-button" type="button" data-item-id="{{improvement.id}}" title="Edit">
+                    <img src="systems/stonetop/assets/icons/edit-icon.png">
+                  </button>
+                  <button class="steading-improvement-delete icon-button" type="button" data-item-id="{{improvement.id}}" title="Delete">
+                    <img src="systems/stonetop/assets/icons/delete-icon.png">
+                  </button>
+                </div>
+              </header>
+
+              <div class="steading-improvement-divider"></div>
+
+              <div class="steading-improvement-body">
+                {{{improvement.textHtml}}}
+              </div>
+            </article>
+          {{/each}}
+          {{#unless improvementColumns.middle}}
+            <p class="steading-improvement-empty">Drop steading improvements here.</p>
+          {{/unless}}
+        </section>
+
+        <div class="steading-improvements-divider" aria-hidden="true"></div>
+
+        <section class="steading-improvement-column" data-column="right">
+          {{#each improvementColumns.right as |improvement|}}
+            <article class="steading-improvement-card steading-panel-frame {{#if improvement.expanded}}expanded{{/if}}" data-item-id="{{improvement.id}}">
+              <span class="panel-corner panel-corner-tl"></span>
+              <span class="panel-corner panel-corner-tr"></span>
+              <span class="panel-corner panel-corner-bl"></span>
+              <span class="panel-corner panel-corner-br"></span>
+              <span class="panel-edge panel-edge-top"></span>
+              <span class="panel-edge panel-edge-right"></span>
+              <span class="panel-edge panel-edge-bottom"></span>
+              <span class="panel-edge panel-edge-left"></span>
+
+              <header class="steading-improvement-card-header">
+                <div class="steading-improvement-title-row">
+                  {{#if improvement.showHeaderCheckbox}}
+                    <input
+                      type="checkbox"
+                      class="square-description-check steading-improvement-check"
+                      data-item-id="{{improvement.id}}"
+                      {{#if improvement.headerCheckboxChecked}}checked{{/if}}
+                    >
+                  {{/if}}
+                  <button class="steading-improvement-title" type="button">{{improvement.name}}</button>
+                </div>
+                <div class="steading-improvement-actions">
+                  <button class="steading-improvement-edit icon-button" type="button" data-item-id="{{improvement.id}}" title="Edit">
+                    <img src="systems/stonetop/assets/icons/edit-icon.png">
+                  </button>
+                  <button class="steading-improvement-delete icon-button" type="button" data-item-id="{{improvement.id}}" title="Delete">
+                    <img src="systems/stonetop/assets/icons/delete-icon.png">
+                  </button>
+                </div>
+              </header>
+
+              <div class="steading-improvement-divider"></div>
+
+              <div class="steading-improvement-body">
+                {{{improvement.textHtml}}}
+              </div>
+            </article>
+          {{/each}}
+          {{#unless improvementColumns.right}}
+            <p class="steading-improvement-empty">Drop steading improvements here.</p>
+          {{/unless}}
+        </section>
+
+      </div>
+
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="moves">
+
+      <div class="steading-homefront-moves-grid steading-moves-panel">
+
+        <section class="steading-homefront-move-column" data-column="left">
+          {{#each homefrontMoveColumns.left}}
+              <div class="move-card {{#if this.expanded}}expanded{{/if}}" data-item-id="{{this.id}}">
+
+                <div class="move-card-header">
+                  <div class="move-header-left">
+                    <img class="move-item-icon" src="{{this.img}}" alt="{{this.name}}">
+                    <button class="move-title" type="button">{{this.name}}</button>
+                  </div>
+
+                  {{#if this.system.showPips}}
+                    <div class="move-pips">
+                      {{#each this.pipSlots}}
+                        <input
+                          type="checkbox"
+                          class="circle-check move-pip"
+                          data-pip="{{this.key}}"
+                          {{#if this.checked}}checked{{/if}}
+                        >
+                      {{/each}}
+                    </div>
+                  {{/if}}
+
+                  <div class="move-card-actions">
+                    <button class="move-edit icon-button" type="button" title="Edit">
+                      <img src="systems/stonetop/assets/icons/edit-icon.png">
+                    </button>
+                    <button class="move-delete icon-button" type="button" title="Delete">
+                      <img src="systems/stonetop/assets/icons/delete-icon.png">
+                    </button>
+                  </div>
+                </div>
+
+                <div class="move-card-body">
+                  <div class="move-description">
+                    {{{this.descriptionHtml}}}
+                  </div>
+
+                  {{#if this.canRoll}}
+                    <label>Roll Stat</label>
+                    <select class="move-stat-select">
+                      <option value="">No Stat / +Nothing</option>
+                      <option value="fortunes" {{#if (eq this.system.stat "fortunes")}}selected{{/if}}>Fortunes</option>
+                      <option value="surplus" {{#if (eq this.system.stat "surplus")}}selected{{/if}}>Surplus</option>
+                      <option value="size" {{#if (eq this.system.stat "size")}}selected{{/if}}>Size</option>
+                      <option value="population" {{#if (eq this.system.stat "population")}}selected{{/if}}>Population</option>
+                      <option value="prosperity" {{#if (eq this.system.stat "prosperity")}}selected{{/if}}>Prosperity</option>
+                      <option value="defenses" {{#if (eq this.system.stat "defenses")}}selected{{/if}}>Defenses</option>
+                    </select>
+
+                    <button class="move-roll" type="button">Roll</button>
+                  {{else}}
+                    <button class="move-roll" type="button">Share</button>
+                  {{/if}}
+                </div>
+              </div>
+          {{/each}}
+          {{#unless homefrontMoveColumns.left}}
+            <p class="steading-moves-empty">Drop Homefront move items here.</p>
+          {{/unless}}
+        </section>
+
+        <div class="steading-homefront-moves-divider" aria-hidden="true"></div>
+
+        <section class="steading-homefront-move-column" data-column="middle">
+          {{#each homefrontMoveColumns.middle}}
+              <div class="move-card {{#if this.expanded}}expanded{{/if}}" data-item-id="{{this.id}}">
+
+                <div class="move-card-header">
+                  <div class="move-header-left">
+                    <img class="move-item-icon" src="{{this.img}}" alt="{{this.name}}">
+                    <button class="move-title" type="button">{{this.name}}</button>
+                  </div>
+
+                  {{#if this.system.showPips}}
+                    <div class="move-pips">
+                      {{#each this.pipSlots}}
+                        <input
+                          type="checkbox"
+                          class="circle-check move-pip"
+                          data-pip="{{this.key}}"
+                          {{#if this.checked}}checked{{/if}}
+                        >
+                      {{/each}}
+                    </div>
+                  {{/if}}
+
+                  <div class="move-card-actions">
+                    <button class="move-edit icon-button" type="button" title="Edit">
+                      <img src="systems/stonetop/assets/icons/edit-icon.png">
+                    </button>
+                    <button class="move-delete icon-button" type="button" title="Delete">
+                      <img src="systems/stonetop/assets/icons/delete-icon.png">
+                    </button>
+                  </div>
+                </div>
+
+                <div class="move-card-body">
+                  <div class="move-description">
+                    {{{this.descriptionHtml}}}
+                  </div>
+
+                  {{#if this.canRoll}}
+                    <label>Roll Stat</label>
+                    <select class="move-stat-select">
+                      <option value="">No Stat / +Nothing</option>
+                      <option value="fortunes" {{#if (eq this.system.stat "fortunes")}}selected{{/if}}>Fortunes</option>
+                      <option value="surplus" {{#if (eq this.system.stat "surplus")}}selected{{/if}}>Surplus</option>
+                      <option value="size" {{#if (eq this.system.stat "size")}}selected{{/if}}>Size</option>
+                      <option value="population" {{#if (eq this.system.stat "population")}}selected{{/if}}>Population</option>
+                      <option value="prosperity" {{#if (eq this.system.stat "prosperity")}}selected{{/if}}>Prosperity</option>
+                      <option value="defenses" {{#if (eq this.system.stat "defenses")}}selected{{/if}}>Defenses</option>
+                    </select>
+
+                    <button class="move-roll" type="button">Roll</button>
+                  {{else}}
+                    <button class="move-roll" type="button">Share</button>
+                  {{/if}}
+                </div>
+              </div>
+          {{/each}}
+          {{#unless homefrontMoveColumns.middle}}
+            <p class="steading-moves-empty">Drop Homefront move items here.</p>
+          {{/unless}}
+        </section>
+
+        <div class="steading-homefront-moves-divider" aria-hidden="true"></div>
+
+        <section class="steading-homefront-move-column" data-column="right">
+          {{#each homefrontMoveColumns.right}}
+              <div class="move-card {{#if this.expanded}}expanded{{/if}}" data-item-id="{{this.id}}">
+
+                <div class="move-card-header">
+                  <div class="move-header-left">
+                    <img class="move-item-icon" src="{{this.img}}" alt="{{this.name}}">
+                    <button class="move-title" type="button">{{this.name}}</button>
+                  </div>
+
+                  {{#if this.system.showPips}}
+                    <div class="move-pips">
+                      {{#each this.pipSlots}}
+                        <input
+                          type="checkbox"
+                          class="circle-check move-pip"
+                          data-pip="{{this.key}}"
+                          {{#if this.checked}}checked{{/if}}
+                        >
+                      {{/each}}
+                    </div>
+                  {{/if}}
+
+                  <div class="move-card-actions">
+                    <button class="move-edit icon-button" type="button" title="Edit">
+                      <img src="systems/stonetop/assets/icons/edit-icon.png">
+                    </button>
+                    <button class="move-delete icon-button" type="button" title="Delete">
+                      <img src="systems/stonetop/assets/icons/delete-icon.png">
+                    </button>
+                  </div>
+                </div>
+
+                <div class="move-card-body">
+                  <div class="move-description">
+                    {{{this.descriptionHtml}}}
+                  </div>
+
+                  {{#if this.canRoll}}
+                    <label>Roll Stat</label>
+                    <select class="move-stat-select">
+                      <option value="">No Stat / +Nothing</option>
+                      <option value="fortunes" {{#if (eq this.system.stat "fortunes")}}selected{{/if}}>Fortunes</option>
+                      <option value="surplus" {{#if (eq this.system.stat "surplus")}}selected{{/if}}>Surplus</option>
+                      <option value="size" {{#if (eq this.system.stat "size")}}selected{{/if}}>Size</option>
+                      <option value="population" {{#if (eq this.system.stat "population")}}selected{{/if}}>Population</option>
+                      <option value="prosperity" {{#if (eq this.system.stat "prosperity")}}selected{{/if}}>Prosperity</option>
+                      <option value="defenses" {{#if (eq this.system.stat "defenses")}}selected{{/if}}>Defenses</option>
+                    </select>
+
+                    <button class="move-roll" type="button">Roll</button>
+                  {{else}}
+                    <button class="move-roll" type="button">Share</button>
+                  {{/if}}
+                </div>
+              </div>
+          {{/each}}
+          {{#unless homefrontMoveColumns.right}}
+            <p class="steading-moves-empty">Drop Homefront move items here.</p>
+          {{/unless}}
+        </section>
+
+      </div>
+
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="notes">
+
+      <div class="steading-notes-grid">
+        <section class="steading-notes-column">
+          <div class="steading-notes-field steading-panel-frame">
+            <span class="panel-corner panel-corner-tl"></span>
+            <span class="panel-corner panel-corner-tr"></span>
+            <span class="panel-corner panel-corner-bl"></span>
+            <span class="panel-corner panel-corner-br"></span>
+            <span class="panel-edge panel-edge-top"></span>
+            <span class="panel-edge panel-edge-right"></span>
+            <span class="panel-edge panel-edge-bottom"></span>
+            <span class="panel-edge panel-edge-left"></span>
+
+            <h2>Places of Interest</h2>
+            <textarea name="system.placesOfInterest">{{system.placesOfInterest}}</textarea>
+          </div>
+        </section>
+
+        <div class="steading-notes-divider" aria-hidden="true"></div>
+
+        <section class="steading-notes-column steading-notes-content-column">
+          
+
+          <div class="steading-notes-field steading-panel-frame steading-notes-content-field">
+            <span class="panel-corner panel-corner-tl"></span>
+            <span class="panel-corner panel-corner-tr"></span>
+            <span class="panel-corner panel-corner-bl"></span>
+            <span class="panel-corner panel-corner-br"></span>
+            <span class="panel-edge panel-edge-top"></span>
+            <span class="panel-edge panel-edge-right"></span>
+            <span class="panel-edge panel-edge-bottom"></span>
+            <span class="panel-edge panel-edge-left"></span>
+
+            <h2>Excluded Content</h2>
+            <textarea name="system.excludedContent">{{system.excludedContent}}</textarea>
+          </div>
+
+          <div class="steading-notes-field steading-panel-frame steading-notes-content-field">
+            <span class="panel-corner panel-corner-tl"></span>
+            <span class="panel-corner panel-corner-tr"></span>
+            <span class="panel-corner panel-corner-bl"></span>
+            <span class="panel-corner panel-corner-br"></span>
+            <span class="panel-edge panel-edge-top"></span>
+            <span class="panel-edge panel-edge-right"></span>
+            <span class="panel-edge panel-edge-bottom"></span>
+            <span class="panel-edge panel-edge-left"></span>
+
+            <h2>Veiled Content</h2>
+            <textarea name="system.veiledContent">{{system.veiledContent}}</textarea>
+          </div>
+
+          <div class="steading-notes-field steading-panel-frame steading-notes-content-field">
+            <span class="panel-corner panel-corner-tl"></span>
+            <span class="panel-corner panel-corner-tr"></span>
+            <span class="panel-corner panel-corner-bl"></span>
+            <span class="panel-corner panel-corner-br"></span>
+            <span class="panel-edge panel-edge-top"></span>
+            <span class="panel-edge panel-edge-right"></span>
+            <span class="panel-edge panel-edge-bottom"></span>
+            <span class="panel-edge panel-edge-left"></span>
+
+            <h2>Special Handling</h2>
+            <textarea name="system.specialHandling">{{system.specialHandling}}</textarea>
+          </div>
+        </section>
+
+        <div class="steading-notes-divider" aria-hidden="true"></div>
+
+        <section class="steading-notes-column">
+          <div class="steading-notes-field steading-panel-frame">
+            <span class="panel-corner panel-corner-tl"></span>
+            <span class="panel-corner panel-corner-tr"></span>
+            <span class="panel-corner panel-corner-bl"></span>
+            <span class="panel-corner panel-corner-br"></span>
+            <span class="panel-edge panel-edge-top"></span>
+            <span class="panel-edge panel-edge-right"></span>
+            <span class="panel-edge panel-edge-bottom"></span>
+            <span class="panel-edge panel-edge-left"></span>
+
+            <h2>Notes</h2>
+            <textarea name="system.notes">{{system.notes}}</textarea>
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+  </section>
+
+</form>

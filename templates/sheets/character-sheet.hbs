@@ -1,0 +1,1521 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+  <header class="sheet-header character-top textured-header">
+
+  <div class="header-main">
+
+    <div class="name-frame">
+      <input name="name" type="text" value="{{actor.name}}" placeholder="Charactername">
+    </div>
+
+    <div class="stat-instruction">
+      Assign these scores: +2, +1, +1, +0, +0, -1. When a debility is marked, you roll with disadvantage.
+    </div>
+
+    <div class="textured-stats-row">
+
+      <div class="textured-stat">
+        <button class="stat-roll" type="button" data-stat="str" data-label="Strength">Strength</button>
+        <input name="system.stats.str" type="text" value="{{system.stats.str}}">
+        <div class="stat-short">(STR)</div>
+      </div>
+
+      <div class="textured-stat">
+        <button class="stat-roll" type="button" data-stat="dex" data-label="Dexterity">Dexterity</button>
+        <input name="system.stats.dex" type="text" value="{{system.stats.dex}}">
+        <div class="stat-short">(DEX)</div>
+      </div>
+
+      <div class="textured-stat">
+        <button class="stat-roll" type="button" data-stat="int" data-label="Intelligence">Intelligence</button>
+        <input name="system.stats.int" type="text" value="{{system.stats.int}}">
+        <div class="stat-short">(INT)</div>
+      </div>
+
+      <div class="textured-stat">
+        <button class="stat-roll" type="button" data-stat="wis" data-label="Wisdom">Wisdom</button>
+        <input name="system.stats.wis" type="text" value="{{system.stats.wis}}">
+        <div class="stat-short">(WIS)</div>
+      </div>
+
+      <div class="textured-stat">
+        <button class="stat-roll" type="button" data-stat="con" data-label="Constitution">Constitution</button>
+        <input name="system.stats.con" type="text" value="{{system.stats.con}}">
+        <div class="stat-short">(CON)</div>
+      </div>
+
+      <div class="textured-stat">
+        <button class="stat-roll" type="button" data-stat="cha" data-label="Charisma">Charisma</button>
+        <input name="system.stats.cha" type="text" value="{{system.stats.cha}}">
+        <div class="stat-short">(CHA)</div>
+      </div>
+
+    </div>
+
+    <div class="debility-row">
+
+      <label class="debility-control debility-weakened">
+        <span class="debility-divider"></span>
+        <input class="circle-check" type="checkbox" name="system.debilities.weakened" {{checked system.debilities.weakened}}>
+        <span>weakened</span>
+      </label>
+
+      <label class="debility-control debility-dazed">
+        <span class="debility-divider"></span>
+        <input class="circle-check" type="checkbox" name="system.debilities.dazed" {{checked system.debilities.dazed}}>
+        <span>dazed</span>
+      </label>
+
+      <label class="debility-control debility-miserable">
+        <span class="debility-divider"></span>
+        <input class="circle-check" type="checkbox" name="system.debilities.miserable" {{checked system.debilities.miserable}}>
+        <span>miserable</span>
+      </label>
+
+    </div>
+
+    <div class="resource-row">
+
+      <div class="textured-resource small-resource">
+        <button class="damage-roll" type="button">Damage</button>
+        <input name="system.damage" type="text" value="{{system.damage}}">
+      </div>
+
+      <div class="textured-resource wide-resource">
+        <div class="resource-label">HP</div>
+        <div class="split-field">
+          <input name="system.hp.value" type="number" value="{{system.hp.value}}">
+          <span>/</span>
+          <input name="system.hp.max" type="number" value="{{system.hp.max}}">
+        </div>
+      </div>
+
+      <div class="textured-resource small-resource">
+        <div class="resource-label">Armor</div>
+        <input name="system.armor" type="number" value="{{system.armor}}">
+      </div>
+
+      <div class="textured-resource wide-resource">
+        <div class="resource-label">XP</div>
+        <div class="split-field">
+          <input name="system.xp.value" type="number" value="{{system.xp.value}}">
+          <span>/</span>
+          <input type="number" value="{{nextLevelXP}}" disabled>
+        </div>
+      </div>
+
+      <div class="textured-resource small-resource">
+        <div class="resource-label">Level</div>
+        <input name="system.level" type="number" value="{{system.level}}">
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="portrait-frame">
+    <img src="{{actorImg}}" alt="{{actor.name}}">
+  </div>
+
+</header>
+
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item active" data-tab="playbook">Playbook</a>
+    <a class="item" data-tab="moves">Moves</a>
+    <a class="item" data-tab="inventory">Inventory</a>
+    <a class="item" data-tab="arcana">Arcana</a>
+    <a class="item" data-tab="notes">Notes</a>
+
+    {{#each insertTabs}}
+      <a class="item" data-tab="{{this.tabId}}">{{this.label}}</a>
+    {{/each}}
+  </nav>
+
+  <section class="sheet-body">
+
+    
+<div class="tab active" data-group="primary" data-tab="playbook">
+
+  <div class="playbook-tab-layout">
+
+    <section class="playbook-column">
+
+      <div class="playbook-panel">
+        <div class="playbook-panel-header">
+          <h2>Playbook</h2>
+
+          {{#if playbookItem}}
+            <div class="playbook-panel-actions">
+              <button class="embedded-item-edit icon-button" type="button" data-item-id="{{playbookItem.id}}" title="Edit Playbook">
+                <img src="systems/stonetop/assets/icons/edit-icon.png">
+              </button>
+
+              <button class="embedded-item-delete icon-button" type="button" data-item-id="{{playbookItem.id}}" title="Delete Playbook">
+                <img src="systems/stonetop/assets/icons/delete-icon.png">
+              </button>
+            </div>
+          {{/if}}
+        </div>
+
+        <div class="playbook-panel-divider"></div>
+
+        <div class="playbook-panel-body">
+
+          {{#if playbookItem}}
+
+            <h3>{{playbookItem.name}}</h3>
+
+            <div class="playbook-text">
+              {{{playbookItem.descriptionHtml}}}
+            </div>
+
+            <div class="builder-action-row" style="display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center;">
+              <button class="builder-apply-button" type="button" data-source-item-id="{{playbookItem.id}}">Apply Builder</button>
+              {{#if playbookItem.builderApplied}}<span class="builder-row-check">✓</span>{{/if}}
+            </div>
+
+            {{#if playbookItem.builderChoiceGroups.length}}
+              <div class="builder-choice-list">
+                {{#each playbookItem.builderChoiceGroups}}
+                  <div class="builder-choice-row" style="display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center;">
+                    <button
+                      class="builder-choice-button"
+                      type="button"
+                      data-choice-key="{{this.choiceKey}}"
+                      data-source-item-id="{{this.sourceItemId}}"
+                      data-group-id="{{this.id}}"
+                    >
+                      {{this.label}}
+                    </button>
+
+                    <span class="builder-row-check">{{this.checkmark}}</span>
+                  </div>
+
+                  {{#if this.selectedName}}
+                    <div class="builder-choice-selected">{{this.selectedName}}</div>
+                  {{/if}}
+                {{/each}}
+              </div>
+            {{/if}}
+
+          {{else}}
+
+            <p>Drop a Playbook item here.</p>
+
+          {{/if}}
+
+        </div>
+      </div>
+
+      <div class="playbook-panel">
+        <div class="playbook-panel-header">
+          <h2>Background</h2>
+
+          {{#if backgroundItem}}
+            <div class="playbook-panel-actions">
+              <button class="embedded-item-edit icon-button" type="button" data-item-id="{{backgroundItem.id}}" title="Edit Background">
+                <img src="systems/stonetop/assets/icons/edit-icon.png">
+              </button>
+
+              <button class="embedded-item-delete icon-button" type="button" data-item-id="{{backgroundItem.id}}" title="Delete Background">
+                <img src="systems/stonetop/assets/icons/delete-icon.png">
+              </button>
+            </div>
+          {{/if}}
+        </div>
+
+        <div class="playbook-panel-divider"></div>
+
+        <div class="playbook-panel-body">
+
+          {{#if backgroundItem}}
+
+            <h3>{{backgroundItem.name}}</h3>
+
+            <div class="playbook-text">
+              {{{backgroundItem.descriptionHtml}}}
+            </div>
+
+            <div class="builder-action-row" style="display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center;">
+              <button class="builder-apply-button" type="button" data-source-item-id="{{backgroundItem.id}}">Apply Builder</button>
+              {{#if backgroundItem.builderApplied}}<span class="builder-row-check">✓</span>{{/if}}
+            </div>
+
+            {{#if backgroundItem.builderChoiceGroups.length}}
+              <div class="builder-choice-list">
+                {{#each backgroundItem.builderChoiceGroups}}
+                  <div class="builder-choice-row" style="display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center;">
+                    <button
+                      class="builder-choice-button"
+                      type="button"
+                      data-choice-key="{{this.choiceKey}}"
+                      data-source-item-id="{{this.sourceItemId}}"
+                      data-group-id="{{this.id}}"
+                    >
+                      {{this.label}}
+                    </button>
+
+                    <span class="builder-row-check">{{this.checkmark}}</span>
+                  </div>
+
+                  {{#if this.selectedName}}
+                    <div class="builder-choice-selected">{{this.selectedName}}</div>
+                  {{/if}}
+                {{/each}}
+              </div>
+            {{/if}}
+
+          {{else}}
+
+            <p>Drop a Background item here.</p>
+
+          {{/if}}
+
+        </div>
+      </div>
+
+    </section>
+
+    <div class="playbook-divider"></div>
+
+    <section class="playbook-column">
+
+      {{#each profilePanels}}
+
+      <div class="playbook-panel">
+
+        <div class="playbook-panel-header">
+          <h2>{{this.label}}</h2>
+
+          {{#if this.item}}
+            <div class="playbook-panel-actions">
+              <button class="embedded-item-edit icon-button" type="button" data-item-id="{{this.item.id}}" title="Edit {{this.label}}">
+                <img src="systems/stonetop/assets/icons/edit-icon.png">
+              </button>
+
+              <button class="embedded-item-delete icon-button" type="button" data-item-id="{{this.item.id}}" title="Delete {{this.label}}">
+                <img src="systems/stonetop/assets/icons/delete-icon.png">
+              </button>
+            </div>
+          {{/if}}
+        </div>
+
+        <div class="playbook-panel-divider"></div>
+
+        <div class="playbook-panel-body">
+
+          {{#if this.item}}
+
+            <div class="playbook-text profile-text-rendered" data-item-id="{{this.item.id}}">
+              {{{this.item.textHtml}}}
+            </div>
+
+          {{else}}
+
+            <p>Drop a Profile Text item here.</p>
+
+          {{/if}}
+
+        </div>
+
+      </div>
+
+      {{/each}}
+
+    </section>
+
+  </div>
+
+</div>
+
+<div class="tab" data-group="primary" data-tab="moves">
+
+
+      <h2>Moves</h2>
+
+      <div class="moves-layout">
+
+        <div class="moves-column moves-column-left">
+          {{#each moveCategories.left}}
+            <section class="move-category {{#unless this.expanded}}category-closed{{/unless}}" data-category="{{this.key}}">
+
+              <button class="move-category-header" type="button" data-category="{{this.key}}">
+                <span class="move-category-title">{{this.label}}</span>
+                <span class="move-category-toggle">▾</span>
+              </button>
+
+              <div class="move-category-body" data-category="{{this.key}}">
+                {{#each this.moves}}
+                  <div class="move-card" data-item-id="{{this.id}}">
+
+                    <div class="move-card-header">
+
+                      <div class="move-header-left">
+                        <img class="move-item-icon" src="{{this.img}}" alt="{{this.name}}">
+
+                        <button class="move-title" type="button">
+                          {{this.name}}
+                        </button>
+                      </div>
+
+                      {{#if this.system.showPips}}
+                        <div class="move-pips">
+                          {{#each this.pipSlots}}
+                            <input
+                              type="checkbox"
+                              class="circle-check move-pip"
+                              data-pip="{{this.key}}"
+                              {{#if this.checked}}checked{{/if}}
+                            >
+                          {{/each}}
+                        </div>
+                      {{/if}}
+
+                      <div class="move-card-actions">
+
+                        <button class="move-edit insert-move-edit icon-button" type="button" title="Edit">
+                          <img src="systems/stonetop/assets/icons/edit-icon.png">
+                        </button>
+
+                        <button class="move-delete insert-move-delete icon-button" type="button" title="Delete">
+                          <img src="systems/stonetop/assets/icons/delete-icon.png">
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                    <div class="move-card-body">
+
+                      <div class="move-description">
+                        {{{this.descriptionHtml}}}
+                      </div>
+
+                      {{#if this.canRoll}}
+
+                        <label>Roll Stat</label>
+
+                        <select class="move-stat-select insert-move-stat-select">
+
+                          <option value="">No Stat / +Nothing</option>
+
+                          <option value="str" {{#if (eq this.system.stat "str")}}selected{{/if}}>STR</option>
+                          <option value="dex" {{#if (eq this.system.stat "dex")}}selected{{/if}}>DEX</option>
+                          <option value="con" {{#if (eq this.system.stat "con")}}selected{{/if}}>CON</option>
+                          <option value="int" {{#if (eq this.system.stat "int")}}selected{{/if}}>INT</option>
+                          <option value="wis" {{#if (eq this.system.stat "wis")}}selected{{/if}}>WIS</option>
+                          <option value="cha" {{#if (eq this.system.stat "cha")}}selected{{/if}}>CHA</option>
+
+                        </select>
+
+                        <button class="move-roll" type="button">
+                          Roll
+                        </button>
+
+                      {{else}}
+
+                        <button class="move-roll" type="button">
+                          Share
+                        </button>
+
+                      {{/if}}
+
+                    </div>
+
+                  </div>
+                {{/each}}
+              </div>
+
+            </section>
+          {{/each}}
+        </div>
+
+        <div class="moves-divider" aria-hidden="true"></div>
+
+        <div class="moves-column moves-column-right">
+          {{#each moveCategories.right}}
+            <section class="move-category {{#unless this.expanded}}category-closed{{/unless}}" data-category="{{this.key}}">
+
+              <button class="move-category-header" type="button" data-category="{{this.key}}">
+                <span class="move-category-title">{{this.label}}</span>
+                <span class="move-category-toggle">▾</span>
+              </button>
+
+              <div class="move-category-body" data-category="{{this.key}}">
+                {{#each this.moves}}
+                  <div class="move-card" data-item-id="{{this.id}}">
+
+                    <div class="move-card-header">
+
+                      <div class="move-header-left">
+                        <img class="move-item-icon" src="{{this.img}}" alt="{{this.name}}">
+
+                        <button class="move-title" type="button">
+                          {{this.name}}
+                        </button>
+                      </div>
+
+                      {{#if this.system.showPips}}
+                        <div class="move-pips">
+                          {{#each this.pipSlots}}
+                            <input
+                              type="checkbox"
+                              class="circle-check move-pip"
+                              data-pip="{{this.key}}"
+                              {{#if this.checked}}checked{{/if}}
+                            >
+                          {{/each}}
+                        </div>
+                      {{/if}}
+
+                      <div class="move-card-actions">
+
+                        <button class="move-edit insert-move-edit icon-button" type="button" title="Edit">
+                          <img src="systems/stonetop/assets/icons/edit-icon.png">
+                        </button>
+
+                        <button class="move-delete insert-move-delete icon-button" type="button" title="Delete">
+                          <img src="systems/stonetop/assets/icons/delete-icon.png">
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                    <div class="move-card-body">
+
+                      <div class="move-description">
+                        {{{this.descriptionHtml}}}
+                      </div>
+
+                      {{#if this.canRoll}}
+
+                        <label>Roll Stat</label>
+
+                        <select class="move-stat-select insert-move-stat-select">
+
+                          <option value="">No Stat / +Nothing</option>
+
+                          <option value="str" {{#if (eq this.system.stat "str")}}selected{{/if}}>STR</option>
+                          <option value="dex" {{#if (eq this.system.stat "dex")}}selected{{/if}}>DEX</option>
+                          <option value="con" {{#if (eq this.system.stat "con")}}selected{{/if}}>CON</option>
+                          <option value="int" {{#if (eq this.system.stat "int")}}selected{{/if}}>INT</option>
+                          <option value="wis" {{#if (eq this.system.stat "wis")}}selected{{/if}}>WIS</option>
+                          <option value="cha" {{#if (eq this.system.stat "cha")}}selected{{/if}}>CHA</option>
+
+                        </select>
+
+                        <button class="move-roll" type="button">
+                          Roll
+                        </button>
+
+                      {{else}}
+
+                        <button class="move-roll" type="button">
+                          Share
+                        </button>
+
+                      {{/if}}
+
+                    </div>
+
+                  </div>
+                {{/each}}
+              </div>
+
+            </section>
+          {{/each}}
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="inventory">
+
+      <div class="inventory-sheet">
+
+        <div class="inventory-main">
+
+          <p>When you <strong>Outfit</strong>, mark a number of below, on specific items or Undefined.</p>
+
+          <p>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.lightLoad" {{checked system.inventoryChecks.lightLoad}}>
+            For a <strong>light load</strong> <em>(quick & quiet)</em>, mark up to 3 ◆
+          </p>
+
+          <p>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.normalLoad" {{checked system.inventoryChecks.normalLoad}}>
+            For a <strong>normal load</strong>, mark 4-6 ◆
+          </p>
+
+          <p>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.heavyLoad" {{checked system.inventoryChecks.heavyLoad}}>
+            For a <strong>heavy load</strong> <em>(noisy, slow, hot, quick to tire)</em>, mark 7-9 ◆
+          </p>
+
+          <hr>
+
+          <h3>Undefined</h3>
+
+          <div class="check-row diamond-row">
+            <input type="checkbox" name="system.inventoryChecks.undefined1" {{checked system.inventoryChecks.undefined1}}>
+            <input type="checkbox" name="system.inventoryChecks.undefined2" {{checked system.inventoryChecks.undefined2}}>
+            <input type="checkbox" name="system.inventoryChecks.undefined3" {{checked system.inventoryChecks.undefined3}}>
+            <input type="checkbox" name="system.inventoryChecks.undefined4" {{checked system.inventoryChecks.undefined4}}>
+            <input type="checkbox" name="system.inventoryChecks.undefined5" {{checked system.inventoryChecks.undefined5}}>
+            <input type="checkbox" name="system.inventoryChecks.undefined6" {{checked system.inventoryChecks.undefined6}}>
+            <input type="checkbox" name="system.inventoryChecks.undefined7" {{checked system.inventoryChecks.undefined7}}>
+            <input type="checkbox" name="system.inventoryChecks.undefined8" {{checked system.inventoryChecks.undefined8}}>
+            <input type="checkbox" name="system.inventoryChecks.undefined9" {{checked system.inventoryChecks.undefined9}}>
+          </div>
+
+          <p>When you <strong>Have What You Need</strong>, move ◆ from here to below.</p>
+
+          <hr>
+
+          <label class="inventory-line diamond-check">
+            <input type="checkbox" name="system.inventoryChecks.supplies" {{checked system.inventoryChecks.supplies}}>
+            Supplies (4+Prosperity uses
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.suppliesUse1" {{checked system.inventoryChecks.suppliesUse1}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.suppliesUse2" {{checked system.inventoryChecks.suppliesUse2}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.suppliesUse3" {{checked system.inventoryChecks.suppliesUse3}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.suppliesUse4" {{checked system.inventoryChecks.suppliesUse4}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.suppliesUse5" {{checked system.inventoryChecks.suppliesUse5}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.suppliesUse6" {{checked system.inventoryChecks.suppliesUse6}}>)
+          </label>
+
+          <label class="inventory-line diamond-check">
+            <input type="checkbox" name="system.inventoryChecks.moreSupplies" {{checked system.inventoryChecks.moreSupplies}}>
+            More supplies (4+Prosperity uses
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.moreSuppliesUse1" {{checked system.inventoryChecks.moreSuppliesUse1}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.moreSuppliesUse2" {{checked system.inventoryChecks.moreSuppliesUse2}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.moreSuppliesUse3" {{checked system.inventoryChecks.moreSuppliesUse3}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.moreSuppliesUse4" {{checked system.inventoryChecks.moreSuppliesUse4}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.moreSuppliesUse5" {{checked system.inventoryChecks.moreSuppliesUse5}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.moreSuppliesUse6" {{checked system.inventoryChecks.moreSuppliesUse6}}>)
+          </label>
+
+          <label class="inventory-line diamond-check">
+            <input type="checkbox" name="system.inventoryChecks.evenMoreSupplies" {{checked system.inventoryChecks.evenMoreSupplies}}>
+            Even more supplies (4+Prosperity uses
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.evenMoreSuppliesUse1" {{checked system.inventoryChecks.evenMoreSuppliesUse1}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.evenMoreSuppliesUse2" {{checked system.inventoryChecks.evenMoreSuppliesUse2}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.evenMoreSuppliesUse3" {{checked system.inventoryChecks.evenMoreSuppliesUse3}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.evenMoreSuppliesUse4" {{checked system.inventoryChecks.evenMoreSuppliesUse4}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.evenMoreSuppliesUse5" {{checked system.inventoryChecks.evenMoreSuppliesUse5}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.evenMoreSuppliesUse6" {{checked system.inventoryChecks.evenMoreSuppliesUse6}}>)
+          </label>
+
+          <p>Use supplies to Recover, Make Camp, or have extra small items.</p>
+
+          <hr>
+
+          <div class="inventory-two-col">
+
+            <div>
+              <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.messKit" {{checked system.inventoryChecks.messKit}}> Mess kit (requires fire & water; makes Supplies last longer)</label>
+              <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.bedroll" {{checked system.inventoryChecks.bedroll}}> Bedroll (recover 1d6 extra HP when you Make Camp)</label>
+              <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.blanket" {{checked system.inventoryChecks.blanket}}> Blanket (warm)</label>
+              <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.rope" {{checked system.inventoryChecks.rope}}> Rope, ~25 ft</label>
+              <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.sledge" {{checked system.inventoryChecks.sledge}}> Sledge/litter/travois, roll-out</label>
+            </div>
+
+            <div>
+              <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.changeClothes" {{checked system.inventoryChecks.changeClothes}}> Change of clothes</label>
+              <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.shovel" {{checked system.inventoryChecks.shovel}}> Shovel</label>
+              <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.snowShoes" {{checked system.inventoryChecks.snowShoes}}> Snow-shoes</label>
+            </div>
+
+          </div>
+
+          <hr>
+
+          <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.torch" {{checked system.inventoryChecks.torch}}> Torch (lasts ~1 hour; reach, area, dangerous)</label>
+
+          <label class="inventory-line diamond-check">
+            <input type="checkbox" name="system.inventoryChecks.oilLamp" {{checked system.inventoryChecks.oilLamp}}>
+            Oil lamp (
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.oilLampUse1" {{checked system.inventoryChecks.oilLampUse1}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.oilLampUse2" {{checked system.inventoryChecks.oilLampUse2}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.oilLampUse3" {{checked system.inventoryChecks.oilLampUse3}}>
+            hours, close, area, crude)
+          </label>
+
+          <label class="inventory-line diamond-check">
+            <input type="checkbox" name="system.inventoryChecks.extraOil" {{checked system.inventoryChecks.extraOil}}>
+            Extra oil (
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.extraOilUse1" {{checked system.inventoryChecks.extraOilUse1}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.extraOilUse2" {{checked system.inventoryChecks.extraOilUse2}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.extraOilUse3" {{checked system.inventoryChecks.extraOilUse3}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.extraOilUse4" {{checked system.inventoryChecks.extraOilUse4}}>
+            hours, for lamp/lantern, useless as a weapon)
+          </label>
+
+          <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.firewood" {{checked system.inventoryChecks.firewood}}> Firewood (enough to last 1 full night, reach, area)</label>
+
+          <hr>
+
+          <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.hatchet" {{checked system.inventoryChecks.hatchet}}> Hatchet, iron (hand, thrown, x piercing)</label>
+          <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.mallet" {{checked system.inventoryChecks.mallet}}> Mallet, iron and/or wood (hand)</label>
+          <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.mattock" {{checked system.inventoryChecks.mattock}}> Mattock, iron (close, x piercing, messy, awkward)</label>
+          <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.maul" {{checked system.inventoryChecks.maul}}> Maul, iron (close, forceful, awkward)</label>
+          <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.staff" {{checked system.inventoryChecks.staff}}> Staff (close)</label>
+          <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.spear" {{checked system.inventoryChecks.spear}}> Spear, iron (close, thrown, x piercing)</label>
+          <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.longSpear" {{checked system.inventoryChecks.longSpear}}> Long spear, iron (reach, x piercing)</label>
+          <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.bow" {{checked system.inventoryChecks.bow}}> Bow & iron arrows (near, x piercing, low ammo, all out)</label>
+          <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.extraArrows" {{checked system.inventoryChecks.extraArrows}}> Extra arrows (x piercing, plenty left, low ammo, all out)</label>
+          <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.javelins" {{checked system.inventoryChecks.javelins}}> Javelins, a few, iron (thrown, x piercing, +1 damage, all out)</label>
+
+          <hr>
+
+          <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.shield" {{checked system.inventoryChecks.shield}}> Shield (+1 armor, +1 Readiness on a 7+ to Defend)</label>
+          <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.thickHides" {{checked system.inventoryChecks.thickHides}}> Thick hides (1 armor, warm)</label>
+          <label class="inventory-line diamond-check"><input type="checkbox" name="system.inventoryChecks.cloak" {{checked system.inventoryChecks.cloak}}> Cloak (warm)</label>
+
+          <h3>Possessions, items, loot</h3>
+          <textarea name="system.possessions">{{system.possessions}}</textarea>
+
+          <h3>Other things <span>(animals, kits, stashed items, etc.)</span></h3>
+          <textarea name="system.otherThings">{{system.otherThings}}</textarea>
+
+        </div>
+
+        <div class="inventory-small">
+
+          <h3>Small items</h3>
+          <p>Fit in a pocket, pouch, or boot.</p>
+          <p>When you <strong>Outfit</strong>, mark below equal to 4+Prosperity.</p>
+
+          <h4>Undefined</h4>
+
+          <div class="check-row square-row">
+            <input type="checkbox" name="system.inventoryChecks.smallUndefined1" {{checked system.inventoryChecks.smallUndefined1}}>
+            <input type="checkbox" name="system.inventoryChecks.smallUndefined2" {{checked system.inventoryChecks.smallUndefined2}}>
+            <input type="checkbox" name="system.inventoryChecks.smallUndefined3" {{checked system.inventoryChecks.smallUndefined3}}>
+            <input type="checkbox" name="system.inventoryChecks.smallUndefined4" {{checked system.inventoryChecks.smallUndefined4}}>
+            <input type="checkbox" name="system.inventoryChecks.smallUndefined5" {{checked system.inventoryChecks.smallUndefined5}}>
+            <input type="checkbox" name="system.inventoryChecks.smallUndefined6" {{checked system.inventoryChecks.smallUndefined6}}>
+          </div>
+
+          <p>When you <strong>Have What You Need</strong>, move ◆ from here to items below, or expend supplies to mark an additional □.</p>
+
+          <label class="inventory-line square-check"><input type="checkbox" name="system.inventoryChecks.knife" {{checked system.inventoryChecks.knife}}> Knife or dagger, iron (hand)</label>
+          <label class="inventory-line square-check"><input type="checkbox" name="system.inventoryChecks.sling" {{checked system.inventoryChecks.sling}}> Sling (near, reload, awkward, low ammo, all out)</label>
+          <label class="inventory-line square-check"><input type="checkbox" name="system.inventoryChecks.rushlight" {{checked system.inventoryChecks.rushlight}}> Rushlight (lasts ~15-30 minutes, hand, crude)</label>
+          <label class="inventory-line square-check"><input type="checkbox" name="system.inventoryChecks.tinderbox" {{checked system.inventoryChecks.tinderbox}}> Tinderbox (slow)</label>
+          <label class="inventory-line square-check"><input type="checkbox" name="system.inventoryChecks.needleThread" {{checked system.inventoryChecks.needleThread}}> Needle & thread</label>
+          <label class="inventory-line square-check"><input type="checkbox" name="system.inventoryChecks.coppers" {{checked system.inventoryChecks.coppers}}> Handful of coppers</label>
+
+          <label class="inventory-line square-check">
+            <input type="checkbox" name="system.inventoryChecks.whisky" {{checked system.inventoryChecks.whisky}}>
+            Whisky, skin (
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.whiskyUse1" {{checked system.inventoryChecks.whiskyUse1}}>
+            <input type="checkbox" class="circle-check" name="system.inventoryChecks.whiskyUse2" {{checked system.inventoryChecks.whiskyUse2}}>
+            uses)
+          </label>
+
+          <div class="small-items-grid">
+            <label><input type="checkbox" name="system.inventoryChecks.awl" {{checked system.inventoryChecks.awl}}> Awl</label>
+            <label><input type="checkbox" name="system.inventoryChecks.bowstring" {{checked system.inventoryChecks.bowstring}}> Bowstring</label>
+            <label><input type="checkbox" name="system.inventoryChecks.chalk" {{checked system.inventoryChecks.chalk}}> Chalk</label>
+            <label><input type="checkbox" name="system.inventoryChecks.charcoal" {{checked system.inventoryChecks.charcoal}}> Charcoal</label>
+            <label><input type="checkbox" name="system.inventoryChecks.clayJar" {{checked system.inventoryChecks.clayJar}}> Clay jar</label>
+            <label><input type="checkbox" name="system.inventoryChecks.clothRag" {{checked system.inventoryChecks.clothRag}}> Cloth/rag</label>
+            <label><input type="checkbox" name="system.inventoryChecks.comb" {{checked system.inventoryChecks.comb}}> Comb</label>
+            <label><input type="checkbox" name="system.inventoryChecks.cup" {{checked system.inventoryChecks.cup}}> Cup</label>
+            <label><input type="checkbox" name="system.inventoryChecks.extraSocks" {{checked system.inventoryChecks.extraSocks}}> Extra socks</label>
+            <label><input type="checkbox" name="system.inventoryChecks.gloves" {{checked system.inventoryChecks.gloves}}> Gloves</label>
+            <label><input type="checkbox" name="system.inventoryChecks.littleBox" {{checked system.inventoryChecks.littleBox}}> Little box</label>
+            <label><input type="checkbox" name="system.inventoryChecks.sack" {{checked system.inventoryChecks.sack}}> Sack (empty)</label>
+            <label><input type="checkbox" name="system.inventoryChecks.sawdust" {{checked system.inventoryChecks.sawdust}}> Sawdust</label>
+            <label><input type="checkbox" name="system.inventoryChecks.tallow" {{checked system.inventoryChecks.tallow}}> Tallow</label>
+            <label><input type="checkbox" name="system.inventoryChecks.twineCord" {{checked system.inventoryChecks.twineCord}}> Twine/cord</label>
+            <label><input type="checkbox" name="system.inventoryChecks.waterskin" {{checked system.inventoryChecks.waterskin}}> Waterskin</label>
+            <label><input type="checkbox" name="system.inventoryChecks.whetstone" {{checked system.inventoryChecks.whetstone}}> Whetstone</label>
+            <label><input type="checkbox" name="system.inventoryChecks.whistle" {{checked system.inventoryChecks.whistle}}> Whistle</label>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="arcana">
+
+      <h2>Arcana</h2>
+
+      <div class="arcana-tab-layout">
+
+        <section class="arcana-column arcana-column-minor">
+
+          <div class="arcana-column-header">
+            <h3>Minor Arcana</h3>
+          </div>
+
+          <div class="arcana-column-divider"></div>
+
+          <div class="arcana-list" data-arcana-type="minor">
+
+            {{#each arcanaGroups.minor}}
+
+              <div class="arcana-card {{#if this.isBack}}showing-back{{/if}}" data-item-id="{{this.id}}">
+
+                <div class="arcana-card-header">
+
+                  <div class="arcana-header-left">
+                    <img class="arcana-item-icon" src="{{this.img}}" alt="{{this.name}}">
+
+                    <button class="arcana-title" type="button">
+                      {{this.displayTitle}}
+                    </button>
+                  </div>
+
+                  <div class="arcana-card-actions">
+
+                    {{#if this.canFlip}}
+                    <button class="arcana-flip icon-button" type="button" title="Flip Card">
+                      ↺
+                    </button>
+                    {{/if}}
+
+                    <button class="arcana-edit icon-button" type="button" title="Edit">
+                      <img src="systems/stonetop/assets/icons/edit-icon.png">
+                    </button>
+
+                    <button class="arcana-delete icon-button" type="button" title="Delete">
+                      <img src="systems/stonetop/assets/icons/delete-icon.png">
+                    </button>
+
+                  </div>
+
+                </div>
+
+                <div class="arcana-card-body">
+
+                  <div class="arcana-face-label">
+                    {{#if this.isBack}}Back{{else}}Front{{/if}}
+                  </div>
+
+                  <div class="arcana-description">
+                    {{{this.descriptionHtml}}}
+                  </div>
+
+                  {{#if this.canRoll}}
+
+                    <label>Roll Stat</label>
+
+                    <select class="arcana-stat-select">
+
+                      <option value="">No Stat / +Nothing</option>
+
+                      <option value="str" {{#if (eq this.system.stat "str")}}selected{{/if}}>STR</option>
+                      <option value="dex" {{#if (eq this.system.stat "dex")}}selected{{/if}}>DEX</option>
+                      <option value="con" {{#if (eq this.system.stat "con")}}selected{{/if}}>CON</option>
+                      <option value="int" {{#if (eq this.system.stat "int")}}selected{{/if}}>INT</option>
+                      <option value="wis" {{#if (eq this.system.stat "wis")}}selected{{/if}}>WIS</option>
+                      <option value="cha" {{#if (eq this.system.stat "cha")}}selected{{/if}}>CHA</option>
+
+                    </select>
+
+                    <button class="arcana-roll" type="button">
+                      Roll
+                    </button>
+
+                  {{else}}
+
+                    <button class="arcana-roll" type="button">
+                      Share
+                    </button>
+
+                  {{/if}}
+
+                </div>
+
+              </div>
+
+            {{/each}}
+
+          </div>
+
+        </section>
+
+        <div class="arcana-divider" aria-hidden="true"></div>
+
+        <section class="arcana-column arcana-column-major">
+
+          <div class="arcana-column-header">
+            <h3>Major Arcana</h3>
+          </div>
+
+          <div class="arcana-column-divider"></div>
+
+          <div class="arcana-list" data-arcana-type="major">
+
+            {{#each arcanaGroups.major}}
+
+              <div class="arcana-card {{#if this.isBack}}showing-back{{/if}}" data-item-id="{{this.id}}">
+
+                <div class="arcana-card-header">
+
+                  <div class="arcana-header-left">
+                    <img class="arcana-item-icon" src="{{this.img}}" alt="{{this.name}}">
+
+                    <button class="arcana-title" type="button">
+                      {{this.displayTitle}}
+                    </button>
+                  </div>
+
+                  <div class="arcana-card-actions">
+
+                    {{#if this.canFlip}}
+                    <button class="arcana-flip icon-button" type="button" title="Flip Card">
+                      ↺
+                    </button>
+                    {{/if}}
+
+                    <button class="arcana-edit icon-button" type="button" title="Edit">
+                      <img src="systems/stonetop/assets/icons/edit-icon.png">
+                    </button>
+
+                    <button class="arcana-delete icon-button" type="button" title="Delete">
+                      <img src="systems/stonetop/assets/icons/delete-icon.png">
+                    </button>
+
+                  </div>
+
+                </div>
+
+                <div class="arcana-card-body">
+
+                  <div class="arcana-face-label">
+                    {{#if this.isBack}}Back{{else}}Front{{/if}}
+                  </div>
+
+                  <div class="arcana-description">
+                    {{{this.descriptionHtml}}}
+                  </div>
+
+                  {{#if this.canRoll}}
+
+                    <label>Roll Stat</label>
+
+                    <select class="arcana-stat-select">
+
+                      <option value="">No Stat / +Nothing</option>
+
+                      <option value="str" {{#if (eq this.system.stat "str")}}selected{{/if}}>STR</option>
+                      <option value="dex" {{#if (eq this.system.stat "dex")}}selected{{/if}}>DEX</option>
+                      <option value="con" {{#if (eq this.system.stat "con")}}selected{{/if}}>CON</option>
+                      <option value="int" {{#if (eq this.system.stat "int")}}selected{{/if}}>INT</option>
+                      <option value="wis" {{#if (eq this.system.stat "wis")}}selected{{/if}}>WIS</option>
+                      <option value="cha" {{#if (eq this.system.stat "cha")}}selected{{/if}}>CHA</option>
+
+                    </select>
+
+                    <button class="arcana-roll" type="button">
+                      Roll
+                    </button>
+
+                  {{else}}
+
+                    <button class="arcana-roll" type="button">
+                      Share
+                    </button>
+
+                  {{/if}}
+
+                </div>
+
+              </div>
+
+            {{/each}}
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="notes">
+
+      <div class="notes-tab-layout">
+
+        <section class="notes-panel">
+
+          <div class="notes-panel-header">
+            <h3>Notes</h3>
+          </div>
+
+          <div class="notes-panel-divider"></div>
+
+          <textarea name="system.notes">{{system.notes}}</textarea>
+
+        </section>
+
+        <div class="notes-divider" aria-hidden="true"></div>
+
+        <section class="notes-panel">
+
+          <div class="notes-panel-header">
+            <h3>Additional Notes</h3>
+          </div>
+
+          <div class="notes-panel-divider"></div>
+
+          <textarea name="system.notes2">{{system.notes2}}</textarea>
+
+        </section>
+
+      </div>
+
+    </div>
+
+
+
+    {{#each insertTabs}}
+
+      <div class="tab" data-group="primary" data-tab="{{this.tabId}}">
+
+        <div class="playbook-panel" style="margin-bottom: 12px;">
+          <div class="playbook-panel-header">
+            <h2>{{this.label}}</h2>
+
+            <div class="playbook-panel-actions">
+              <button class="embedded-item-edit icon-button" type="button" data-item-id="{{this.id}}" title="Edit Insert">
+                <img src="systems/stonetop/assets/icons/edit-icon.png">
+              </button>
+
+              <button class="embedded-item-delete icon-button" type="button" data-item-id="{{this.id}}" title="Delete Insert">
+                <img src="systems/stonetop/assets/icons/delete-icon.png">
+              </button>
+            </div>
+          </div>
+
+          <div class="playbook-panel-divider"></div>
+
+          <div class="playbook-panel-body"></div>
+        </div>
+
+        <div class="playbook-tab-layout">
+
+          <section class="playbook-column">
+
+            {{#each this.leftColumn}}
+
+              <div class="playbook-panel {{#if this.isMove}}move-card insert-move-card{{/if}} {{#if this.isArcana}}arcana-card insert-arcana-card{{/if}} {{#if this.isNpc}}insert-npc-card{{/if}}" data-item-id="{{this.id}}" data-uuid="{{this.uuid}}">
+                <div class="playbook-panel-header {{#if this.isArcana}}arcana-card-header{{/if}}">
+
+                  {{#if this.isMove}}
+                    <div class="move-header-left">
+                      <img class="move-item-icon" src="{{this.img}}" alt="{{this.name}}">
+
+                      <button class="move-title" type="button">
+                        {{this.name}}
+                      </button>
+                    </div>
+
+                    <div class="move-card-actions">
+                      <button class="move-edit insert-move-edit icon-button" type="button" title="Edit">
+                        <img src="systems/stonetop/assets/icons/edit-icon.png">
+                      </button>
+
+                      <button class="move-delete insert-move-delete icon-button" type="button" title="Delete">
+                        <img src="systems/stonetop/assets/icons/delete-icon.png">
+                      </button>
+                    </div>
+                  {{else}}
+                    {{#if this.isArcana}}
+                      <div class="arcana-header-left">
+                        <img class="arcana-item-icon" src="{{this.img}}" alt="{{this.name}}">
+
+                        <button class="insert-arcana-title arcana-title" type="button">
+                          {{this.name}}
+                        </button>
+                      </div>
+
+                      <div class="arcana-card-actions">
+                        {{#if this.canFlip}}
+                          <button class="insert-arcana-flip icon-button" type="button" title="Flip Card">↺</button>
+                        {{/if}}
+
+                        <button class="insert-arcana-edit icon-button" type="button" title="Edit">
+                          <img src="systems/stonetop/assets/icons/edit-icon.png">
+                        </button>
+
+                        <button class="insert-arcana-delete icon-button" type="button" title="Delete">
+                          <img src="systems/stonetop/assets/icons/delete-icon.png">
+                        </button>
+                      </div>
+                    {{else}}
+                      {{#if this.isNpc}}
+                        <section class="npc-top-grid insert-npc-title">
+
+                          <div class="npc-portrait-frame npc-portrait-display">
+                            <img src="{{this.img}}" alt="{{this.name}}">
+                          </div>
+
+                          <div class="npc-identity-block">
+
+                            <div class="npc-name-frame">
+                              <input type="text" value="{{this.name}}" disabled>
+                            </div>
+
+                            <input
+                              class="npc-tags-field"
+                              type="text"
+                              value="{{this.system.tags}}"
+                              placeholder="Tags"
+                              disabled
+                            >
+
+                            <div class="npc-loyalty-row">
+                              <span>Loyalty</span>
+
+                              <div class="npc-loyalty-pips">
+                                {{#each this.loyaltyPips}}
+                                  <input
+                                    type="checkbox"
+                                    class="circle-check npc-loyalty-pip insert-npc-loyalty-pip"
+                                    data-value="{{this.value}}"
+                                    {{#if this.checked}}checked{{/if}}
+                                  >
+                                {{/each}}
+                              </div>
+                            </div>
+
+                          </div>
+
+                        </section>
+                      {{else}}
+                        {{#if this.isTextBox}}
+                          {{#if this.showHeaderCheckbox}}
+                            <div class="text-box-title-row">
+                              <input
+                                type="checkbox"
+                                class="square-description-check text-box-header-check"
+                                data-item-id="{{this.id}}"
+                                {{#if this.headerCheckboxChecked}}checked{{/if}}
+                              >
+                              <h2>{{this.name}}</h2>
+                            </div>
+                          {{else}}
+                            <h2>{{this.name}}</h2>
+                          {{/if}}
+                        {{else}}
+                          <h2>{{this.name}}</h2>
+                        {{/if}}
+                      {{/if}}
+                    {{/if}}
+                  {{/if}}
+
+                </div>
+
+                <div class="playbook-panel-divider"></div>
+
+                <div class="playbook-panel-body {{#if this.isMove}}move-card-body{{/if}} {{#if this.isArcana}}arcana-card-body{{/if}}">
+
+                  {{#if this.isNpc}}
+
+                    <div class="npc-card-sheet insert-npc-card-sheet">
+
+                      <section class="npc-resource-row">
+
+                        <div class="npc-resource npc-damage-resource">
+                          <button class="npc-damage-roll insert-npc-damage-roll" type="button">Damage</button>
+                          <input type="text" value="{{this.system.damage}}" disabled>
+                        </div>
+
+                        <div class="npc-resource npc-armor-resource">
+                          <label>Armor</label>
+                          <input class="insert-npc-field" data-field="system.armor" type="number" step="1" value="{{this.system.armor}}">
+                        </div>
+
+                        <div class="npc-resource npc-hp-resource">
+                          <label>HP</label>
+
+                          <div class="npc-split-field">
+                            <input class="insert-npc-field" data-field="system.hp.value" type="number" step="1" value="{{this.system.hp.value}}">
+                            <span>/</span>
+                            <input class="insert-npc-field" data-field="system.hp.max" type="number" step="1" value="{{this.system.hp.max}}">
+                          </div>
+
+                          <div class="npc-minmax-labels">
+                            <span>Min</span>
+                            <span>Max</span>
+                          </div>
+                        </div>
+
+                      </section>
+
+                      <input
+                        class="npc-weapon-field"
+                        type="text"
+                        value="{{this.system.weapon}}"
+                        placeholder="Weapon"
+                        disabled
+                      >
+
+                      <section class="npc-text-panel">
+                        <label>Instincts</label>
+                        <div class="playbook-text profile-text-rendered">{{{this.instinctHtml}}}</div>
+                      </section>
+
+                      <section class="npc-text-panel">
+                        <label>Cost</label>
+                        <div class="playbook-text profile-text-rendered">{{{this.costHtml}}}</div>
+                      </section>
+
+                      <section class="npc-text-panel">
+                        <label>Description</label>
+                        <div class="playbook-text profile-text-rendered">{{{this.npcDescriptionHtml}}}</div>
+                      </section>
+
+                    </div>
+
+                  {{else}}
+
+                    {{#if this.isArcana}}
+                      <div class="arcana-face-label">
+                        {{#if this.isBack}}Back{{else}}Front{{/if}}
+                      </div>
+                    {{/if}}
+
+                    <div class="playbook-text {{#if this.isMove}}move-description{{/if}} {{#if this.isArcana}}arcana-description{{/if}}">
+                      {{{this.descriptionHtml}}}
+                    </div>
+
+                  {{#if this.isMove}}
+
+                    {{#if this.canRoll}}
+                      <label>Roll Stat</label>
+
+                      <select class="move-stat-select insert-move-stat-select">
+                        <option value="">No Stat / +Nothing</option>
+                        <option value="str" {{#if (eq this.system.stat "str")}}selected{{/if}}>STR</option>
+                        <option value="dex" {{#if (eq this.system.stat "dex")}}selected{{/if}}>DEX</option>
+                        <option value="con" {{#if (eq this.system.stat "con")}}selected{{/if}}>CON</option>
+                        <option value="int" {{#if (eq this.system.stat "int")}}selected{{/if}}>INT</option>
+                        <option value="wis" {{#if (eq this.system.stat "wis")}}selected{{/if}}>WIS</option>
+                        <option value="cha" {{#if (eq this.system.stat "cha")}}selected{{/if}}>CHA</option>
+                      </select>
+
+                      <button class="move-roll insert-move-roll" type="button">Roll</button>
+                    {{else}}
+                      <button class="move-roll insert-move-roll" type="button">Share</button>
+                    {{/if}}
+
+                  {{/if}}
+
+                  {{#if this.isArcana}}
+
+                    {{#if this.canRoll}}
+                      <label>Roll Stat</label>
+
+                      <select class="arcana-stat-select insert-arcana-stat-select">
+                        <option value="">No Stat / +Nothing</option>
+                        <option value="str" {{#if (eq this.system.stat "str")}}selected{{/if}}>STR</option>
+                        <option value="dex" {{#if (eq this.system.stat "dex")}}selected{{/if}}>DEX</option>
+                        <option value="con" {{#if (eq this.system.stat "con")}}selected{{/if}}>CON</option>
+                        <option value="int" {{#if (eq this.system.stat "int")}}selected{{/if}}>INT</option>
+                        <option value="wis" {{#if (eq this.system.stat "wis")}}selected{{/if}}>WIS</option>
+                        <option value="cha" {{#if (eq this.system.stat "cha")}}selected{{/if}}>CHA</option>
+                      </select>
+
+                      <button class="arcana-roll insert-arcana-roll" type="button">Roll</button>
+                    {{else}}
+                      <button class="arcana-roll insert-arcana-roll" type="button">Share</button>
+                    {{/if}}
+
+                  {{/if}}
+
+                  {{/if}}
+
+                </div>
+              </div>
+
+            {{else}}
+
+              <div class="playbook-panel">
+                <div class="playbook-panel-header">
+                  <h2>Left Column</h2>
+                </div>
+
+                <div class="playbook-panel-divider"></div>
+
+                <div class="playbook-panel-body">
+                  <p>No entries.</p>
+                </div>
+              </div>
+
+            {{/each}}
+
+          </section>
+
+          <div class="playbook-divider"></div>
+
+          <section class="playbook-column">
+
+            {{#each this.rightColumn}}
+
+              <div class="playbook-panel {{#if this.isMove}}move-card insert-move-card{{/if}} {{#if this.isArcana}}arcana-card insert-arcana-card{{/if}} {{#if this.isNpc}}insert-npc-card{{/if}}" data-item-id="{{this.id}}" data-uuid="{{this.uuid}}">
+                <div class="playbook-panel-header {{#if this.isArcana}}arcana-card-header{{/if}}">
+
+                  {{#if this.isMove}}
+                    <div class="move-header-left">
+                      <img class="move-item-icon" src="{{this.img}}" alt="{{this.name}}">
+
+                      <button class="move-title" type="button">
+                        {{this.name}}
+                      </button>
+                    </div>
+
+                    <div class="move-card-actions">
+                      <button class="move-edit insert-move-edit icon-button" type="button" title="Edit">
+                        <img src="systems/stonetop/assets/icons/edit-icon.png">
+                      </button>
+
+                      <button class="move-delete insert-move-delete icon-button" type="button" title="Delete">
+                        <img src="systems/stonetop/assets/icons/delete-icon.png">
+                      </button>
+                    </div>
+                  {{else}}
+                    {{#if this.isArcana}}
+                      <div class="arcana-header-left">
+                        <img class="arcana-item-icon" src="{{this.img}}" alt="{{this.name}}">
+
+                        <button class="insert-arcana-title arcana-title" type="button">
+                          {{this.name}}
+                        </button>
+                      </div>
+
+                      <div class="arcana-card-actions">
+                        {{#if this.canFlip}}
+                          <button class="insert-arcana-flip icon-button" type="button" title="Flip Card">↺</button>
+                        {{/if}}
+
+                        <button class="insert-arcana-edit icon-button" type="button" title="Edit">
+                          <img src="systems/stonetop/assets/icons/edit-icon.png">
+                        </button>
+
+                        <button class="insert-arcana-delete icon-button" type="button" title="Delete">
+                          <img src="systems/stonetop/assets/icons/delete-icon.png">
+                        </button>
+                      </div>
+                    {{else}}
+                      {{#if this.isNpc}}
+                        <section class="npc-top-grid insert-npc-title">
+
+                          <div class="npc-portrait-frame npc-portrait-display">
+                            <img src="{{this.img}}" alt="{{this.name}}">
+                          </div>
+
+                          <div class="npc-identity-block">
+
+                            <div class="npc-name-frame">
+                              <input type="text" value="{{this.name}}" disabled>
+                            </div>
+
+                            <input
+                              class="npc-tags-field"
+                              type="text"
+                              value="{{this.system.tags}}"
+                              placeholder="Tags"
+                              disabled
+                            >
+
+                            <div class="npc-loyalty-row">
+                              <span>Loyalty</span>
+
+                              <div class="npc-loyalty-pips">
+                                {{#each this.loyaltyPips}}
+                                  <input
+                                    type="checkbox"
+                                    class="circle-check npc-loyalty-pip insert-npc-loyalty-pip"
+                                    data-value="{{this.value}}"
+                                    {{#if this.checked}}checked{{/if}}
+                                  >
+                                {{/each}}
+                              </div>
+                            </div>
+
+                          </div>
+
+                        </section>
+                      {{else}}
+                        {{#if this.isTextBox}}
+                          {{#if this.showHeaderCheckbox}}
+                            <div class="text-box-title-row">
+                              <input
+                                type="checkbox"
+                                class="square-description-check text-box-header-check"
+                                data-item-id="{{this.id}}"
+                                {{#if this.headerCheckboxChecked}}checked{{/if}}
+                              >
+                              <h2>{{this.name}}</h2>
+                            </div>
+                          {{else}}
+                            <h2>{{this.name}}</h2>
+                          {{/if}}
+                        {{else}}
+                          <h2>{{this.name}}</h2>
+                        {{/if}}
+                      {{/if}}
+                    {{/if}}
+                  {{/if}}
+
+                </div>
+
+                <div class="playbook-panel-divider"></div>
+
+                <div class="playbook-panel-body {{#if this.isMove}}move-card-body{{/if}} {{#if this.isArcana}}arcana-card-body{{/if}}">
+
+                  {{#if this.isNpc}}
+
+                    <div class="npc-card-sheet insert-npc-card-sheet">
+
+                      <section class="npc-resource-row">
+
+                        <div class="npc-resource npc-damage-resource">
+                          <button class="npc-damage-roll insert-npc-damage-roll" type="button">Damage</button>
+                          <input type="text" value="{{this.system.damage}}" disabled>
+                        </div>
+
+                        <div class="npc-resource npc-armor-resource">
+                          <label>Armor</label>
+                          <input class="insert-npc-field" data-field="system.armor" type="number" step="1" value="{{this.system.armor}}">
+                        </div>
+
+                        <div class="npc-resource npc-hp-resource">
+                          <label>HP</label>
+
+                          <div class="npc-split-field">
+                            <input class="insert-npc-field" data-field="system.hp.value" type="number" step="1" value="{{this.system.hp.value}}">
+                            <span>/</span>
+                            <input class="insert-npc-field" data-field="system.hp.max" type="number" step="1" value="{{this.system.hp.max}}">
+                          </div>
+
+                          <div class="npc-minmax-labels">
+                            <span>Min</span>
+                            <span>Max</span>
+                          </div>
+                        </div>
+
+                      </section>
+
+                      <input
+                        class="npc-weapon-field"
+                        type="text"
+                        value="{{this.system.weapon}}"
+                        placeholder="Weapon"
+                        disabled
+                      >
+
+                      <section class="npc-text-panel">
+                        <label>Instincts</label>
+                        <div class="playbook-text profile-text-rendered">{{{this.instinctHtml}}}</div>
+                      </section>
+
+                      <section class="npc-text-panel">
+                        <label>Cost</label>
+                        <div class="playbook-text profile-text-rendered">{{{this.costHtml}}}</div>
+                      </section>
+
+                      <section class="npc-text-panel">
+                        <label>Description</label>
+                        <div class="playbook-text profile-text-rendered">{{{this.npcDescriptionHtml}}}</div>
+                      </section>
+
+                    </div>
+
+                  {{else}}
+
+                    {{#if this.isArcana}}
+                      <div class="arcana-face-label">
+                        {{#if this.isBack}}Back{{else}}Front{{/if}}
+                      </div>
+                    {{/if}}
+
+                    <div class="playbook-text {{#if this.isMove}}move-description{{/if}} {{#if this.isArcana}}arcana-description{{/if}}">
+                      {{{this.descriptionHtml}}}
+                    </div>
+
+                  {{#if this.isMove}}
+
+                    {{#if this.canRoll}}
+                      <label>Roll Stat</label>
+
+                      <select class="move-stat-select insert-move-stat-select">
+                        <option value="">No Stat / +Nothing</option>
+                        <option value="str" {{#if (eq this.system.stat "str")}}selected{{/if}}>STR</option>
+                        <option value="dex" {{#if (eq this.system.stat "dex")}}selected{{/if}}>DEX</option>
+                        <option value="con" {{#if (eq this.system.stat "con")}}selected{{/if}}>CON</option>
+                        <option value="int" {{#if (eq this.system.stat "int")}}selected{{/if}}>INT</option>
+                        <option value="wis" {{#if (eq this.system.stat "wis")}}selected{{/if}}>WIS</option>
+                        <option value="cha" {{#if (eq this.system.stat "cha")}}selected{{/if}}>CHA</option>
+                      </select>
+
+                      <button class="move-roll insert-move-roll" type="button">Roll</button>
+                    {{else}}
+                      <button class="move-roll insert-move-roll" type="button">Share</button>
+                    {{/if}}
+
+                  {{/if}}
+
+                  {{#if this.isArcana}}
+
+                    {{#if this.canRoll}}
+                      <label>Roll Stat</label>
+
+                      <select class="arcana-stat-select insert-arcana-stat-select">
+                        <option value="">No Stat / +Nothing</option>
+                        <option value="str" {{#if (eq this.system.stat "str")}}selected{{/if}}>STR</option>
+                        <option value="dex" {{#if (eq this.system.stat "dex")}}selected{{/if}}>DEX</option>
+                        <option value="con" {{#if (eq this.system.stat "con")}}selected{{/if}}>CON</option>
+                        <option value="int" {{#if (eq this.system.stat "int")}}selected{{/if}}>INT</option>
+                        <option value="wis" {{#if (eq this.system.stat "wis")}}selected{{/if}}>WIS</option>
+                        <option value="cha" {{#if (eq this.system.stat "cha")}}selected{{/if}}>CHA</option>
+                      </select>
+
+                      <button class="arcana-roll insert-arcana-roll" type="button">Roll</button>
+                    {{else}}
+                      <button class="arcana-roll insert-arcana-roll" type="button">Share</button>
+                    {{/if}}
+
+                  {{/if}}
+
+                  {{/if}}
+
+                </div>
+              </div>
+
+            {{else}}
+
+              <div class="playbook-panel">
+                <div class="playbook-panel-header">
+                  <h2>Right Column</h2>
+                </div>
+
+                <div class="playbook-panel-divider"></div>
+
+                <div class="playbook-panel-body">
+                  <p>No entries.</p>
+                </div>
+              </div>
+
+            {{/each}}
+
+          </section>
+
+        </div>
+
+      </div>
+
+    {{/each}}
+
+  </section>
+
+</form>

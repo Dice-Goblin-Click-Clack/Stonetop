@@ -1,0 +1,285 @@
+{
+  "Actor": {
+    "types": [
+      "character",
+      "steading",
+      "npc"
+    ],
+    "templates": {
+      "base": {
+        "description": "",
+        "notes": ""
+      }
+    },
+    "character": {
+      "templates": [
+        "base"
+      ],
+      "name": "",
+      "playbook": "",
+      "background": "",
+      "level": 1,
+      "xp": {
+        "value": 0
+      },
+      "hp": {
+        "value": 18,
+        "max": 18
+      },
+      "armor": 0,
+      "damage": "d6",
+      "stats": {
+        "str": 0,
+        "dex": 0,
+        "con": 0,
+        "int": 0,
+        "wis": 0,
+        "cha": 0
+      },
+      "debilities": {
+        "weakened": false,
+        "dazed": false,
+        "miserable": false
+      },
+      "inventory": "",
+      "possessions": "",
+      "otherThings": "",
+      "stock": {
+        "value": 0,
+        "max": 3
+      },
+      "inventoryChecks": {},
+      "builderChoices": {
+        "applied": {}
+      }
+    },
+    "steading": {
+      "templates": [
+        "base"
+      ],
+      "name": "Stonetop",
+      "population": 0,
+      "prosperity": 0,
+      "defenses": 0,
+      "assets": "- A pair of hardy draft horses, followers (large, powerful, keen-nosed, hardy): HP 10 each; Damage d6+3 (hand, close, forceful); Instinct: to panic; Cost: care & grooming.\n- A pair of horse-drawn plows, iron\n- A pair of carts (plus horse harness)\n- A wagon (plus horse harness)",
+      "problems": "",
+      "seasonNotes": "",
+      "fortunes": 1,
+      "surplus": 1,
+      "size": 0,
+      "debilities": {
+        "diminished": false,
+        "lacking": false,
+        "malcontent": false
+      },
+      "resources": "- Farming (beans, potatoes, oats, barley)\n- Hunting/trapping (fur, meat, hides)\n- Distilling (whisky)\n- Stone (collected from the Old Wall)\n- Cistern (filled with rain, snow)\n- Tradesfolk (midwife, potter, publican, smith, tanner)\n- Trade: Gordin’s Delve (metal, tools)\n- Trade: Marshedge (textiles, herbs, glass)",
+      "defenseNotes": "- Village militia\n- The Ringwall (low, stone)\n- 3 watchtowers\n- Spears & shields in every home\n- Some bows",
+      "assetCoinage": {
+        "silverPurses": 0,
+        "silverHandfuls": 0,
+        "silverCoins": 0,
+        "goldPurses": 0,
+        "goldHandfuls": 0,
+        "goldCoins": 0
+      },
+      "residentsRoster": {
+        "rows": [
+          {
+            "name": "",
+            "occupation": "",
+            "traits": ""
+          }
+        ]
+      },
+      "residentNames": "Aderyn, Aeronwen, Afanen, Afon, Alun,\nAndras, Aneirin, Awstin, Bedwyr,\nBerwyn, Betrys, Braith, Briallen,\nBronwen, Bryn, Cadi, Cadoc, Cadwygan,\nCaron, Cefin, Ceinwen, Ceridwyn, Cerys,\nColwyn, Deiniol, Dilwen, Dylis, Eifion,\nEirlys, Eluned, Emrys, Enfys, Eurwen,\nGaenor, Garet, Gethin, Glyndir, Heledd,\nHywel, Ifan, Iorwerth, Iwan, Lewela,\nLeuca, Linos, Mado, Maldwyn, Malon,\nMared, Marged, Martyn, Meirion,\nMenwen, Mererid, Neirin, Nia, Ofydd,\nOlwyn, Owain, Padrig, Parry, Pryce,\nPryder, Rheinal, Rhisiart, Rhosyn,\nRydderch, Sawyl, Siana, Sioned, Talfryn,\nTegid, Tiwlip, Tomos, Tudyr,\nWinifred, Yorath",
+      "npcTraits": "all thumbs\nambitious\nbeloved by everyone\nbeautiful singing voice\nbest cook\nbest weaver\nblind\nbraved the Ruined Tower\ncautious\ncheery\nchronic cough\ncomplains too much\ncowardly\ncraves recognition\ncurious\ndallied with the Fae years ago\ndeaf\ndesperately wants a child\ndistills the best whisky\ndoesn’t pull their weight\ndrunkard\neagle-eye\nfearless\nfoundling\ngathers herbs from the Wood\ngets the best deals\ngifted storyteller\ngods-fearing\ngood with children\nhappy-go-lucky\nhas a beef with Marshedge\nhas a good heart\nhas a lot of backbone\nhas a wandering eye\nhas a way with animals\nhas Fae blood in their veins\nhas just terrible luck\nhas lost their nerve\nhas no respect for their elders\nhas terrible nightmares\nhas the most children\nhas their head in the clouds\nhates the Hillfolk\nhears voices\nhumorless\nimmaculate appearance\njealous\njust got married\nkeeps to themselves\nknows all the gossip\nlame\nlikes to hurt things\nlived among the Forest Folk\nlost all their children\nlovesick\nloves their dogs\nloyal friend\nmost handsome\nmoved here recently\nmust approve any marriages\nmute\nnot afraid of deep water\nnot too bright\noldest\norphan\noverprotective\nprettiest\nprideful\nreckless\nrefuses to marry\nresents their lot in life\nruns everywhere\nsensitive\nsimpleton\nslew many crinwin\nstoic\nstubborn\nsuffers from fits\nswears they met the Pale Hunter\ntells the best jokes\ntender-hearted\ntends the Gods’ Pavilion\ntends to the sick & injured\ntouched\nvery strong\nwants to have kids\nwell-read\nwell-traveled\nwidowed\nwill eat anything",
+      "neighborPlaces": [
+        {
+          "notes": "",
+          "names": "Abben, Ailen, Brin, Brogan, Catlin, Coln, Daedre, Dermos, Ennin, Finnen, Gilor, Isbeal, Kiran, Lile, Lim, Mathuin, Mirne, Noren, Owan, Ragan, Renan, Seadha, Seann, Tierney, Ulliam"
+        },
+        {
+          "notes": "",
+          "names": "Choose from other lists; everyone comes to Gordin’s Delve from somewhere else."
+        },
+        {
+          "notes": "",
+          "names": "Adm, Blej, Cirl, Davth, Elst, Gwilm, Gwenl, Henri, Ines, Jenfir, Jown, Juda, Kiln, Laurl, Loic, Merrn, Maikl, Nanzl, Nolwn, Quent, Reegn, Ropr, Sabi, Stren, Yanz"
+        },
+        {
+          "notes": "",
+          "names": "Agatte, Aref, Alix, Baraz, Canan, Darya, Demetra, Elene, Elios, Fotios, Faruza, Golza, Iasos, Iona, Kyriakos, Marika, Maayan, Osher, Natasa, Nivola, Rinat, Stamat, Thecla, Zhaleh"
+        },
+        {
+          "notes": "",
+          "names": ""
+        }
+      ],
+      "placesOfInterest": "",
+      "excludedContent": "",
+      "veiledContent": "",
+      "specialHandling": "",
+      "homefrontMoveColumns": {
+        "left": [],
+        "middle": [],
+        "right": []
+      }
+    },
+    "npc": {
+      "templates": [
+        "base"
+      ],
+      "tags": "",
+      "loyalty": {
+        "value": 0,
+        "max": 3
+      },
+      "hp": {
+        "value": 12,
+        "max": 12
+      },
+      "armor": 0,
+      "damage": "d6",
+      "weapon": "",
+      "instinct": "",
+      "cost": "",
+      "description": ""
+    }
+  },
+  "Item": {
+    "types": [
+      "playbook",
+      "move",
+      "arcana",
+      "insert",
+      "profileText",
+      "background",
+      "textBox",
+      "npc",
+      "steadingImprovement"
+    ],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "playbook": {
+      "templates": [
+        "base"
+      ],
+      "autoAppearance": null,
+      "autoOrigin": null,
+      "autoInsert": null,
+      "choiceGroups": []
+    },
+    "profileText": {
+      "templates": [
+        "base"
+      ],
+      "profileSlot": "instinct",
+      "text": ""
+    },
+    "background": {
+      "templates": [
+        "base"
+      ],
+      "grantedMoves": [],
+      "moveChoices": [],
+      "grantedInserts": [],
+      "notes": "",
+      "autoMoves": [],
+      "autoInsert": null,
+      "choiceGroups": []
+    },
+    "textBox": {
+      "templates": [
+        "base"
+      ],
+      "header": "",
+      "text": "",
+      "tab": "",
+      "column": "left",
+      "showHeaderCheckbox": false,
+      "headerCheckboxChecked": false
+    },
+    "move": {
+      "templates": [
+        "base"
+      ],
+      "stat": "",
+      "trigger": "",
+      "result10": "",
+      "result79": "",
+      "result6": "",
+      "category": "player",
+      "usesRoll": true,
+      "showPips": false,
+      "maxPips": 0,
+      "pips": {},
+      "descriptionChecks": {}
+    },
+    "arcana": {
+      "templates": [
+        "base"
+      ],
+      "arcanaType": "minor",
+      "frontTitle": "",
+      "frontText": "",
+      "backTitle": "",
+      "backText": "",
+      "activeSide": "front",
+      "stat": "",
+      "result10": "",
+      "result79": "",
+      "result6": "",
+      "usesRoll": false,
+      "showPips": false,
+      "maxPips": 0,
+      "pips": {},
+      "descriptionChecks": {},
+      "revealBack": false
+    },
+    "insert": {
+      "templates": [
+        "base"
+      ],
+      "tabId": "",
+      "tabLabel": "",
+      "leftColumn": [],
+      "rightColumn": [],
+      "allowDelete": true
+    },
+    "steadingImprovement": {
+      "templates": [
+        "base"
+      ],
+      "header": "",
+      "text": "",
+      "tab": "",
+      "column": "left",
+      "showHeaderCheckbox": true,
+      "headerCheckboxChecked": false
+    },
+    "npc": {
+      "templates": [
+        "base"
+      ],
+      "tags": "",
+      "loyalty": {
+        "value": 0,
+        "max": 3
+      },
+      "hp": {
+        "value": 12,
+        "max": 12
+      },
+      "armor": 0,
+      "damage": "d6",
+      "weapon": "",
+      "instinct": "",
+      "cost": "",
+      "description": "",
+      "descriptionChecks": {}
+    }
+  }
+}

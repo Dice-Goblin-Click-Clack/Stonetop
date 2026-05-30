@@ -1,0 +1,636 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+  {{#unless (eq item.type "npc")}}
+
+  <header class="sheet-header item-top">
+
+    <button class="item-image-picker" type="button" title="Change Item Image">
+      <img src="{{item.img}}" alt="{{item.name}}">
+    </button>
+
+    <div class="item-title-block">
+      <h1>
+        <input name="name" type="text" value="{{item.name}}" placeholder="Item Name">
+      </h1>
+
+      <p>Type: {{item.type}}</p>
+    </div>
+
+  </header>
+
+  {{/unless}}
+
+  {{#if (eq item.type "npc")}}
+
+    <div class="npc-card-sheet">
+
+      <section class="npc-top-grid">
+
+        <div class="npc-portrait-frame" title="Change NPC image">
+          <img src="{{item.img}}" alt="{{item.name}}">
+        </div>
+
+        <div class="npc-identity-block">
+
+          <div class="npc-name-frame">
+            <input name="name" type="text" value="{{item.name}}" placeholder="Name">
+          </div>
+
+          <input
+            class="npc-tags-field"
+            name="system.tags"
+            type="text"
+            value="{{system.tags}}"
+            placeholder="Tags"
+          >
+
+          <div class="npc-loyalty-row">
+            <span>Loyalty</span>
+
+            <div class="npc-loyalty-pips">
+              {{#each loyaltyPips}}
+                <input
+                  type="checkbox"
+                  class="circle-check npc-loyalty-pip"
+                  data-value="{{this.value}}"
+                  {{#if this.checked}}checked{{/if}}
+                >
+              {{/each}}
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="npc-resource-row">
+
+        <div class="npc-resource npc-damage-resource">
+          <button class="npc-damage-roll" type="button">Damage</button>
+          <input name="system.damage" type="text" value="{{system.damage}}">
+        </div>
+
+        <div class="npc-resource npc-armor-resource">
+          <label>Armor</label>
+          <input name="system.armor" type="number" step="1" value="{{system.armor}}">
+        </div>
+
+        <div class="npc-resource npc-hp-resource">
+          <label>HP</label>
+
+          <div class="npc-split-field">
+            <input name="system.hp.value" type="number" step="1" value="{{system.hp.value}}">
+            <span>/</span>
+            <input name="system.hp.max" type="number" step="1" value="{{system.hp.max}}">
+          </div>
+
+          <div class="npc-minmax-labels">
+            <span>Min</span>
+            <span>Max</span>
+          </div>
+        </div>
+
+      </section>
+
+      <input
+        class="npc-weapon-field"
+        name="system.weapon"
+        type="text"
+        value="{{system.weapon}}"
+        placeholder="Weapon"
+      >
+
+      <section class="npc-text-panel">
+        <label>Instincts</label>
+        <textarea name="system.instinct">{{system.instinct}}</textarea>
+      </section>
+
+      <section class="npc-text-panel">
+        <label>Cost</label>
+        <textarea name="system.cost">{{system.cost}}</textarea>
+      </section>
+
+      <section class="npc-text-panel">
+        <label>Description</label>
+        <textarea name="system.description">{{system.description}}</textarea>
+      </section>
+
+    </div>
+
+  {{/if}}
+
+  {{#if (eq item.type "move")}}
+
+    <h2>Move</h2>
+
+    <label>Move Category</label>
+    <select name="system.category">
+      <option value="player" {{#if (eq system.category "player")}}selected{{/if}}>Player Moves</option>
+      <option value="follower" {{#if (eq system.category "follower")}}selected{{/if}}>Follower Moves</option>
+      <option value="special" {{#if (eq system.category "special")}}selected{{/if}}>Special Moves</option>
+      <option value="playbook" {{#if (eq system.category "playbook")}}selected{{/if}}>Playbook Moves</option>
+      <option value="expedition" {{#if (eq system.category "expedition")}}selected{{/if}}>Expedition Moves</option>
+      <option value="homefront" {{#if (eq system.category "homefront")}}selected{{/if}}>Homefront Moves</option>
+    </select>
+
+    <label>Description</label>
+    <textarea name="system.description">{{system.description}}</textarea>
+
+    <label>
+      <input type="checkbox" name="system.usesRoll" {{checked system.usesRoll}}>
+      Uses Roll
+    </label>
+
+    <label>Default Roll Stat</label>
+    <select name="system.stat">
+      <option value="">No Default / Choose On Roll</option>
+      <option value="str" {{#if (eq system.stat "str")}}selected{{/if}}>STR</option>
+      <option value="dex" {{#if (eq system.stat "dex")}}selected{{/if}}>DEX</option>
+      <option value="con" {{#if (eq system.stat "con")}}selected{{/if}}>CON</option>
+      <option value="int" {{#if (eq system.stat "int")}}selected{{/if}}>INT</option>
+      <option value="wis" {{#if (eq system.stat "wis")}}selected{{/if}}>WIS</option>
+      <option value="cha" {{#if (eq system.stat "cha")}}selected{{/if}}>CHA</option>
+      <option value="fortune" {{#if (eq system.stat "fortune")}}selected{{/if}}>Fortune</option>
+      <option value="surplus" {{#if (eq system.stat "surplus")}}selected{{/if}}>Surplus</option>
+      <option value="size" {{#if (eq system.stat "size")}}selected{{/if}}>Size</option>
+      <option value="population" {{#if (eq system.stat "population")}}selected{{/if}}>Population</option>
+      <option value="prosperity" {{#if (eq system.stat "prosperity")}}selected{{/if}}>Prosperity</option>
+      <option value="defenses" {{#if (eq system.stat "defenses")}}selected{{/if}}>Defenses</option>
+    </select>
+
+    <label>
+      <input type="checkbox" name="system.showPips" {{checked system.showPips}}>
+      Show Advancement Pips
+    </label>
+
+    <label>Maximum Pips</label>
+    <select name="system.maxPips">
+      <option value="0" {{#if (eq maxPips 0)}}selected{{/if}}>0</option>
+      <option value="1" {{#if (eq maxPips 1)}}selected{{/if}}>1</option>
+      <option value="2" {{#if (eq maxPips 2)}}selected{{/if}}>2</option>
+      <option value="3" {{#if (eq maxPips 3)}}selected{{/if}}>3</option>
+      <option value="4" {{#if (eq maxPips 4)}}selected{{/if}}>4</option>
+      <option value="5" {{#if (eq maxPips 5)}}selected{{/if}}>5</option>
+      <option value="6" {{#if (eq maxPips 6)}}selected{{/if}}>6</option>
+    </select>
+
+    {{#if system.usesRoll}}
+      <label>10+</label>
+      <textarea name="system.result10">{{system.result10}}</textarea>
+
+      <label>7-9</label>
+      <textarea name="system.result79">{{system.result79}}</textarea>
+
+      <label>6-</label>
+      <textarea name="system.result6">{{system.result6}}</textarea>
+    {{/if}}
+
+  {{/if}}
+
+  {{#if (eq item.type "profileText")}}
+
+    <h2>Profile Text</h2>
+
+    <label>Profile Slot</label>
+    <select name="system.profileSlot">
+      <option value="instinct" {{#if (eq system.profileSlot "instinct")}}selected{{/if}}>Instinct</option>
+      <option value="appearance" {{#if (eq system.profileSlot "appearance")}}selected{{/if}}>Appearance</option>
+      <option value="origin" {{#if (eq system.profileSlot "origin")}}selected{{/if}}>Place of Origin & Name</option>
+    </select>
+
+    <label>Text</label>
+    <textarea name="system.text">{{system.text}}</textarea>
+
+  {{/if}}
+
+  {{#if (eq item.type "background")}}
+
+    <h2>Background</h2>
+
+    <label>Description</label>
+    <textarea name="system.description">{{system.description}}</textarea>
+
+    <label>Notes</label>
+    <textarea name="system.notes">{{system.notes}}</textarea>
+
+    <hr>
+
+    <h3>Builder: Auto Populate</h3>
+
+    <section class="builder-drop-zone" data-builder-field="autoMoves" data-builder-mode="array" data-builder-accept="move" style="border: 1px solid black; padding: 8px; min-height: 90px; margin-bottom: 8px;">
+      <h4 style="margin-top: 0;">Auto Moves</h4>
+
+      {{#if system.autoMoves.length}}
+        {{#each system.autoMoves}}
+          <div style="display: grid; grid-template-columns: 28px 1fr auto; gap: 6px; align-items: center; border: 1px solid black; padding: 4px; margin-bottom: 4px;">
+            <img src="{{this.img}}" alt="{{this.name}}" style="width: 28px; height: 28px; object-fit: cover; border: none;">
+            <div>
+              <strong>{{this.name}}</strong><br>
+              <small>{{this.type}}</small>
+            </div>
+            <div style="display: flex; gap: 3px;">
+              <button class="builder-entry-open" type="button" data-uuid="{{this.uuid}}" title="Open">✎</button>
+              <button class="builder-entry-remove" type="button" data-builder-field="autoMoves" data-builder-mode="array" data-index="{{@index}}" title="Remove">×</button>
+            </div>
+          </div>
+        {{/each}}
+      {{else}}
+        <p style="font-style: italic; opacity: 0.75;">Drop move items here. Empty means no auto moves.</p>
+      {{/if}}
+    </section>
+
+    <section class="builder-drop-zone" data-builder-field="autoInsert" data-builder-mode="single" data-builder-accept="insert" style="border: 1px solid black; padding: 8px; min-height: 70px; margin-bottom: 8px;">
+      <h4 style="margin-top: 0;">Auto Insert</h4>
+
+      {{#if system.autoInsert.uuid}}
+        <div style="display: grid; grid-template-columns: 28px 1fr auto; gap: 6px; align-items: center; border: 1px solid black; padding: 4px;">
+          <img src="{{system.autoInsert.img}}" alt="{{system.autoInsert.name}}" style="width: 28px; height: 28px; object-fit: cover; border: none;">
+          <div>
+            <strong>{{system.autoInsert.name}}</strong><br>
+            <small>{{system.autoInsert.type}}</small>
+          </div>
+          <div style="display: flex; gap: 3px;">
+            <button class="builder-entry-open" type="button" data-uuid="{{system.autoInsert.uuid}}" title="Open">✎</button>
+            <button class="builder-entry-remove" type="button" data-builder-field="autoInsert" data-builder-mode="single" title="Remove">×</button>
+          </div>
+        </div>
+      {{else}}
+        <p style="font-style: italic; opacity: 0.75;">Drop one insert item here. Empty means no auto insert.</p>
+      {{/if}}
+    </section>
+
+    <h3>Builder: Choice Groups</h3>
+
+    {{#if system.choiceGroups.length}}
+      {{#each system.choiceGroups}}
+        <section class="builder-choice-group" data-group-index="{{@index}}" style="border: 1px solid black; padding: 8px; margin-bottom: 8px;">
+          <div style="display: grid; grid-template-columns: 1fr 150px auto; gap: 6px; align-items: end;">
+            <label>
+              Choice Label
+              <input type="text" class="builder-choice-label" data-group-index="{{@index}}" value="{{this.label}}">
+            </label>
+
+            <label>
+              Allowed Type
+              <select class="builder-choice-type" data-group-index="{{@index}}">
+                <option value="move" {{#if (eq this.allowedType "move")}}selected{{/if}}>Move</option>
+                <option value="arcana" {{#if (eq this.allowedType "arcana")}}selected{{/if}}>Arcana</option>
+                <option value="background" {{#if (eq this.allowedType "background")}}selected{{/if}}>Background</option>
+                <option value="profileText" {{#if (eq this.allowedType "profileText")}}selected{{/if}}>Profile Text</option>
+                <option value="insert" {{#if (eq this.allowedType "insert")}}selected{{/if}}>Insert</option>
+              </select>
+            </label>
+
+            <button class="builder-choice-remove" type="button" data-group-index="{{@index}}">Remove Group</button>
+          </div>
+
+          <div class="builder-drop-zone" data-builder-field="choiceGroups" data-builder-mode="choice" data-group-index="{{@index}}" data-builder-accept="{{this.allowedType}}" style="border: 1px dashed black; padding: 8px; min-height: 70px; margin-top: 8px;">
+            {{#if this.choices.length}}
+              {{#each this.choices}}
+                <div style="display: grid; grid-template-columns: 28px 1fr auto; gap: 6px; align-items: center; border: 1px solid black; padding: 4px; margin-bottom: 4px;">
+                  <img src="{{this.img}}" alt="{{this.name}}" style="width: 28px; height: 28px; object-fit: cover; border: none;">
+                  <div>
+                    <strong>{{this.name}}</strong><br>
+                    <small>{{this.type}}</small>
+                  </div>
+                  <div style="display: flex; gap: 3px;">
+                    <button class="builder-entry-open" type="button" data-uuid="{{this.uuid}}" title="Open">✎</button>
+                    <button class="builder-entry-remove" type="button" data-builder-field="choiceGroups" data-builder-mode="choice" data-group-index="{{@../index}}" data-index="{{@index}}" title="Remove">×</button>
+                  </div>
+                </div>
+              {{/each}}
+            {{else}}
+              <p style="font-style: italic; opacity: 0.75;">Drop allowed items here. Empty groups are ignored later.</p>
+            {{/if}}
+          </div>
+        </section>
+      {{/each}}
+    {{else}}
+      <p style="font-style: italic; opacity: 0.75;">No choice groups yet.</p>
+    {{/if}}
+
+    <button class="builder-choice-add" type="button">Add Choice Group</button>
+
+  {{/if}}
+
+  {{#if (eq item.type "arcana")}}
+
+    <h2>Arcana</h2>
+
+    {{#if @root.editable}}
+      <div class="form-group">
+        <label>
+          <input type="checkbox" name="system.usesRoll" {{checked system.usesRoll}}>
+          Uses Roll (GM Only)
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <input type="checkbox" name="system.revealBack" {{checked system.revealBack}}>
+          Reveal Back Side To Players (GM Only)
+        </label>
+      </div>
+    {{/if}}
+
+    <label>Arcana Type</label>
+    <select name="system.arcanaType">
+      <option value="minor" {{#if (eq system.arcanaType "minor")}}selected{{/if}}>Minor Arcana</option>
+      <option value="major" {{#if (eq system.arcanaType "major")}}selected{{/if}}>Major Arcana</option>
+    </select>
+
+    <label>Front Title</label>
+    <input type="text" name="system.frontTitle" value="{{system.frontTitle}}">
+
+    <label>Front Text</label>
+    <textarea name="system.frontText">{{system.frontText}}</textarea>
+
+    <label>Back Title</label>
+    <input type="text" name="system.backTitle" value="{{system.backTitle}}">
+
+    <label>Back Text</label>
+    <textarea name="system.backText">{{system.backText}}</textarea>
+
+    <label>
+      <input type="checkbox" name="system.usesRoll" {{checked system.usesRoll}}>
+      Uses Roll
+    </label>
+
+    <label>Default Roll Stat</label>
+    <select name="system.stat">
+      <option value="">No Default / Choose On Roll</option>
+      <option value="str" {{#if (eq system.stat "str")}}selected{{/if}}>STR</option>
+      <option value="dex" {{#if (eq system.stat "dex")}}selected{{/if}}>DEX</option>
+      <option value="con" {{#if (eq system.stat "con")}}selected{{/if}}>CON</option>
+      <option value="int" {{#if (eq system.stat "int")}}selected{{/if}}>INT</option>
+      <option value="wis" {{#if (eq system.stat "wis")}}selected{{/if}}>WIS</option>
+      <option value="cha" {{#if (eq system.stat "cha")}}selected{{/if}}>CHA</option>
+      <option value="fortune" {{#if (eq system.stat "fortune")}}selected{{/if}}>Fortune</option>
+      <option value="surplus" {{#if (eq system.stat "surplus")}}selected{{/if}}>Surplus</option>
+      <option value="size" {{#if (eq system.stat "size")}}selected{{/if}}>Size</option>
+      <option value="population" {{#if (eq system.stat "population")}}selected{{/if}}>Population</option>
+      <option value="prosperity" {{#if (eq system.stat "prosperity")}}selected{{/if}}>Prosperity</option>
+      <option value="defenses" {{#if (eq system.stat "defenses")}}selected{{/if}}>Defenses</option>
+    </select>
+
+    <label>10+</label>
+    <textarea name="system.result10">{{system.result10}}</textarea>
+
+    <label>7-9</label>
+    <textarea name="system.result79">{{system.result79}}</textarea>
+
+    <label>6-</label>
+    <textarea name="system.result6">{{system.result6}}</textarea>
+
+  {{/if}}
+
+  {{#if (eq item.type "textBox")}}
+
+    <h2>Text Box</h2>
+
+    <label>Header</label>
+    <input type="text" name="system.header" value="{{system.header}}">
+
+    <label class="text-box-option-row">
+      <input type="checkbox" name="system.showHeaderCheckbox" {{checked system.showHeaderCheckbox}}>
+      Show square checkbox in character sheet header
+    </label>
+
+    <label>Tab</label>
+    <input type="text" name="system.tab" value="{{system.tab}}">
+
+    <label>Column</label>
+    <select name="system.column">
+      <option value="left" {{#if (eq system.column "left")}}selected{{/if}}>Left</option>
+      <option value="right" {{#if (eq system.column "right")}}selected{{/if}}>Right</option>
+    </select>
+
+    <label>Text</label>
+    <textarea name="system.text">{{system.text}}</textarea>
+
+  {{/if}}
+
+  {{#if (eq item.type "insert")}}
+
+    <h2>Insert</h2>
+
+    <label>Tab ID</label>
+    <input type="text" name="system.tabId" value="{{system.tabId}}">
+
+    <label>Tab Label</label>
+    <input type="text" name="system.tabLabel" value="{{system.tabLabel}}">
+
+    <label>
+      <input type="checkbox" name="system.allowDelete" {{checked system.allowDelete}}>
+      Allow Delete
+    </label>
+
+    <label>Description</label>
+    <textarea name="system.description">{{system.description}}</textarea>
+
+    <hr>
+
+    <h3>Insert Contents</h3>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+
+      <section class="insert-drop-zone" data-column="leftColumn" style="border: 1px solid black; padding: 8px; min-height: 140px;">
+        <h4 style="margin-top: 0;">Left Column</h4>
+
+        {{#if system.leftColumn.length}}
+          {{#each system.leftColumn}}
+            <div style="display: grid; grid-template-columns: 28px 1fr auto; gap: 6px; align-items: center; border: 1px solid black; padding: 4px; margin-bottom: 4px;">
+              <img src="{{this.img}}" alt="{{this.name}}" style="width: 28px; height: 28px; object-fit: cover; border: none;">
+              <div>
+                <strong>{{this.name}}</strong><br>
+                <small>{{this.source}} / {{this.type}}</small>
+              </div>
+              <div style="display: flex; gap: 3px;">
+                <button class="insert-entry-open" type="button" data-uuid="{{this.uuid}}" title="Open">✎</button>
+                <button class="insert-entry-remove" type="button" data-column="leftColumn" data-index="{{@index}}" title="Remove">×</button>
+              </div>
+            </div>
+          {{/each}}
+        {{else}}
+          <p style="font-style: italic; opacity: 0.75;">Drop items or NPC actors here.</p>
+        {{/if}}
+      </section>
+
+      <section class="insert-drop-zone" data-column="rightColumn" style="border: 1px solid black; padding: 8px; min-height: 140px;">
+        <h4 style="margin-top: 0;">Right Column</h4>
+
+        {{#if system.rightColumn.length}}
+          {{#each system.rightColumn}}
+            <div style="display: grid; grid-template-columns: 28px 1fr auto; gap: 6px; align-items: center; border: 1px solid black; padding: 4px; margin-bottom: 4px;">
+              <img src="{{this.img}}" alt="{{this.name}}" style="width: 28px; height: 28px; object-fit: cover; border: none;">
+              <div>
+                <strong>{{this.name}}</strong><br>
+                <small>{{this.source}} / {{this.type}}</small>
+              </div>
+              <div style="display: flex; gap: 3px;">
+                <button class="insert-entry-open" type="button" data-uuid="{{this.uuid}}" title="Open">✎</button>
+                <button class="insert-entry-remove" type="button" data-column="rightColumn" data-index="{{@index}}" title="Remove">×</button>
+              </div>
+            </div>
+          {{/each}}
+        {{else}}
+          <p style="font-style: italic; opacity: 0.75;">Drop items or NPC actors here.</p>
+        {{/if}}
+      </section>
+
+    </div>
+
+  {{/if}}
+
+  {{#if (eq item.type "playbook")}}
+
+    <h2>Playbook</h2>
+
+    <label>Description</label>
+    <textarea name="system.description">{{system.description}}</textarea>
+
+    <hr>
+
+    <h3>Builder: Auto Populate</h3>
+
+    <section class="builder-drop-zone" data-builder-field="autoAppearance" data-builder-mode="single" data-builder-accept="profileText" style="border: 1px solid black; padding: 8px; min-height: 70px; margin-bottom: 8px;">
+      <h4 style="margin-top: 0;">Auto Appearance</h4>
+
+      {{#if system.autoAppearance.uuid}}
+        <div style="display: grid; grid-template-columns: 28px 1fr auto; gap: 6px; align-items: center; border: 1px solid black; padding: 4px;">
+          <img src="{{system.autoAppearance.img}}" alt="{{system.autoAppearance.name}}" style="width: 28px; height: 28px; object-fit: cover; border: none;">
+          <div>
+            <strong>{{system.autoAppearance.name}}</strong><br>
+            <small>{{system.autoAppearance.type}}</small>
+          </div>
+          <div style="display: flex; gap: 3px;">
+            <button class="builder-entry-open" type="button" data-uuid="{{system.autoAppearance.uuid}}" title="Open">✎</button>
+            <button class="builder-entry-remove" type="button" data-builder-field="autoAppearance" data-builder-mode="single" title="Remove">×</button>
+          </div>
+        </div>
+      {{else}}
+        <p style="font-style: italic; opacity: 0.75;">Drop one Appearance profileText here. Empty means no auto appearance.</p>
+      {{/if}}
+    </section>
+
+    <section class="builder-drop-zone" data-builder-field="autoOrigin" data-builder-mode="single" data-builder-accept="profileText" style="border: 1px solid black; padding: 8px; min-height: 70px; margin-bottom: 8px;">
+      <h4 style="margin-top: 0;">Auto Place of Origin</h4>
+
+      {{#if system.autoOrigin.uuid}}
+        <div style="display: grid; grid-template-columns: 28px 1fr auto; gap: 6px; align-items: center; border: 1px solid black; padding: 4px;">
+          <img src="{{system.autoOrigin.img}}" alt="{{system.autoOrigin.name}}" style="width: 28px; height: 28px; object-fit: cover; border: none;">
+          <div>
+            <strong>{{system.autoOrigin.name}}</strong><br>
+            <small>{{system.autoOrigin.type}}</small>
+          </div>
+          <div style="display: flex; gap: 3px;">
+            <button class="builder-entry-open" type="button" data-uuid="{{system.autoOrigin.uuid}}" title="Open">✎</button>
+            <button class="builder-entry-remove" type="button" data-builder-field="autoOrigin" data-builder-mode="single" title="Remove">×</button>
+          </div>
+        </div>
+      {{else}}
+        <p style="font-style: italic; opacity: 0.75;">Drop one Origin profileText here. Empty means no auto origin.</p>
+      {{/if}}
+    </section>
+
+    <section class="builder-drop-zone" data-builder-field="autoInsert" data-builder-mode="single" data-builder-accept="insert" style="border: 1px solid black; padding: 8px; min-height: 70px; margin-bottom: 8px;">
+      <h4 style="margin-top: 0;">Auto Playbook Insert</h4>
+
+      {{#if system.autoInsert.uuid}}
+        <div style="display: grid; grid-template-columns: 28px 1fr auto; gap: 6px; align-items: center; border: 1px solid black; padding: 4px;">
+          <img src="{{system.autoInsert.img}}" alt="{{system.autoInsert.name}}" style="width: 28px; height: 28px; object-fit: cover; border: none;">
+          <div>
+            <strong>{{system.autoInsert.name}}</strong><br>
+            <small>{{system.autoInsert.type}}</small>
+          </div>
+          <div style="display: flex; gap: 3px;">
+            <button class="builder-entry-open" type="button" data-uuid="{{system.autoInsert.uuid}}" title="Open">✎</button>
+            <button class="builder-entry-remove" type="button" data-builder-field="autoInsert" data-builder-mode="single" title="Remove">×</button>
+          </div>
+        </div>
+      {{else}}
+        <p style="font-style: italic; opacity: 0.75;">Drop one insert item here. Empty means no auto insert.</p>
+      {{/if}}
+    </section>
+
+    <h3>Builder: Choice Groups</h3>
+
+    {{#if system.choiceGroups.length}}
+      {{#each system.choiceGroups}}
+        <section class="builder-choice-group" data-group-index="{{@index}}" style="border: 1px solid black; padding: 8px; margin-bottom: 8px;">
+          <div style="display: grid; grid-template-columns: 1fr 150px auto; gap: 6px; align-items: end;">
+            <label>
+              Choice Label
+              <input type="text" class="builder-choice-label" data-group-index="{{@index}}" value="{{this.label}}">
+            </label>
+
+            <label>
+              Allowed Type
+              <select class="builder-choice-type" data-group-index="{{@index}}">
+                <option value="background" {{#if (eq this.allowedType "background")}}selected{{/if}}>Background</option>
+                <option value="profileText" {{#if (eq this.allowedType "profileText")}}selected{{/if}}>Profile Text</option>
+                <option value="move" {{#if (eq this.allowedType "move")}}selected{{/if}}>Move</option>
+                <option value="arcana" {{#if (eq this.allowedType "arcana")}}selected{{/if}}>Arcana</option>
+                <option value="insert" {{#if (eq this.allowedType "insert")}}selected{{/if}}>Insert</option>
+              </select>
+            </label>
+
+            <button class="builder-choice-remove" type="button" data-group-index="{{@index}}">Remove Group</button>
+          </div>
+
+          <div class="builder-drop-zone" data-builder-field="choiceGroups" data-builder-mode="choice" data-group-index="{{@index}}" data-builder-accept="{{this.allowedType}}" style="border: 1px dashed black; padding: 8px; min-height: 70px; margin-top: 8px;">
+            {{#if this.choices.length}}
+              {{#each this.choices}}
+                <div style="display: grid; grid-template-columns: 28px 1fr auto; gap: 6px; align-items: center; border: 1px solid black; padding: 4px; margin-bottom: 4px;">
+                  <img src="{{this.img}}" alt="{{this.name}}" style="width: 28px; height: 28px; object-fit: cover; border: none;">
+                  <div>
+                    <strong>{{this.name}}</strong><br>
+                    <small>{{this.type}}</small>
+                  </div>
+                  <div style="display: flex; gap: 3px;">
+                    <button class="builder-entry-open" type="button" data-uuid="{{this.uuid}}" title="Open">✎</button>
+                    <button class="builder-entry-remove" type="button" data-builder-field="choiceGroups" data-builder-mode="choice" data-group-index="{{@../index}}" data-index="{{@index}}" title="Remove">×</button>
+                  </div>
+                </div>
+              {{/each}}
+            {{else}}
+              <p style="font-style: italic; opacity: 0.75;">Drop allowed items here. Empty groups are ignored later.</p>
+            {{/if}}
+          </div>
+        </section>
+      {{/each}}
+    {{else}}
+      <p style="font-style: italic; opacity: 0.75;">No choice groups yet.</p>
+    {{/if}}
+
+    <button class="builder-choice-add" type="button">Add Choice Group</button>
+
+  {{/if}}
+
+  {{#if (eq item.type "steadingImprovement")}}
+
+    <h2>Steading Improvement</h2>
+
+    <label>Header</label>
+    <input type="text" name="system.header" value="{{system.header}}">
+
+    <label class="text-box-option-row">
+      <input type="checkbox" name="system.showHeaderCheckbox" {{checked system.showHeaderCheckbox}}>
+      Show square checkbox in character sheet header
+    </label>
+
+    <label>Tab</label>
+    <input type="text" name="system.tab" value="{{system.tab}}">
+
+    <label>Column</label>
+    <select name="system.column">
+      <option value="left" {{#if (eq system.column "left")}}selected{{/if}}>Left</option>
+      <option value="right" {{#if (eq system.column "right")}}selected{{/if}}>Right</option>
+    </select>
+
+    <label>Text</label>
+    <textarea name="system.text">{{system.text}}</textarea>
+
+  {{/if}}
+
+</form>
